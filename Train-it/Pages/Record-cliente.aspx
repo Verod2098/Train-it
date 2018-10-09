@@ -1,7 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Blank-cliente.aspx.cs" Inherits="Pages_Blank" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Record-cliente.aspx.cs" Inherits="Pages_Record_cliente" %>
 
 <!DOCTYPE html>
 
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
  <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -31,6 +32,7 @@
 </head>
 
 <body class="theme-cyan">
+    <form id="Form1" runat ="server">
     <!-- Page Loader -->
    <div class="page-loader-wrapper">
         <div class="loader">
@@ -124,18 +126,34 @@
      
         <!-- #END# Right Sidebar -->
     </section>
-    
-    
-    <section class="content">
+
+          <section class="content">
         <div class="container-fluid">
             <!--Insertar Codigo-->
+            <div class="card">
+             <h2>Historial de examenes</h2>
             <div class="block-header">
-                <h2>BLANK PAGE</h2>
+               
+                <div class="block-header">
+                    <asp:GridView ID="GridViewRecord" class="table" runat="server" AutoGenerateColumns="False" >
+                        <Columns>
+                            <asp:BoundField DataField="Codigo_Prueba" HeaderText="prueba" SortExpression="prueba" />
+                            <asp:BoundField DataField="nota" HeaderText="nota" SortExpression="nota" />
+                        </Columns>
+                    </asp:GridView>
+                
+                  
+                       
+                
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+    </form>
 
-    <!-- Jquery Core Js -->
+
+     <!-- Jquery Core Js -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core Js -->

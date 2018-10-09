@@ -82,7 +82,7 @@ sub {
 }
 
 img {
-    border: 0
+    width:230px !important
 }
 
 svg:not(:root) {

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Blank-cliente.aspx.cs" Inherits="Pages_Blank" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Index-cliente.aspx.cs" Inherits="Pages_Index_cliente" %>
 
 <!DOCTYPE html>
 
@@ -31,6 +31,7 @@
 </head>
 
 <body class="theme-cyan">
+    <form id="Form1" runat="server">
     <!-- Page Loader -->
    <div class="page-loader-wrapper">
         <div class="loader">
@@ -129,8 +130,23 @@
     <section class="content">
         <div class="container-fluid">
             <!--Insertar Codigo-->
+                <div  class="card">
+            <h2>Bienvenido a Train-it</h2>
             <div class="block-header">
-                <h2>BLANK PAGE</h2>
+                <asp:GridView ID="GridViewExamen" runat="server" class="table" AutoGenerateColumns="False" DataKeyNames="codigoPrueba">
+                    <Columns>
+                        
+                       
+                        
+                        <asp:ButtonField CommandName="Select" Text="Prueba" />
+                        
+                    </Columns>
+                </asp:GridView>
+                
+            </div>
+        </div>
+            </div>
+    </section>
             </div>
         </div>
     </section>
@@ -155,5 +171,6 @@
 
     <!-- Demo Js -->
     <script src="../../js/demo.js"></script>
+        </form>           
 </body>
 </html>

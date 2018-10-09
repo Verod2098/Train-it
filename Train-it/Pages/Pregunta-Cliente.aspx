@@ -38,7 +38,7 @@
    <div class="page-loader-wrapper">
         <div class="loader">
             <div class="preloader">
-                <div class="spinner-layer pl-light-green">
+                <div class="spinner-layer pl-cyan">
                     <div class="circle-clipper left">
                         <div class="circle"></div>
                     </div>
@@ -63,7 +63,7 @@
             <div class="navbar-header" >
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand " > <i class="material-icons">desktop_windows </i>  Train-it</a>
+                  <a > <img src="../Images/Train-it (1).png" class="img" width=230px /> </a>
           
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
@@ -106,6 +106,13 @@
                         <a href="Record-cliente.aspx">
                             <i class="material-icons">description</i>
                             <span>Historial de pruebas</span>
+                        </a>
+                    </li>
+
+                     <li>
+                        <a href="Record-cliente.aspx">
+                            <i class="material-icons">face </i>
+                            <span>Información Personal</span>
                         </a>
                     </li>
                    
