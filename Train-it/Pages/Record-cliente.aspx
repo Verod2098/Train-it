@@ -92,9 +92,11 @@
         <aside id="leftsidebar" class="sidebar">
             
             <!-- Menu -->
+          
             <div class="menu">
                 <ul class="list">
-                    <li class="header">Menú Principal</li>
+                    <br />
+                   <!-- <li class="header">Menú Principal</li> -->
                     <li class="active">
                         <a href="Index-cliente.aspx">
                             <i class="material-icons">home</i>

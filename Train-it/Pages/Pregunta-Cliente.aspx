@@ -95,7 +95,8 @@
             <!-- Menu -->
             <div class="menu">
                 <ul class="list">
-                    <li class="header">Menú Principal</li>
+                    <br />
+                 <!--   <li class="header">Menú Principal</li> -->
                     <li class="active">
                         <a href="Index-cliente.aspx">
                             <i class="material-icons">home</i>
@@ -133,13 +134,14 @@
             <!--Insertar Codigo-->
             <div class="block-header">
                 <div class="quiz" id="quiz" data-toggle="buttons">
+                    <fieldset>
                        <div class="modal-dialog">
       <div class="modal-content">
           <asp:ScriptManager ID="ScriptManager1"
                                runat="server" />
             <asp:Panel ID="Panel1"
                        GroupingText="Preguntas de la prueba"
-                       runat="server">
+                       runat="server" >
                 <asp:UpdatePanel ID="UpdatePanel1"
                                  UpdateMode="Conditional"
                                  runat="server">
@@ -152,9 +154,11 @@
                     </ContentTemplate>
                 </asp:UpdatePanel>
       </asp:Panel>
+         
 </div>
 </div>
 </div>
+                            </fieldset>
             </div>
         </div>
     </section>
