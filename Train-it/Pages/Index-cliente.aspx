@@ -134,15 +134,20 @@
                 <div  class="card">
             <h2>Bienvenido a Train-it</h2>
             <div class="block-header">
-                <asp:GridView ID="GridViewExamen" runat="server" class="table" AutoGenerateColumns="False" DataKeyNames="codigoPrueba">
+                <asp:GridView ID="GridViewExamen"  runat="server" class="table bg-navy" AutoGenerateColumns="False" DataSourceID="SqlDataTemas" OnSelectedIndexChanged="GridViewExamen_SelectedIndexChanged">
                     <Columns>
                         
                        
                         
-                        <asp:ButtonField CommandName="Select" Text="Prueba" />
+                        <asp:BoundField DataField="Tema" HeaderText="Tema" SortExpression="Tema" ShowHeader="False"   >
+                       
+                        </asp:BoundField>
+                        <asp:CommandField ShowSelectButton="True" />
                         
                     </Columns>
                 </asp:GridView>
+                
+                <asp:SqlDataSource ID="SqlDataTemas" runat="server" ConnectionString="<%$ ConnectionStrings:TRAINT-ITConnectionString %>" SelectCommand="SELECT [Tema] FROM [Tema_Prueba]"></asp:SqlDataSource>
                 
             </div>
         </div>

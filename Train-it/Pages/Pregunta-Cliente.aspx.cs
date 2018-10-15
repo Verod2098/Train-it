@@ -63,9 +63,14 @@ public partial class Pregunta_Cliente : System.Web.UI.Page
             Console.WriteLine(i.ToString());
         }
 
-    } 
+    }
 
 
-    
 
+
+
+    protected void Button_Q1_Click(object sender, EventArgs e)
+    {
+
+    }
 }

@@ -9,7 +9,7 @@ using System.Web;
 public class Utils
 {
     
-    public static int numero_pregunta;
+    public static int maxpregunta;
     public static string nombre;
     public static int id;
     public static int id_prueba;
