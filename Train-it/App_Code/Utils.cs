@@ -8,9 +8,8 @@ using System.Web;
 /// </summary>
 public class Utils
 {
-    
+    //Examen 
     public static int maxpregunta;
-    public static string nombre;
     public static int id;
     public static int id_prueba;
     public static string req;
@@ -23,5 +22,14 @@ public class Utils
     public static int Porcentaje;
     public static Boolean isfull;
     public static int code = 0;
-   
+
+   //USer
+    public static string nombre;
+    public static int cedula;
+    public static int tel;
+    public static string fecha;
+    public static string lugar;
+    public static string ocupacion;
+    public static string tipo;
+    public static string correo;
 }

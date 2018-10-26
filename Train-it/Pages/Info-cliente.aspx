@@ -1,7 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="GridPreguntas-cliente.aspx.cs" Inherits="Pages_GridPreguntas_cliente" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Info-cliente.aspx.cs" Inherits="Pages_Info_cliente" %>
 
 <!DOCTYPE html>
 
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
  <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -31,7 +32,7 @@
 </head>
 
 <body class="theme-cyan">
-    <form id="Form1" runat="server">
+   <form id="Form1" runat="server">
     <!-- Page Loader -->
    <div class="page-loader-wrapper">
         <div class="loader">
@@ -94,7 +95,7 @@
             <div class="menu">
                 <ul class="list">
                     <br />
-                 <!--   <li class="header">Menú Principal</li> -->
+                    <!--<li class="header">Menú Principal</li> -->
                     <li class="active">
                         <a href="Index-cliente.aspx">
                             <i class="material-icons">home</i>
@@ -131,43 +132,100 @@
     <section class="content">
         <div class="container-fluid">
             <!--Insertar Codigo-->
-                <div  class="card">
-            <h2>Exámenes Disponibles</h2>
             <div class="block-header">
-                <asp:GridView ID="GridViewPruebas"  runat="server" class="table bg-navy" AutoGenerateColumns="False" DataSourceID="SqlDataSourcePrueba"  DataKeyNames="Id">
-                    <Columns>
-                        
-                       
-                        
-                        
-                       
-                       
+                   <div class="card">
+                        <div class="body bg-gray">
+                            <div class="h1">Información Personal</div>
+                            <ul class="dashboard-stat-list">
+
+                                <li>
+
+                                    <div class="form-group form-float">
+                                        <div class="form-line focused">
+                                            <asp:TextBox ID="Txt_NombreText" class="form-control" runat ="server"  ></asp:TextBox>
+                                            <label class="form-label">Nombre </label>
+                                        </div>
+                                    </div>
+                                 </li>
+
+                                <li>
+                                      <div class="form-group form-float">
+                                        <div class="form-line focused">
+                                                 <asp:TextBox ID="Txt_Fecha" runat="server"  CssClass="form-control dtp-date" >
+                                                     </asp:TextBox>
+                                            <label class="form-label">Fecha de Nacimiento</label>
+                                        </div>
+                                    </div>
+                                         </li>
+                                  <li>
+                                      <div class="form-group form-float">
+                                        <div class="form-line focused">
+                                                 <asp:TextBox ID="Txtphone" runat="server"  CssClass="form-control glyphicon-phone" >
+                                                     </asp:TextBox>
+                                            <label class="form-label">Número de Teléfono</label>
+                                        </div>
+                                    </div>
+                                         </li>
+
+                                 <li>
+                                      <div class="form-group form-float">
+                                        <div class="form-line focused">
+                                                 <asp:TextBox ID="TxtJob" runat="server"  CssClass="form-control" >
+                                                     </asp:TextBox>
+                                            <label class="form-label">Ocupación</label>
+                                        </div>
+                                    </div>
+                                         </li>
+
+                                 <li>
+                                      <div class="form-group form-float">
+                                        <div class="form-line focused">
+                                                 <asp:TextBox ID="TxtCentroEducativo" runat="server"  CssClass="form-control" >
+                                                     </asp:TextBox>
+                                            <label class="form-label">Centro Educativo o Lugar de Trabajo</label>
+                                        </div>
+                                    </div>
+                                         </li>
+                             
+                                <li>
+
+                                    <div class="form-group form-float">
+                                        <div class="form-line focused">
+                                                 <asp:TextBox ID="Txt_correo" runat="server"  class="form-control" TextMode="Email"></asp:TextBox>
+                                                     
+                                            <label class="form-label">Correo electrónico</label>
+                                        </div>
+                                    </div>
+                                   
+                                </li>
+
+                                
+
+                                              
+                                                    <li>
+                                      <div class="form-group form-float col-sm-3">
+                                        
+
+                                                     
+                                            <label class="col-sm-3">Tipo de Cuenta</label> 
+                                          
+                                                <asp:label id="Labeltipe"  runat="server">    </asp:label> 
+                                          <asp:Button ID="UpgradeButton" runat="server" Cssclass="btn-success" Text="Cambio de plan" OnClick="UpgradeButton_Click"/>
+
+                                        
+                                    
+                                         
+       
+                                                 
                  
-                        
-                        <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
-                        <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
-                        <asp:CommandField ShowSelectButton="True" />
-                        
-                       
-           
-                        
-                    </Columns>
-                </asp:GridView>
-                
- 
-                
-                <asp:SqlDataSource ID="SqlDataSourcePrueba" runat="server" ConnectionString="<%$ ConnectionStrings:TRAINT-ITConnectionString %>" SelectCommand="SELECT [Id], [Nombre] FROM [Prueba] WHERE ([Especialidad] = @Especialidad)">
-                    <SelectParameters>
-                        <asp:SessionParameter DefaultValue="" Name="Especialidad" SessionField="Tema_prueba" Type="String" />
-                    </SelectParameters>
-                </asp:SqlDataSource>
-                
- 
-                
-            </div>
-        </div>
-            </div>
-    </section>
+                      <span class="pull-right">
+                    <asp:Button ID="BttnUdate" runat="server" Text="Modificar"  CssClass="btn primary bg-cyan" />
+                          </span>
+                 </li>
+                </ul>
+               </div>
+         </div>
+               
             </div>
         </div>
     </section>
@@ -192,6 +250,6 @@
 
     <!-- Demo Js -->
     <script src="../../js/demo.js"></script>
-        </form>           
+       </form>
 </body>
 </html>

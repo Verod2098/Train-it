@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="GridPreguntas-cliente.aspx.cs" Inherits="Pages_GridPreguntas_cliente" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Pago-Premium.aspx.cs" Inherits="Pages_Pago_Premium" %>
 
 <!DOCTYPE html>
 
@@ -94,7 +94,7 @@
             <div class="menu">
                 <ul class="list">
                     <br />
-                 <!--   <li class="header">Menú Principal</li> -->
+                    <!--<li class="header">Menú Principal</li> -->
                     <li class="active">
                         <a href="Index-cliente.aspx">
                             <i class="material-icons">home</i>
@@ -131,43 +131,69 @@
     <section class="content">
         <div class="container-fluid">
             <!--Insertar Codigo-->
-                <div  class="card">
-            <h2>Exámenes Disponibles</h2>
             <div class="block-header">
-                <asp:GridView ID="GridViewPruebas"  runat="server" class="table bg-navy" AutoGenerateColumns="False" DataSourceID="SqlDataSourcePrueba"  DataKeyNames="Id">
-                    <Columns>
-                        
-                       
-                        
-                        
-                       
-                       
-                 
-                        
-                        <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
-                        <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
-                        <asp:CommandField ShowSelectButton="True" />
-                        
-                       
-           
-                        
-                    </Columns>
-                </asp:GridView>
-                
- 
-                
-                <asp:SqlDataSource ID="SqlDataSourcePrueba" runat="server" ConnectionString="<%$ ConnectionStrings:TRAINT-ITConnectionString %>" SelectCommand="SELECT [Id], [Nombre] FROM [Prueba] WHERE ([Especialidad] = @Especialidad)">
-                    <SelectParameters>
-                        <asp:SessionParameter DefaultValue="" Name="Especialidad" SessionField="Tema_prueba" Type="String" />
-                    </SelectParameters>
-                </asp:SqlDataSource>
-                
- 
-                
-            </div>
-        </div>
-            </div>
-    </section>
+
+               <div class="card">
+                   <h1>Subscribase para obtener una mejor experiencia</h1
+                       <ul class="dashboard-stat-list">
+                       <li>
+                                      <div class="form-group form-float">
+                                        <div class="form-line focused">
+                                                 <asp:TextBox ID="TxtTarejat" runat="server"  CssClass="form-control" >
+                                                     </asp:TextBox>
+                                            <label class="form-label">Número de Tarjeta</label>
+                                        </div>
+                                    </div>
+                                         </li>
+
+                             <li>
+
+                                    <div class="form-group form-float">
+                                        <div class="form-line focused">
+                                            <asp:TextBox ID="Txt_NombreText" class="form-control" runat ="server"  ></asp:TextBox>
+                                            <label class="form-label">Nombre del Tarjetahabiente</label>
+                                        </div>
+                                    </div>
+                                 </li>
+
+
+
+                                 <li>
+                                      <div class="form-group form-float">
+                                        <div class="form-line focused">
+                                                 <asp:TextBox ID="TxtCodigo" runat="server"  CssClass="form-control" >
+                                                     </asp:TextBox>
+                                            <label class="form-label">Código de Seguridad</label>
+                                        </div>
+                                    </div>
+                                         </li>
+
+                             
+
+                                      <li>
+
+                                    <div class="form-group form-float">
+                                        <div class="form-line focused">
+                                            <asp:TextBox ID="Txtfecha" class="form-control" runat ="server"  ></asp:TextBox>
+                                            <label class="form-label">Fecha de Vencimiento </label>
+                                        </div>
+                                    </div>
+                                 </li>
+                                
+                           <span class="pull-right">
+                    <asp:Button ID="BttnPay" runat="server" Text="Suscribirse"  CssClass="btn primary bg-cyan" />
+                          </span>
+
+                           </ul>
+
+                         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="P5PGH9BAKJ6QC">
+<input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
+<img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+                        </div>
             </div>
         </div>
     </section>
@@ -192,6 +218,7 @@
 
     <!-- Demo Js -->
     <script src="../../js/demo.js"></script>
-        </form>           
+
+        </form>
 </body>
 </html>
