@@ -140,7 +140,7 @@
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TRAINT-ITConnectionString %>" SelectCommand="SELECT [Tema] FROM [Tema_Prueba]"></asp:SqlDataSource>
 
                 <span class="pull-right">
-                    <asp:Button ID="Bttnnext" runat="server" Text="Continuar"  CssClass="btn primary bg-cyan" />
+                    <asp:Button ID="Bttnnext" runat="server" Text="Continuar"  CssClass="btn primary bg-cyan" OnClick="Bttnnext_Click" />
                           </span>
             </div>
         </div>
