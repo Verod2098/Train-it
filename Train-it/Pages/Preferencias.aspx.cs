@@ -11,4 +11,16 @@ public partial class Pages_Preferencias : System.Web.UI.Page
     {
 
     }
+
+    protected void Bttnnext_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            Response.Redirect("index-cliente.aspx", false);
+
+        }
+        catch {
+
+        }
+    }
 }
