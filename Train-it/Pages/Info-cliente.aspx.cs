@@ -11,7 +11,7 @@ public partial class Pages_Info_cliente : System.Web.UI.Page
     Users User = new Users();
     protected void Page_Load(object sender, EventArgs e)
     {
-        Fillinfo(1);
+        Fillinfo(Utils.cedula);
     } 
 
 
@@ -23,7 +23,7 @@ public partial class Pages_Info_cliente : System.Web.UI.Page
                 Txt_NombreText.Text = Utils.nombre;
                 TxtJob.Text = Utils.ocupacion;
                 TxtCentroEducativo.Text = Utils.lugar;
-                Txtphone.Text = Utils.tel.ToString();
+                Txtphone.Text = Utils.tel;
                 Txt_correo.Text = Utils.correo;
                 Txt_Fecha.Text = Utils.fecha;
                 Labeltipe.Text = Utils.tipo;
@@ -52,6 +52,28 @@ public partial class Pages_Info_cliente : System.Web.UI.Page
 
         {
             Console.WriteLine(exception.ToString ());
+        }
+    }
+
+    protected void BttnUdate_Click(object sender, EventArgs e)
+    {
+
+        try {
+
+            User.updateClient(Txt_NombreText.Text, Txt_correo.Text, TxtJob.Text, TxtCentroEducativo.Text, Txtphone.Text);
+            Txt_NombreText.Text = "";
+            Txtphone.Text = " ";
+            Txt_correo.Text = " ";
+            TxtCentroEducativo.Text = " ";
+            TxtJob.Text = " ";
+            Txt_Fecha.Text = " ";
+            Labeltipe.Text = " ";
+           
+        }
+        catch (Exception exception)
+
+        {
+            Console.WriteLine(exception.ToString());
         }
     }
 }

@@ -25,8 +25,8 @@ public class Utils
 
    //USer
     public static string nombre;
-    public static int cedula;
-    public static int tel;
+    public static int cedula=1;
+    public static string tel;
     public static string fecha;
     public static string lugar;
     public static string ocupacion;
