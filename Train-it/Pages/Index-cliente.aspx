@@ -134,15 +134,15 @@
                 <div  class="card">
             <h2>Bienvenido a Train-it</h2>
             <div class="block-header">
-                <asp:GridView ID="GridViewExamen"  runat="server" class="table bg-navy" AutoGenerateColumns="False" DataSourceID="SqlDataTemas" OnSelectedIndexChanged="GridViewExamen_SelectedIndexChanged">
+                <asp:GridView ID="GridViewExamen"  runat="server" class="table bg-navy" AutoGenerateColumns="False" DataSourceID="SqlDataTemas" OnSelectedIndexChanged="GridViewExamen_SelectedIndexChanged"  CssClass=" table-condensed" BorderColor="White">
                     <Columns>
                         
                        
                         
-                        <asp:BoundField DataField="TEMA" HeaderText="TEMA" SortExpression="TEMA"   >
+                        <asp:BoundField DataField="TEMA"  SortExpression="TEMA"   >
                        
                         </asp:BoundField>
-                        <asp:ButtonField CommandName="Select" Text="Seleccionar" />
+                        <asp:ButtonField CommandName="Select" Text="Seleccionar" ><ControlStyle CssClass="btn-xs bg-cyan"></ControlStyle> </asp:ButtonField>
                         
                     </Columns>
                 </asp:GridView>

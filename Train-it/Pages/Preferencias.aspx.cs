@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 
 public partial class Pages_Preferencias : System.Web.UI.Page
 {
+
+    Users user = new Users();
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -19,8 +21,37 @@ public partial class Pages_Preferencias : System.Web.UI.Page
             Response.Redirect("index-cliente.aspx", false);
 
         }
-        catch {
+        catch (Exception exception)
 
+        {
+            Console.WriteLine(exception.ToString());
         }
+    }
+
+        protected void ChckListPreferencias_SelectedIndexChanged(object sender, EventArgs e)
+    {
+       
+
+    }
+
+
+
+
+
+
+
+    protected void GrriPrefe_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        try
+        {
+            Session["Preferencias"] = GrriPrefe.SelectedRow.Cells[1].Text;
+            user.insertPreferences(Utils.cedula, Session["Preferencias"].ToString());
+        }
+        catch (Exception exception)
+
+        {
+            Console.WriteLine(exception.ToString());
+        }
+
     }
 }

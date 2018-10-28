@@ -11,14 +11,8 @@ public class Test
 {
 
 
+    SqlConnection conexion = new SqlConnection("Data Source = DELL\\SQLEXPRESS;Initial Catalog = TRAINT-IT; User ID = Vero; Password=123");
 
-    public Test()
-    {
-        using (var db = new Train_itEntities())
-        {
-            var result = db.Preferencias.Where(c => c.active == true).ToList();
-        }
-    }
 
 
     public Boolean CorrectAnswer(string answer, string choose)

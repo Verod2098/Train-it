@@ -20,9 +20,21 @@ public partial class Pages_Index_cliente : System.Web.UI.Page
 
     protected void GridViewExamen_SelectedIndexChanged(object sender, EventArgs e)
     {
+        try
+        {
 
-        Session["Tema"] = GridViewExamen.SelectedRow.Cells[0].Text;
-        Response.Redirect("GridPreguntas-cliente.aspx", false);
+
+
+            Session["Tema"] = GridViewExamen.SelectedRow.Cells[0].Text;
+            Response.Redirect("GridPreguntas-cliente.aspx", false);
+
+        }
+        catch (Exception exception)
+
+        {
+            Console.WriteLine(exception.ToString());
+        }
+
 
     }
 }

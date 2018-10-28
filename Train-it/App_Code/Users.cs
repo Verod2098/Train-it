@@ -69,4 +69,21 @@ public class Users
         conexion.Close();
         return isReal;
     }
+
+
+    public void insertPreferences(int id, string prueba)
+    {
+        String sql;
+        SqlCommand com;
+        conexion.Open();
+        sql = "INSERT INTO PREFERENCIAS(ID_Usuario, ID_PRUEBA) VALUES(@cedula, (SELECT CODIGO FROM TEMA_PRUEBA WHERE TEMA =@Prueba)); ";
+        com = conexion.CreateCommand();
+        com.Parameters.AddWithValue("cedula", id);
+        com.Parameters.AddWithValue("prueba", prueba);
+        com.CommandText = sql;
+        com.ExecuteNonQuery();
+
+        conexion.Close();
+      
+    }
 }

@@ -132,19 +132,35 @@
     <section class="content">
        
             <!--Insertar Codigo-->
+              
             <div class="auto-style1" >
             <div class="block-header">
+            
                 <h1>Comencemos</h1>
                 <h2>Seleccione lo que le gustaría ver en su inicio </h2>
-                <asp:CheckBoxList ID="ChckListPreferencias"  runat="server" DataSourceID="SqlDataSource1" DataTextField="Tema" DataValueField="Tema"></asp:CheckBoxList>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TRAINT-ITConnectionString %>" SelectCommand="SELECT [Tema] FROM [Tema_Prueba]"></asp:SqlDataSource>
+             
+               <asp:GridView ID="GrriPrefe" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GrriPrefe_SelectedIndexChanged" CssClass=" table-condensed" BorderColor="White">
+                   <Columns>
+                       <asp:ButtonField ButtonType="Button" CommandName="Select" Text="Agregar " >
+<ControlStyle CssClass="btn-xs bg-cyan"></ControlStyle> 
+                            </asp:ButtonField>
+                       <asp:BoundField DataField="Tema"  SortExpression="Tema"  />
+                 
+                   </Columns>
+               
+                    </asp:GridView>
 
+                   
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TRAINT-ITConnectionString %>" SelectCommand="SELECT [Tema] FROM [Tema_Prueba]"></asp:SqlDataSource>
                 <span class="pull-right">
                     <asp:Button ID="Bttnnext" runat="server" Text="Continuar"  CssClass="btn primary bg-cyan" OnClick="Bttnnext_Click" />
                           </span>
+                
             </div>
-        </div>
-            </div>
+       </div>
+              
+        
+           
     </section>
 
     <!-- Jquery Core Js -->
