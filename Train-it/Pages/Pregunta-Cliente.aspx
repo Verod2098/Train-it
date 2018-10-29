@@ -147,10 +147,10 @@
                                  runat="server">
                     <ContentTemplate>
                            <asp:Label ID="LblPregunta" runat="server" Text="" CssClass="labelpregunta"></asp:Label>
-                            <asp:Button ID="Button_Q1" class="element-animation1 btn btn-lg  btn-block bg-navy" runat="server" OnClick="Button_Q1_Click" ></asp:Button>
-                            <asp:Button ID="Button_Q2" class="element-animation1 btn btn-lg  btn-block bg-navy" runat="server" ></asp:Button>
-                            <asp:Button ID="Button_Q3" class="element-animation1 btn btn-lg  btn-block bg-navy" runat="server"></asp:Button>
-                            <asp:Button ID="Button_Q4" class="element-animation1 btn btn-lg  btn-block bg-navy" runat="server"></asp:Button>
+                            <asp:Button ID="Button_Q1" class="element-animation1 btn btn-lg  btn-block bg-cyan" runat="server" OnClick="Button_Q1_Click" ></asp:Button>
+                            <asp:Button ID="Button_Q2" class="element-animation1 btn btn-lg  btn-block bg-cyan" runat="server" OnClick="Button_Q2_Click" ></asp:Button>
+                            <asp:Button ID="Button_Q3" class="element-animation1 btn btn-lg  btn-block bg-cyan" runat="server" OnClick="Button_Q3_Click"></asp:Button>
+                            <asp:Button ID="Button_Q4" class="element-animation1 btn btn-lg  btn-block bg-cyan" runat="server" OnClick="Button_Q4_Click"></asp:Button>
                     </ContentTemplate>
                 </asp:UpdatePanel>
       </asp:Panel>

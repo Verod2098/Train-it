@@ -9,7 +9,7 @@ using System.Web;
 /// </summary>
 public class Test
 {
-
+    Pregunta pregunta = new Pregunta();
 
     SqlConnection conexion = new SqlConnection("Data Source = DELL\\SQLEXPRESS;Initial Catalog = TRAINT-IT; User ID = Vero; Password=123");
      public static List< Pregunta> ListPregunta = new List<Pregunta> ();
@@ -35,7 +35,7 @@ public class Test
             SqlCommand com;
             SqlDataReader rs;
             conexion.Open();
-            sql = "SELECT * FROM Pregunta where id=@Codigo_prueba and id_pregunta=@id";
+            sql = "SELECT * FROM Pregunta where id_prueba=@Codigo_prueba and id_pregunta=@id";
             com = conexion.CreateCommand();
             com.Parameters.AddWithValue("Codigo_prueba", idprueba);
             com.Parameters.AddWithValue("id", GetRandom());
@@ -44,15 +44,15 @@ public class Test
 
             if (rs.Read())
             {
-                Pregunta pregunta = new Pregunta();
-                pregunta.Preguntatext = rs[1].ToString();
-                Pregunta .porcentaje= int.Parse(rs[2].ToString());
-                 pregunta.CorrectAnswer= rs[3].ToString();
-                pregunta.BadAnswer1 = rs[4].ToString();
-                pregunta.BadAnswer2 = rs[5].ToString();
-                pregunta.BadAnswer3 = rs[6].ToString();
-                pregunta.Path = rs[8].ToString();
-                pregunta.Format = rs[9].ToString();
+               
+                Pregunta.preguntatext = rs[1].ToString();
+                Pregunta .porcentaje= rs[2].ToString();
+                 Pregunta.correctAnswer= rs[3].ToString();
+                Pregunta.badAnswer1 = rs[4].ToString();
+                Pregunta.badAnswer2 = rs[5].ToString();
+                Pregunta.badAnswer3 = rs[6].ToString();
+                Pregunta.path = rs[8].ToString();
+                Pregunta.format = rs[9].ToString();
                 Utils.code++;
                 ListPregunta.Add(pregunta);
             
@@ -111,11 +111,16 @@ public class Test
     public int GetRandom() {
         int id_pregunta;
         Random rnd = new Random();
-      return id_pregunta = rnd.Next(10);
+      return id_pregunta = rnd.Next(1,10);
 
     }
 
+    public override string ToString()
+    {
+        return pregunta.ToString();
+    }
 
-  
+
+
 
 }

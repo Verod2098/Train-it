@@ -174,8 +174,9 @@
                         <div class="body bg-gray">
                             <div class="font-bold m-b--35">Respuestas de la Prueba</div>
                             <br />
+                            <br />
                            
-                            <asp:GridView ID="GridViewRespuestas" runat="server" CssClass="table-responsive" DataSourceID="ObjectDataSource1"></asp:GridView> 
+                            <asp:Label ID="GridViewPreguntas" runat="server" Text=" "></asp:Label>
                             
                             <br />
                             <br />

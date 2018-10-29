@@ -9,7 +9,7 @@ using System.Web;
 public class Utils
 {
     //Examen 
-    public static int maxpregunta=5;
+    public static int maxpregunta;
     public static int id;
     public static int id_prueba;
     public static string req;

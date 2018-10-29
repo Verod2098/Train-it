@@ -11,28 +11,28 @@ public class Pregunta
 
 
 
-    private string preguntatext;
-    private string correctAnswer;
-    private string badAnswer1;
-    private string badAnswer2;
-    private string badAnswer3;
-    private string path;
-    private string format;
-    public static int porcentaje;
+    public static string preguntatext;
+    public static string correctAnswer;
+    public static string badAnswer1;
+    public static string badAnswer2;
+    public static string badAnswer3;
+    public static string path;
+    public static string format;
+    public static string porcentaje;
 
-    public string Preguntatext { get => preguntatext; set => preguntatext = value; }
-    public string CorrectAnswer { get => correctAnswer; set => correctAnswer = value; }
-    public string BadAnswer1 { get => badAnswer1; set => badAnswer1 = value; }
-    public string BadAnswer2 { get => badAnswer2; set => badAnswer2 = value; }
-    public string BadAnswer3 { get => badAnswer3; set => badAnswer3 = value; }
-    public string Path { get => path; set => path = value; }
-    public string Format { get => format; set => format = value; }
-    public static int Porcentaje { get => porcentaje; set => porcentaje = value; }
+    
 
     public Pregunta()
     {
        
     }
+
+    public override string ToString()
+    {
+        return "Pregunta: "  + preguntatext +  "Respuesta:  "+ correctAnswer + "  ";
+
+    }
+
 
 
 }

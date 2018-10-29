@@ -42,12 +42,12 @@ public partial class Pages_Nota_cliente : System.Web.UI.Page
             com = conexion.CreateCommand();
             com.CommandText = sql;
             com.Parameters.AddWithValue("prueba", int.Parse(Session["id_prueba"].ToString()));
-            com.Parameters.AddWithValue("cedula", Utils.cedula);
+            com.Parameters.AddWithValue("id", Utils.cedula);
             rs = com.ExecuteReader();
 
             if (rs.Read())
             {
-                LblCodTxt.Text = rs[3].ToString();
+                LblCodTxt.Text = Utils.cedula.ToString();
                 LblNomTex.Text = rs[1].ToString();
                 LblCacTex.Text = rs[2].ToString();
 
@@ -66,11 +66,11 @@ public partial class Pages_Nota_cliente : System.Web.UI.Page
     {
         try
         {
-            for (int i = 0; i < Test.ListPregunta.Count; i++)
+            foreach  (Pregunta i in Test.ListPregunta)
             {
               
-                GridViewRespuestas.DataSource = Test.ListPregunta.ToString();
-                GridViewRespuestas.DataBind();
+                GridViewPreguntas.Text+=Test.ListPregunta.ToString ();
+                
                 
 
             }
