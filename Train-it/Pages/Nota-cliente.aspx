@@ -175,7 +175,8 @@
                             <div class="font-bold m-b--35">Respuestas de la Prueba</div>
                             <br />
                            
-                            <asp:GridView ID="GridViewRespuestas" runat="server" CssClass="table-responsive"></asp:GridView> 
+                            <asp:GridView ID="GridViewRespuestas" runat="server" CssClass="table-responsive" DataSourceID="ObjectDataSource1"></asp:GridView> 
+                            
                             <br />
                             <br />
                             <h4>Subscribirse a Premiun para obtener mas preguntas</h4>

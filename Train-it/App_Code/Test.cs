@@ -12,7 +12,7 @@ public class Test
 
 
     SqlConnection conexion = new SqlConnection("Data Source = DELL\\SQLEXPRESS;Initial Catalog = TRAINT-IT; User ID = Vero; Password=123");
-    List< Pregunta> ListPregunta = new List<Pregunta> ();
+     public static List< Pregunta> ListPregunta = new List<Pregunta> ();
 
 
     public Boolean CorrectAnswer(string answer, string choose)
@@ -34,11 +34,11 @@ public class Test
             String sql;
             SqlCommand com;
             SqlDataReader rs;
-             GetRandom();
             conexion.Open();
-            sql = "SELECT * FROM Pregunta where Codigo_prueba=@Codigo_prueba and ";
+            sql = "SELECT * FROM Pregunta where Codigo_prueba=@Codigo_prueba and id_pregunta=@id";
             com = conexion.CreateCommand();
             com.Parameters.AddWithValue("Codigo_prueba", idprueba);
+            com.Parameters.AddWithValue("id", GetRandom());
             com.CommandText = sql;
             rs = com.ExecuteReader();
 
@@ -108,11 +108,14 @@ public class Test
 
     }
 
-    public void GetRandom() {
-
+    public int GetRandom() {
+        int id_pregunta;
         Random rnd = new Random();
-        int id_pregunta = rnd.Next(10);
+      return id_pregunta = rnd.Next(10);
 
     }
+
+
+  
 
 }

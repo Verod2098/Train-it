@@ -15,7 +15,7 @@ public partial class Pregunta_Cliente : System.Web.UI.Page
         {
             UpdatePanel1.Update();
             test.FillQuestion(int.Parse(Session["id_prueba"].ToString()));
-            test.AddGrade(int.Parse(Session["User_id"].ToString()), int.Parse(Session["id_prueba"].ToString()));
+            test.AddGrade(Utils.cedula, int.Parse(Session["id_prueba"].ToString()));
             LblPregunta.Text = pregunta.Preguntatext.ToString();
             FillButton();
             Utils.isfull = true;
