@@ -29,7 +29,7 @@ public class Pregunta
 
     public override string ToString()
     {
-        return "Pregunta: "  + preguntatext +  "Respuesta:  "+ correctAnswer + "  ";
+        return "   Pregunta: "  + preguntatext.ToString() +  "  Respuesta:  "+ correctAnswer.ToString() + "   " ;
 
     }
 

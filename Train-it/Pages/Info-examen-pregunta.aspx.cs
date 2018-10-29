@@ -6,7 +6,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Pages_Info_examen_pregunta : System.Web.UI.Page { 
+public partial class Pages_Info_examen_pregunta : System.Web.UI.Page {
+    Test test = new Test();
     SqlConnection conexion = new SqlConnection("Data Source = DELL\\SQLEXPRESS;Initial Catalog = TRAINT-IT; User ID = Vero; Password=123");
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -18,6 +19,9 @@ public partial class Pages_Info_examen_pregunta : System.Web.UI.Page {
         try
         {
             Response.Redirect("Pregunta-Cliente.aspx", false);
+            Utils.code = 0;
+            Utils.grade = 0;
+            test.AddGrade(Utils.cedula, int.Parse(Session["id_prueba"].ToString()));
         }
         catch (Exception exception) {
 

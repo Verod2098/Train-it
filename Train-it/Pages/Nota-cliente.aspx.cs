@@ -48,8 +48,8 @@ public partial class Pages_Nota_cliente : System.Web.UI.Page
             if (rs.Read())
             {
                 LblCodTxt.Text = Utils.cedula.ToString();
-                LblNomTex.Text = rs[1].ToString();
-                LblCacTex.Text = rs[2].ToString();
+                LblNomTex.Text = rs[3].ToString();
+                LblCacTex.Text = rs[0].ToString();
 
             }
 
@@ -66,10 +66,12 @@ public partial class Pages_Nota_cliente : System.Web.UI.Page
     {
         try
         {
-            foreach  (Pregunta i in Test.ListPregunta)
+            for (int i =0; i<Test.ListPregunta.Count;i++)
             {
+
               
-                GridViewPreguntas.Text+=Test.ListPregunta.ToString ();
+              GridViewPreguntas.Text+=Test.ListPregunta[i].ToString();
+              
                 
                 
 
@@ -82,4 +84,8 @@ public partial class Pages_Nota_cliente : System.Web.UI.Page
     }
 
 
+
+
+
+    
 }

@@ -55,6 +55,9 @@ public class Test
                 Pregunta.format = rs[9].ToString();
                 Utils.code++;
                 ListPregunta.Add(pregunta);
+            char Values= '%';
+            Pregunta.porcentaje = Pregunta.porcentaje.TrimEnd(Values);
+            
             
             }
            
@@ -115,10 +118,7 @@ public class Test
 
     }
 
-    public override string ToString()
-    {
-        return pregunta.ToString();
-    }
+   
 
 
 

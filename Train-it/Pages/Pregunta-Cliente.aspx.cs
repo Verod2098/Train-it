@@ -11,14 +11,15 @@ public partial class Pregunta_Cliente : System.Web.UI.Page
     Pregunta Pregunta = new Pregunta();
     protected void Page_Load(object sender, EventArgs e)
     {
+        
         if (!Utils.isfull)
         {
             UpdatePanel1.Update();
             test.FillQuestion(int.Parse(Session["id_prueba"].ToString()));
-            test.AddGrade(Utils.cedula, int.Parse(Session["id_prueba"].ToString()));
             LblPregunta.Text = Pregunta.preguntatext.ToString();
             FillButton();
             Utils.isfull = true;
+            
         }
     }
 
@@ -79,7 +80,7 @@ public partial class Pregunta_Cliente : System.Web.UI.Page
             if (test.CorrectAnswer(Pregunta.correctAnswer, Button_Q1.Text))
             {
                 test.newGrade(int.Parse (Pregunta.porcentaje), Utils.grade);
-                test.UpdateGrade(Utils.grade, int.Parse(Session["User_id"].ToString()), int.Parse(Session["id_prueba"].ToString()));
+                test.UpdateGrade(Utils.grade, Utils.cedula, int.Parse(Session["id_prueba"].ToString()));
             }
             if (Utils.code<Utils.maxpregunta)
             {
@@ -108,9 +109,9 @@ public partial class Pregunta_Cliente : System.Web.UI.Page
             if (test.CorrectAnswer(Pregunta.correctAnswer, Button_Q2.Text))
             {
                 test.newGrade(int.Parse (Pregunta.porcentaje), Utils.grade);
-                test.UpdateGrade(Utils.grade, int.Parse(Session["User_id"].ToString()), int.Parse(Session["id_prueba"].ToString()));
+                test.UpdateGrade(Utils.grade, Utils.cedula, int.Parse(Session["id_prueba"].ToString()));
             }
-            if (Utils.code < Utils.maxpregunta)
+            if (Utils.code <Utils.maxpregunta)
             {
                 test.FillQuestion(int.Parse(Session["id_prueba"].ToString()));
                 UpdatePanel1.Update();
@@ -137,7 +138,7 @@ public partial class Pregunta_Cliente : System.Web.UI.Page
             if (test.CorrectAnswer(Pregunta.correctAnswer, Button_Q3.Text))
             {
                 test.newGrade(int.Parse (Pregunta.porcentaje), Utils.grade);
-                test.UpdateGrade(Utils.grade, int.Parse(Session["User_id"].ToString()), int.Parse(Session["id_prueba"].ToString()));
+                test.UpdateGrade(Utils.grade, Utils.cedula, int.Parse(Session["id_prueba"].ToString()));
             }
             if (Utils.code < Utils.maxpregunta)
             {
@@ -166,7 +167,7 @@ public partial class Pregunta_Cliente : System.Web.UI.Page
             if (test.CorrectAnswer(Pregunta.correctAnswer, Button_Q4.Text))
             {
                 test.newGrade(int.Parse (Pregunta.porcentaje), Utils.grade);
-                test.UpdateGrade(Utils.grade, int.Parse(Session["User_id"].ToString()), int.Parse(Session["id_prueba"].ToString()));
+                test.UpdateGrade(Utils.grade,Utils.cedula, int.Parse(Session["id_prueba"].ToString()));
             }
             if (Utils.code < Utils.maxpregunta)
             {
