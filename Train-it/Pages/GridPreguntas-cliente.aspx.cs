@@ -17,7 +17,7 @@ public partial class Pages_GridPreguntas_cliente : System.Web.UI.Page
 
         try
         {
-            Session["id_prueba"] = GridViewPruebas.SelectedRow.Cells[1].Text;
+            Session["nombre_prueba"] = GridViewPruebas.SelectedRow.Cells[1].Text;
             Response.Redirect("Info-examen-pregunta.aspx", false);
 
         }

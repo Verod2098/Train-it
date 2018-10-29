@@ -35,7 +35,7 @@ public class Test
             SqlCommand com;
             SqlDataReader rs;
             conexion.Open();
-            sql = "SELECT * FROM Pregunta where Codigo_prueba=@Codigo_prueba and id_pregunta=@id";
+            sql = "SELECT * FROM Pregunta where id=@Codigo_prueba and id_pregunta=@id";
             com = conexion.CreateCommand();
             com.Parameters.AddWithValue("Codigo_prueba", idprueba);
             com.Parameters.AddWithValue("id", GetRandom());
