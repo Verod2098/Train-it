@@ -137,12 +137,21 @@
             <div class="block-header">
                
                 <div class="block-header">
-                    <asp:GridView ID="GridViewRecord" class="table" runat="server" AutoGenerateColumns="False" >
+                    <asp:GridView ID="GridViewRecord" class="table" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" >
                         <Columns>
-                            <asp:BoundField DataField="Codigo_Prueba" HeaderText="prueba" SortExpression="prueba" />
-                            <asp:BoundField DataField="nota" HeaderText="nota" SortExpression="nota" />
+                            <asp:BoundField DataField="Nota" HeaderText="Nota" SortExpression="Nota" />
+                            <asp:BoundField DataField="ID_Prueba" HeaderText="ID_Prueba" SortExpression="ID_Prueba" />
                         </Columns>
                     </asp:GridView>
+                
+                  
+                       
+                
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TRAINT-ITConnectionString %>" SelectCommand="SELECT [Nota], [ID_Prueba] FROM [Historial] WHERE ([ID] = @ID)">
+                        <SelectParameters>
+                            <asp:SessionParameter DefaultValue="1" Name="ID" SessionField="id_Usuario" Type="Decimal" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
                 
                   
                        

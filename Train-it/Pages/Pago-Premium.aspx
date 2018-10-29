@@ -180,11 +180,27 @@
                                     </div>
                                  </li>
                                 
+                             <li>
+
+                                    <div class="form-group form-float">
+                           <asp:CheckBoxList ID="ChckListTarjeta" runat="server"  CssClass="chk-col-cyan" OnSelectedIndexChanged="ChckListTarjeta_SelectedIndexChanged">
+                               <asp:ListItem Selected="False">Visa</asp:ListItem>
+                               <asp:ListItem Selected="False">MasterCard</asp:ListItem>
+                               <asp:ListItem Selected="False">American Express</asp:ListItem>
+                               <asp:ListItem Selected="False">Discovery</asp:ListItem>
+                               <asp:ListItem Selected="False">JBC</asp:ListItem>
+                                        </asp:CheckBoxList>
+
+                                            </div>
+                                 </li>
+                           
+                           </ul>
+
                            <span class="pull-right">
-                    <asp:Button ID="BttnPay" runat="server" Text="Suscribirse"  CssClass="btn primary bg-cyan" />
+                    <asp:Button ID="BttnPay" runat="server" Text="Suscribirse"  CssClass="btn primary bg-cyan" OnClick="BttnPay_Click" />
                           </span>
 
-                           </ul>
+                           
 
                          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
