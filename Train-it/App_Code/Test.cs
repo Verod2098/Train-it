@@ -12,7 +12,7 @@ public class Test
 
 
     SqlConnection conexion = new SqlConnection("Data Source = DELL\\SQLEXPRESS;Initial Catalog = TRAINT-IT; User ID = Vero; Password=123");
-
+    List< Pregunta> ListPregunta = new List<Pregunta> ();
 
 
     public Boolean CorrectAnswer(string answer, string choose)
@@ -29,18 +29,14 @@ public class Test
 
     }
 
-    public Boolean FillQuestion(int idprueba)
+    public void FillQuestion(int idprueba)
     {
-        Boolean isQuestion = true;
-        while (Utils.code < Utils.maxpregunta) //Para el limite de las preguntas 
-        {
-           
             String sql;
             SqlCommand com;
             SqlDataReader rs;
-
+             GetRandom();
             conexion.Open();
-            sql = "SELECT * FROM Pregunta where Codigo_prueba=@Codigo_prueba";
+            sql = "SELECT * FROM Pregunta where Codigo_prueba=@Codigo_prueba and ";
             com = conexion.CreateCommand();
             com.Parameters.AddWithValue("Codigo_prueba", idprueba);
             com.CommandText = sql;
@@ -48,34 +44,31 @@ public class Test
 
             if (rs.Read())
             {
-                Utils.pregunta = rs[1].ToString();
-                Utils.Porcentaje = int.Parse(rs[6].ToString());
-                Utils.CorrectAnswer = rs[5].ToString();
-                Utils.BadAnswer1 = rs[2].ToString();
-                Utils.BadAnswer2 = rs[3].ToString();
-                Utils.BadAnswer3 = rs[4].ToString();
+                Pregunta pregunta = new Pregunta();
+                pregunta.Preguntatext = rs[1].ToString();
+                Pregunta .porcentaje= int.Parse(rs[2].ToString());
+                 pregunta.CorrectAnswer= rs[3].ToString();
+                pregunta.BadAnswer1 = rs[4].ToString();
+                pregunta.BadAnswer2 = rs[5].ToString();
+                pregunta.BadAnswer3 = rs[6].ToString();
+                pregunta.Path = rs[8].ToString();
+                pregunta.Format = rs[9].ToString();
                 Utils.code++;
-
-
-            }
-            else
-            {
-                isQuestion = false;
-            }
+                ListPregunta.Add(pregunta);
             
-
-        }
+            }
+           
         conexion.Close();
-        return isQuestion;
+       
     }
 
 
-    public void addGrade(int newgrade, int id, int prueba)
+    public void UpdateGrade(int newgrade, int id, int prueba)
     {
         String sql;
         SqlCommand com;
         conexion.Open();
-        sql = "UPDATE Historico SET Nota=@nota WHERE cedula=@cedula AND id_Prueba=@prueba";
+        sql = "UPDATE HISTORIAL SET Nota=@nota WHERE ID=@cedula AND id_Prueba=@prueba";
         com = conexion.CreateCommand();
         com.Parameters.AddWithValue("nota", newgrade);
         com.Parameters.AddWithValue("cedula", id);
@@ -96,6 +89,30 @@ public class Test
 
     }
 
+    public void AddGrade(int id, int prueba) {
 
+        String sql;
+        SqlCommand com;
+        conexion.Open();
+        sql = "INSERT INTO HISTORIAL  (Nota,Tipo,ID,ID_Prueba) VALUES (@nota,@tipo,@cedula,@prueba)";
+        com = conexion.CreateCommand();
+        com.Parameters.AddWithValue("nota", Utils.grade);
+        com.Parameters.AddWithValue("cedula", id);
+        com.Parameters.AddWithValue("prueba", prueba);
+        com.Parameters.AddWithValue("Tipo", " ");
+        com.CommandText = sql;
+        com.ExecuteNonQuery();
+
+        conexion.Close();
+        Utils.code++;
+
+    }
+
+    public void GetRandom() {
+
+        Random rnd = new Random();
+        int id_pregunta = rnd.Next(10);
+
+    }
 
 }

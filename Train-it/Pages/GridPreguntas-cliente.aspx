@@ -134,31 +134,26 @@
                 <div  class="card">
             <h2>Exámenes Disponibles</h2>
             <div class="block-header">
-                <asp:GridView ID="GridViewPruebas"  runat="server" class="table bg-navy" AutoGenerateColumns="False" DataSourceID="SqlDataSourcePrueba"  DataKeyNames="Id">
+                <asp:GridView ID="GridViewPruebas"  runat="server" class="table bg-navy" AutoGenerateColumns="False" DataSourceID="SqlDataSourcePrueba" CssClass=" table-condensed" BorderColor="White" OnSelectedIndexChanged="GridViewPruebas_SelectedIndexChanged">
                     <Columns>
-                        
                        
+                   
+                        <asp:ButtonField CommandName="Select" Text="Seleccionar" ><ControlStyle CssClass="btn-xs bg-cyan"></ControlStyle> </asp:ButtonField>
                         
-                        
-                       
-                       
-                 
-                        
-                        <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
-                        <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
-                        <asp:CommandField ShowSelectButton="True" />
+                     
+                        <asp:BoundField DataField="Nombre"  SortExpression="Nombre" />
                         
                        
            
-                        
+                  
                     </Columns>
                 </asp:GridView>
                 
  
                 
-                <asp:SqlDataSource ID="SqlDataSourcePrueba" runat="server" ConnectionString="<%$ ConnectionStrings:TRAINT-ITConnectionString %>" SelectCommand="SELECT [Id], [Nombre] FROM [Prueba] WHERE ([Especialidad] = @Especialidad)">
+                <asp:SqlDataSource ID="SqlDataSourcePrueba" runat="server" ConnectionString="<%$ ConnectionStrings:TRAINT-ITConnectionString %>" SelectCommand="SELECT [Nombre] FROM [Prueba] JOIN [Tema_Prueba] ON ([Tipo] = [Codigo]) WHERE ([Tema] = @Tema)">
                     <SelectParameters>
-                        <asp:SessionParameter DefaultValue="" Name="Especialidad" SessionField="Tema_prueba" Type="String" />
+                        <asp:SessionParameter Name="Tema" SessionField="Tema" />
                     </SelectParameters>
                 </asp:SqlDataSource>
                 

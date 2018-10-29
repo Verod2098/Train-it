@@ -11,4 +11,22 @@ public partial class Pages_GridPreguntas_cliente : System.Web.UI.Page
     {
 
     }
+
+    protected void GridViewPruebas_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+        try
+        {
+            Session["id_prueba"] = GridViewPruebas.SelectedRow.Cells[1].Text;
+            Response.Redirect("Info-examen-pregunta.aspx", false);
+
+        }
+        catch (Exception exception)
+
+        {
+            Console.WriteLine(exception.ToString());
+        }
+
+
+    }
 }

@@ -7,13 +7,16 @@ using System.Web.UI.WebControls;
 
 public partial class Pregunta_Cliente : System.Web.UI.Page
 {
+    Test test = new Test();
+    Pregunta pregunta = new Pregunta();
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!Utils.isfull)
         {
             UpdatePanel1.Update();
-           // Test.FillQuestion(int.Parse(Session["id_prueba"].ToString()));
-            LblPregunta.Text = Utils.pregunta;
+            test.FillQuestion(int.Parse(Session["id_prueba"].ToString()));
+            test.AddGrade(int.Parse(Session["User_id"].ToString()), int.Parse(Session["id_prueba"].ToString()));
+            LblPregunta.Text = pregunta.Preguntatext.ToString();
             FillButton();
             Utils.isfull = true;
         }
@@ -28,32 +31,32 @@ public partial class Pregunta_Cliente : System.Web.UI.Page
             int right = (int)random.Next(1, 4);
             if (right == 1)
             {
-                Button_Q1.Text = Utils.CorrectAnswer;
-                Button_Q2.Text = Utils.BadAnswer1;
-                Button_Q3.Text = Utils.BadAnswer2;
-                Button_Q4.Text = Utils.BadAnswer3;
+                Button_Q1.Text = pregunta.CorrectAnswer;
+                Button_Q2.Text = pregunta.BadAnswer1;
+                Button_Q3.Text = pregunta.BadAnswer2;
+                Button_Q4.Text = pregunta.BadAnswer3;
 
             }
             else if (right == 2)
             {
-                Button_Q1.Text = Utils.BadAnswer1;
-                Button_Q2.Text = Utils.CorrectAnswer;
-                Button_Q3.Text = Utils.BadAnswer2;
-                Button_Q4.Text = Utils.BadAnswer3;
+                Button_Q1.Text = pregunta.BadAnswer1;
+                Button_Q2.Text = pregunta.CorrectAnswer;
+                Button_Q3.Text = pregunta.BadAnswer2;
+                Button_Q4.Text = pregunta.BadAnswer3;
             }
             else if (right == 3)
             {
-                Button_Q1.Text = Utils.BadAnswer1;
-                Button_Q2.Text = Utils.BadAnswer2;
-                Button_Q3.Text = Utils.CorrectAnswer;
-                Button_Q4.Text = Utils.BadAnswer3;
+                Button_Q1.Text = pregunta.BadAnswer1;
+                Button_Q2.Text = pregunta.BadAnswer2;
+                Button_Q3.Text = pregunta.CorrectAnswer;
+                Button_Q4.Text = pregunta.BadAnswer3;
             }
             else if (right == 4)
             {
-                Button_Q1.Text = Utils.BadAnswer1;
-                Button_Q2.Text = Utils.BadAnswer2;
-                Button_Q3.Text = Utils.BadAnswer3;
-                Button_Q4.Text = Utils.CorrectAnswer;
+                Button_Q1.Text = pregunta.BadAnswer1;
+                Button_Q2.Text = pregunta.BadAnswer2;
+                Button_Q3.Text = pregunta.BadAnswer3;
+                Button_Q4.Text = pregunta.CorrectAnswer;
             }
 
 
@@ -71,6 +74,30 @@ public partial class Pregunta_Cliente : System.Web.UI.Page
 
     protected void Button_Q1_Click(object sender, EventArgs e)
     {
+        try
+        {
+            if (test.CorrectAnswer(pregunta.CorrectAnswer, Button_Q1.Text))
+            {
+                test.newGrade(Pregunta.Porcentaje, Utils.grade);
+                test.UpdateGrade(Utils.grade, int.Parse(Session["User_id"].ToString()), int.Parse(Session["id_prueba"].ToString()));
+            }
+            if (Utils.code<Utils.maxpregunta)
+            {
+                test.FillQuestion(int.Parse(Session["id_prueba"].ToString()));
+                UpdatePanel1.Update();
+                LblPregunta.Text = pregunta.Preguntatext.ToString();
+                FillButton();
+            }
+            else
+            {
+                Response.Redirect("Nota-cliente.aspx", false);
+            }
+
+        }
+        catch (Exception i)
+        {
+            Console.WriteLine(i.ToString());
+        }
 
     }
 }

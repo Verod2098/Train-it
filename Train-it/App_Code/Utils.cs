@@ -9,18 +9,12 @@ using System.Web;
 public class Utils
 {
     //Examen 
-    public static int maxpregunta;
+    public static int maxpregunta=5;
     public static int id;
     public static int id_prueba;
     public static string req;
-    public static int grade;
-    public static string pregunta;
-    public static string CorrectAnswer;
-    public static string BadAnswer1;
-    public static string BadAnswer2;
-    public static string BadAnswer3;
-    public static int Porcentaje;
-    public static Boolean isfull;
+    public static int grade=0;
+       public static Boolean isfull;
     public static int code = 0;
 
    //USer

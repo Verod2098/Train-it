@@ -22,9 +22,6 @@ public partial class Pages_Index_cliente : System.Web.UI.Page
     {
         try
         {
-
-
-
             Session["Tema"] = GridViewExamen.SelectedRow.Cells[0].Text;
             Response.Redirect("GridPreguntas-cliente.aspx", false);
 
