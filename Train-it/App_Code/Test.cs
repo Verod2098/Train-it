@@ -97,7 +97,7 @@ public class Test
         String sql;
         SqlCommand com;
         conexion.Open();
-        sql = "INSERT INTO HISTORIAL  (Nota,Tipo,ID,ID_Prueba) VALUES (@nota,@tipo,@cedula,@prueba)";
+        sql = "INSERT INTO HISTORIAL  (Nota,Tipo,ID,ID_Prueba) VALUES ( @nota,@tipo,@cedula,@prueba)";
         com = conexion.CreateCommand();
         com.Parameters.AddWithValue("nota", Utils.grade);
         com.Parameters.AddWithValue("cedula", id);
