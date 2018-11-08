@@ -35,9 +35,9 @@ public class Test
             SqlCommand com;
             SqlDataReader rs;
             conexion.Open();
-            sql = "SELECT * FROM Pregunta where id_prueba=@Codigo_prueba and id_pregunta=@id";
+            sql = "SELECT * FROM Question where id_test=@id_test and id_question=@id";
             com = conexion.CreateCommand();
-            com.Parameters.AddWithValue("Codigo_prueba", idprueba);
+            com.Parameters.AddWithValue("id_test", idprueba);
             com.Parameters.AddWithValue("id", GetRandom());
             com.CommandText = sql;
             rs = com.ExecuteReader();
@@ -46,8 +46,8 @@ public class Test
             {
                
                 Pregunta.preguntatext = rs[1].ToString();
-                Pregunta .porcentaje= rs[2].ToString();
-                 Pregunta.correctAnswer= rs[3].ToString();
+                Pregunta.porcentaje= rs[2].ToString();
+                Pregunta.correctAnswer= rs[3].ToString();
                 Pregunta.badAnswer1 = rs[4].ToString();
                 Pregunta.badAnswer2 = rs[5].ToString();
                 Pregunta.badAnswer3 = rs[6].ToString();
@@ -66,16 +66,16 @@ public class Test
     }
 
 
-    public void UpdateGrade(int newgrade, int id, int prueba)
+    public void UpdateGrade(int newgrade, int id, int test)
     {
         String sql;
         SqlCommand com;
         conexion.Open();
-        sql = "UPDATE HISTORIAL SET Nota=@nota WHERE ID=@cedula AND id_Prueba=@prueba";
+        sql = "UPDATE Record SET Grade=@grade WHERE ID=@id AND id_Test=@test";
         com = conexion.CreateCommand();
-        com.Parameters.AddWithValue("nota", newgrade);
-        com.Parameters.AddWithValue("cedula", id);
-        com.Parameters.AddWithValue("prueba", prueba);
+        com.Parameters.AddWithValue("Grade", newgrade);
+        com.Parameters.AddWithValue("Id", id);
+        com.Parameters.AddWithValue("Test", test);
         com.CommandText = sql;
         com.ExecuteNonQuery();
 
@@ -92,17 +92,17 @@ public class Test
 
     }
 
-    public void AddGrade(int id, int prueba) {
+    public void AddGrade(int id, int test) {
 
         String sql;
         SqlCommand com;
         conexion.Open();
-        sql = "INSERT INTO HISTORIAL  (Nota,Tipo,ID,ID_Prueba) VALUES ( @nota,@tipo,@cedula,@prueba)";
+        sql = "INSERT INTO Record  (Grade,Type,ID,ID_Test) VALUES ( @grade,@type,@id,@test)";
         com = conexion.CreateCommand();
-        com.Parameters.AddWithValue("nota", Utils.grade);
-        com.Parameters.AddWithValue("cedula", id);
-        com.Parameters.AddWithValue("prueba", prueba);
-        com.Parameters.AddWithValue("Tipo", " ");
+        com.Parameters.AddWithValue("grade", Utils.grade);
+        com.Parameters.AddWithValue("id", id);
+        com.Parameters.AddWithValue("test", test);
+        com.Parameters.AddWithValue("Type", " ");
         com.CommandText = sql;
         com.ExecuteNonQuery();
 

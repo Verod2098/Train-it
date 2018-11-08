@@ -23,14 +23,14 @@ public class Users
          String sql;
          SqlCommand com;
          conexion.Open();
-         sql = "UPDATE Usuario SET Nombre=@name,Numero_Telefono=@phone,Lugar_Ocupacion=@place,Ocupacion=@job, Email=@mail WHERE Cedula=@cedula ";
+         sql = "UPDATE Usuario SET Name=@name,Phone_Number=@phone,Place_Occupation=@place,Occupation=@job, Email=@mail WHERE Id=@id ";
          com = conexion.CreateCommand();
          com.Parameters.AddWithValue("name", name);
          com.Parameters.AddWithValue("phone", phone);
         com.Parameters.AddWithValue("place", place);
         com.Parameters.AddWithValue("job", job);
         com.Parameters.AddWithValue("mail", mail);
-        com.Parameters.AddWithValue("cedula", Utils.cedula);
+        com.Parameters.AddWithValue("id", Utils.cedula);
         com.CommandText = sql;
          com.ExecuteNonQuery();
 
@@ -46,10 +46,10 @@ public class Users
         SqlCommand com;
         SqlDataReader rs;
         conexion.Open();
-        sql = "select * from  Usuario where Cedula=@Cedula";
+        sql = "select * from  User where Id=@Id";
         com = conexion.CreateCommand();
         com.CommandText = sql;
-        com.Parameters.AddWithValue("Cedula", id);
+        com.Parameters.AddWithValue("Id", id);
 
         rs = com.ExecuteReader();
 
@@ -71,15 +71,15 @@ public class Users
     }
 
 
-    public void insertPreferences(int id, string prueba)
+    public void insertPreferences(int id, string test)
     {
         String sql;
         SqlCommand com;
         conexion.Open();
-        sql = "INSERT INTO PREFERENCIAS(ID_Usuario, ID_PRUEBA) VALUES(@cedula, (SELECT CODIGO FROM TEMA_PRUEBA WHERE TEMA =@Prueba)); ";
+        sql = "INSERT INTO PREFERENCES(ID_User, ID_TEST) VALUES(@id, (SELECT ID FROM TOPIC_TEST WHERE TOPIC =@Test)); ";
         com = conexion.CreateCommand();
-        com.Parameters.AddWithValue("cedula", id);
-        com.Parameters.AddWithValue("prueba", prueba);
+        com.Parameters.AddWithValue("id", id);
+        com.Parameters.AddWithValue("test", test);
         com.CommandText = sql;
         com.ExecuteNonQuery();
 

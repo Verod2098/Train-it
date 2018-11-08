@@ -23,19 +23,19 @@ public class Tarjeta
 
 
 
-    public void addCreditCard(string nombre,string numero_tarjeta,string cod_seguridad,string tipo, string Fecha_vencimiento) {
+    public void addCreditCard(string name,string card_number,string CVV,string type, string Expiration_Date) {
 
 
         String sql;
         SqlCommand com;
         conexion.Open();
-        sql = "INSERT INTO Tarjeta  (Nombre,Numero_Tarjeta,Cod_seguridad,Tipo,Fecha_Vencimiento) VALUES (@Nombre,@Numero_Tarjeta,@Cod_seguridad,@Tipo,@Fecha_vencimiento)";
+        sql = "INSERT INTO CreditCard  (Name,Card_Number,CVV,Type,Expiration_Date) VALUES (@Name,@NCard_Number,@CVV,@Type,@Expiratio_Date)";
         com = conexion.CreateCommand();
-        com.Parameters.AddWithValue("Nombre", nombre);
-        com.Parameters.AddWithValue("Numero_Tarjeta", numero_tarjeta);
-        com.Parameters.AddWithValue("cod_seguridad", cod_seguridad);
-        com.Parameters.AddWithValue("Tipo", tipo);
-        com.Parameters.AddWithValue("Fecha_vencimiento", Fecha_vencimiento);
+        com.Parameters.AddWithValue("Name", name);
+        com.Parameters.AddWithValue("Card_Number", card_number);
+        com.Parameters.AddWithValue("CVV", CVV);
+        com.Parameters.AddWithValue("Type", type);
+        com.Parameters.AddWithValue("Expiration_Date", Expiration_Date);
         com.CommandText = sql;
         com.ExecuteNonQuery();
 
@@ -44,16 +44,16 @@ public class Tarjeta
     }
 
 
-    public void upgradeAccount(string Tarjeta, int id) {
+    public void upgradeAccount(string CreditCard, int id) {
 
         String sql;
         SqlCommand com;
         conexion.Open();
-        sql = "UPDATE Usuario SET Tarjeta=@tarjeta, Tipo=@Tipo WHERE cedula=@cedula ";
+        sql = "UPDATE User SET creditCard=@creditcard, Type=@Type WHERE id=@id ";
         com = conexion.CreateCommand();
-        com.Parameters.AddWithValue("tarjeta", Tarjeta);
-        com.Parameters.AddWithValue("cedula", id);
-        com.Parameters.AddWithValue("Tipo", "Premium");
+        com.Parameters.AddWithValue("creditCard", CreditCard);
+        com.Parameters.AddWithValue("Id", id);
+        com.Parameters.AddWithValue("Type", "Premium");
         com.CommandText = sql;
         com.ExecuteNonQuery();
 
