@@ -177,7 +177,9 @@
 
                                   <li>
                       <span class="pull-right">
-                    <asp:Button ID="BttnAddpru" runat="server" Text="Agregar"  CssClass=" btn bg-cyan"  style="left: 7px; top: -4px"/>
+                    <asp:Button ID="BttnAddpru" runat="server" Text="Agregar"  CssClass=" btn bg-cyan"  style="left: 7px; top: -4px" OnClick="BttnAddpru_Click"/>
+                          <asp:Button ID="BttnUPptu" runat="server" Text="Actualiar"  CssClass=" btn bg-cyan" style="left: 7px; top: -4px"/>
+                          <asp:Button ID="BttnDELpru" runat="server" Text="Eliminar"  CssClass=" btn bg-cyan" style="left: 7px; top: -4px"/>
                           </span>
                  </li>
                                 <br />
@@ -229,6 +231,8 @@
                                   <li>
                       <span class="pull-right">
                     <asp:Button ID="BttnAddpre" runat="server" Text="Agregar"  CssClass=" btn bg-cyan" style="left: 7px; top: -4px"/>
+                          <asp:Button ID="BttnUPpre" runat="server" Text="Actualiar"  CssClass=" btn bg-cyan" style="left: 7px; top: -4px"/>
+                          <asp:Button ID="BttnDelPRe" runat="server" Text="Eliminar"  CssClass=" btn bg-cyan" style="left: 7px; top: -4px"/>
                           </span>
                  </li>
                                 <br />

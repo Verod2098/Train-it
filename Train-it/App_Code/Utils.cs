@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
@@ -26,4 +27,8 @@ public class Utils
     public static string ocupacion;
     public static string tipo;
     public static string correo;
+
+
+    //String de conexion 
+    public static SqlConnection conexion = new SqlConnection("Data Source = DELL\\SQLEXPRESS;Initial Catalog = TRAINT-IT; User ID = Vero; Password=123");
 }

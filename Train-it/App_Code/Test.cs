@@ -11,7 +11,7 @@ public class Test
 {
     Pregunta pregunta = new Pregunta();
 
-    SqlConnection conexion = new SqlConnection("Data Source = DELL\\SQLEXPRESS;Initial Catalog = TRAINT-IT; User ID = Vero; Password=123");
+    
      public static List< Pregunta> ListPregunta = new List<Pregunta> ();
 
 
@@ -34,9 +34,9 @@ public class Test
             String sql;
             SqlCommand com;
             SqlDataReader rs;
-            conexion.Open();
+            Utils.conexion.Open();
             sql = "SELECT * FROM Question where id_test=@id_test and id_question=@id";
-            com = conexion.CreateCommand();
+            com = Utils.conexion.CreateCommand();
             com.Parameters.AddWithValue("id_test", idprueba);
             com.Parameters.AddWithValue("id", GetRandom());
             com.CommandText = sql;
@@ -61,7 +61,7 @@ public class Test
             
             }
            
-        conexion.Close();
+        Utils.conexion.Close();
        
     }
 
@@ -70,9 +70,9 @@ public class Test
     {
         String sql;
         SqlCommand com;
-        conexion.Open();
+        Utils.conexion.Open();
         sql = "UPDATE Record SET Grade=@grade WHERE ID=@id AND id_Test=@test";
-        com = conexion.CreateCommand();
+        com = Utils.conexion.CreateCommand();
         com.Parameters.AddWithValue("Grade", newgrade);
         com.Parameters.AddWithValue("Id", id);
         com.Parameters.AddWithValue("Test", test);
@@ -81,7 +81,7 @@ public class Test
 
 
 
-        conexion.Close();
+       Utils. conexion.Close();
     }
 
     public void newGrade(int porcentaje, int grade)
@@ -96,9 +96,9 @@ public class Test
 
         String sql;
         SqlCommand com;
-        conexion.Open();
+        Utils.conexion.Open();
         sql = "INSERT INTO Record  (Grade,Type,ID,ID_Test) VALUES ( @grade,@type,@id,@test)";
-        com = conexion.CreateCommand();
+        com = Utils.conexion.CreateCommand();
         com.Parameters.AddWithValue("grade", Utils.grade);
         com.Parameters.AddWithValue("id", id);
         com.Parameters.AddWithValue("test", test);
@@ -106,7 +106,7 @@ public class Test
         com.CommandText = sql;
         com.ExecuteNonQuery();
 
-        conexion.Close();
+        Utils.conexion.Close();
         Utils.code++;
 
     }
