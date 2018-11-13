@@ -118,9 +118,24 @@ public class Test
 
     }
 
+    public void addTest() {
+
+        String sql;
+        SqlCommand com;
+        Utils.conexion.Open();
+        sql = "INSERT INTO  TEST (Grade,Name,Type,Specialty,Time,Approved,Area,ID) VALUES ( @topic,@id)";
+        com = Utils.conexion.CreateCommand();
+        com.Parameters.AddWithValue("topic", topic);
+        com.Parameters.AddWithValue("id", id);
+        com.CommandText = sql;
+        com.ExecuteNonQuery();
+
+        Utils.conexion.Close();
+
+    }
    
 
-
+    
 
 
 }
