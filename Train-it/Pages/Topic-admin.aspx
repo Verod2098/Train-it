@@ -193,13 +193,16 @@
                                    <div class="font-bold m-b--35"> Temas Agregados </div>
                                        <br />
                                        <br />
-                                    <asp:GridView ID="GridViewTopic" runat="server" CssClass="table" AutoGenerateColumns="False" DataKeyNames="Id" >
+                                    <asp:GridView ID="GridViewTopic" runat="server" CssClass="table" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource2" >
                                         <Columns>
-                                            <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
+                                            <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" ReadOnly="True" />
                                             <asp:BoundField DataField="Topic" HeaderText="Topic" SortExpression="Topic" />
                                         </Columns>
                                      
                                     </asp:GridView>
+                                    
+                                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="Data Source=DELL\SQLEXPRESS;Initial Catalog=TRAINT-IT;Persist Security Info=True;User ID=Vero;Password=123" ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [Topic_Test]"></asp:SqlDataSource>
+                                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=DELL\SQLEXPRESS;Initial Catalog=TRAINT-IT;Persist Security Info=True;User ID=Vero;Password=123" ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [Topic_Question]"></asp:SqlDataSource>
                                     
                 </div>
               
@@ -252,7 +255,7 @@
                                    <div class="font-bold m-b--35"> Temas Agregados </div>
                                        <br />
                                        <br />
-                                    <asp:GridView ID="GridViewPre" runat="server" CssClass="table" AutoGenerateColumns="False" DataKeyNames="Id" >
+                                    <asp:GridView ID="GridViewPre" runat="server" CssClass="table" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" >
                                         <Columns>
                                             <asp:BoundField DataField="Topic" HeaderText="Topic" SortExpression="Topic" />
                                             <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />

@@ -15,28 +15,10 @@ public partial class Pages_Topic_admin : System.Web.UI.Page
         
         protected void Page_Load(object sender, EventArgs e)
     {
-        FillGridPru();
-        FillGridPre();
+       
     }
 
-    private void FillGridPru()
-    {
-        try
-        {
-            Utils.conexion.Open();
-            SqlCommand consulta = new SqlCommand(string.Format("SELECT * FROM Topic_Test"), Utils.conexion);
-            SqlDataAdapter da = new SqlDataAdapter(consulta);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            GridViewTopic.DataSource = dt;
-            GridViewTopic.DataBind();
-            Utils.conexion.Close();
-        }
-        catch (Exception i)
-        {
-            Console.WriteLine(i.ToString());
-        }
-    }
+    
 
     private void FillGridPre()
     {

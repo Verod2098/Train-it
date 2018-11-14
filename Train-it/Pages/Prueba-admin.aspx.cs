@@ -11,4 +11,15 @@ public partial class Pages_Prueba_admin : System.Web.UI.Page
     {
 
     }
+
+
+
+
+
+
+
+    protected void BttnAdd_Click(object sender, EventArgs e)
+    {
+
+    }
 }

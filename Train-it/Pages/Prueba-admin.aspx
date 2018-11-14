@@ -32,6 +32,7 @@
 </head>
 
 <body class="theme-cyan">
+    <form id="Form1" runat="server">
     <!-- Page Loader -->
    <div class="page-loader-wrapper">
         <div class="loader">
@@ -151,6 +152,17 @@
                             <div class="font-bold m-b--35">Agregar Pruebas</div>
                             <ul class="dashboard-stat-list">
 
+                                  <li>
+
+                                    <div class="form-group form-float">
+                                        <div class="form-line focused">
+                                                 <asp:TextBox ID="Txt_ID" runat="server"  class="form-control"></asp:TextBox>
+                                                     
+                                            <label class="form-label">ID de la Prueba</label>
+                                        </div>
+                                    </div>
+                                   
+                                </li>
                                 <li>
 
                                     <div class="form-group form-float">
@@ -162,57 +174,131 @@
                                  </li>
 
                                 <li>
+
+                                     <li>
+
+                                    <div class="form-group form-float">
+                                        <div class="form-line focused">
+                                            <label class="form-label">Tema de la prueba</label>
+                                            <br />
+                                            <asp:DropDownList ID="DDLType" runat="server" CssClass="dropdown-animated" DataSourceID="SqlDataSource2" DataTextField="Topic" DataValueField="Topic" ></asp:DropDownList>
+                                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="Data Source=DELL\SQLEXPRESS;Initial Catalog=TRAINT-IT;Persist Security Info=True;User ID=Vero;Password=123" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [Topic] FROM [Topic_Test]"></asp:SqlDataSource>
+                                        </div>
+                                    </div>
+                                 </li>
+
+                                <li>
                                       <div class="form-group form-float">
                                         <div class="form-line focused">
-                                                 <asp:TextBox ID="Txt_descripciontext" runat="server"  CssClass="form-control">
+                                                 <asp:TextBox ID="Txt_grade" runat="server"  CssClass="form-control">
                                                      </asp:TextBox>
-                                            <label class="form-label">Descripción</label>
+                                            <label class="form-label">Nota mínima para aprobar</label>
                                         </div>
                                     </div>
                                          </li>
                              
+                              
                                 <li>
-
-                                    <div class="form-group form-float">
+                                      <div class="form-group form-float">
                                         <div class="form-line focused">
-                                                 <asp:TextBox ID="Txt_codigo" runat="server"  class="form-control"></asp:TextBox>
-                                                     
-                                            <label class="form-label">Código</label>
+                                                 <asp:TextBox ID="Txt_Time" runat="server"  CssClass="form-control">
+                                                     </asp:TextBox>
+                                            <label class="form-label">Tiempo para realizar la prueba</label>
                                         </div>
                                     </div>
-                                   
-                                </li>
+                                         </li>
+
+                                <li>
+                                      <div class="form-group form-float">
+                                        <div class="form-line focused">
+                                                 <asp:TextBox ID="Txt_Approved" runat="server"  CssClass="form-control">
+                                                     </asp:TextBox>
+                                            <label class="form-label">Minimo de respuestas correctas para aprobar </label>
+                                        </div>
+                                    </div>
+                                         </li>
+
+                                  <li>
+                                      <div class="form-group form-float">
+                                        <div class="form-line focused">
+                                                 <asp:TextBox ID="TxtPrem" runat="server"  CssClass="form-control">
+                                                     </asp:TextBox>
+                                            <label class="form-label">Máximo de preguntas para usuarios Premium </label>
+                                        </div>
+                                    </div>
+                                         </li>
 
                                 
-                                               <li>
+                                  <li>
+                                      <div class="form-group form-float">
+                                        <div class="form-line focused">
+                                                 <asp:TextBox ID="TxtBasic" runat="server"  CssClass="form-control">
+                                                     </asp:TextBox>
+                                            <label class="form-label">Máximo de preguntas para usuarios Basic </label>
+                                        </div>
+                                    </div>
+                                         </li>
 
-                                              
-                                                    
-                                        <label class="form-label">Requerimiento</label>
+                                  <li>
+                                      <div class="form-group form-float">
+                                        <div class="form-line focused">
+                                                 <asp:TextBox ID="TxtPrice" runat="server"  CssClass="form-control">
+                                                     </asp:TextBox>
+                                            <label class="form-label">Precio de la prueba </label>
+                                        </div>
+                                    </div>
+                                         </li>
 
-                                                          <asp:DropDownList ID="DropDownListReq" runat="server" class="form-control" ></asp:DropDownList>          
-                                               
-                                      
-                                       </li>
+
+
+                                
 				
                 
                  <li>
                       <span class="pull-right">
-                    <asp:Button ID="BttnAdd" runat="server" Text="Agregar"  CssClass=" btn bg-blue-grey waves-effect" />
-                      <asp:Button ID="Bttndel" runat="server" Text="Eliminar"  CssClass=" btn bg-blue-grey waves-effect" />
-                         <asp:Button ID="Bttnupdate" runat="server" Text="Actualizar"  CssClass=" btn bg-blue-grey waves-effect" />
+                    <asp:Button ID="BttnAdd" runat="server" Text="Agregar"  CssClass=" btn bg-cyan" OnClick="BttnAdd_Click" />
+                      <asp:Button ID="Bttndel" runat="server" Text="Eliminar"  CssClass=" btn bg-cyan" />
+                         <asp:Button ID="Bttnupdate" runat="server" Text="Actualizar"  CssClass=" btn bg-cyan" />
                           </span>
                  </li>
                 </ul>
                
          </div>
 
-                 
+                  <div class="font-bold m-b--35"> Pruebas Agregadas </div>
+                                       <br />
+                                       <br />
+                                    <asp:GridView ID="GridViewPru" runat="server" CssClass="table" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDataSource1" >
+                                        <Columns>
+                                            <asp:BoundField DataField="ID" HeaderText="ID" ReadOnly="True" SortExpression="ID" />
+                                            <asp:BoundField DataField="Name" HeaderText="Nombre" SortExpression="Name" />
+                                            <asp:BoundField DataField="Grade" HeaderText="Nota" SortExpression="Grade" /> 
+                                            <asp:BoundField DataField="Type" HeaderText="Tipo" SortExpression="Type" />
+                                            <asp:BoundField DataField="Time" HeaderText="Tiempo" SortExpression="Time" />
+                                            <asp:BoundField DataField="Approved" HeaderText="Respuestas para aprobar" SortExpression="Approved" />
+                                            <asp:BoundField DataField="maxPremium" HeaderText="Máximo de preguntas Premium" SortExpression="maxPremium" />
+                                            <asp:BoundField DataField="maxBasic" HeaderText="Máximo de preguntas Basic" SortExpression="maxBasic" />
+                                            <asp:BoundField DataField="Price" HeaderText="Precio" SortExpression="Price" />
+                                            
+                                        </Columns>
+                                        
+                                     
+                                    </asp:GridView>
+                                   
+              
+                               
+               
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=DELL\SQLEXPRESS;Initial Catalog=TRAINT-IT;Persist Security Info=True;User ID=Vero;Password=123" ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [Test]"></asp:SqlDataSource>
+                                   
+              
+                               
+               
+         </div>
              </div>
 
              </div>
             </div>
-        </div>
+        
     </section>
 
     <!-- Jquery Core Js -->
@@ -235,5 +321,6 @@
 
     <!-- Demo Js -->
     <script src="../../js/demo.js"></script>
+    </form>
 </body>
 </html>
