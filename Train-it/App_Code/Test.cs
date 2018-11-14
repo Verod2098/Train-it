@@ -66,6 +66,32 @@ public class Test
     }
 
 
+
+    public void AddTest(int Grade,string Name, int Type, string Specialty, int Time,string Approved,string Area,int maxPremium,int maxBasic,int  Price,int  ID) {
+
+        String sql;
+        SqlCommand com;
+        Utils.conexion.Open();
+        sql = "INSERT INTO  TEST (Grade,Name,Type,Specialty,Time,Approved,Area,maxPremium,maxBasic,Price,ID) VALUES ( @Grade,@Name,@Type,@Specialty,@Time,@Approved,@Area,@maxPremium,@maxBasic,@Price,@ID)";
+        com = Utils.conexion.CreateCommand();
+        com.Parameters.AddWithValue("Grade", Grade);
+        com.Parameters.AddWithValue("Name", Name);
+        com.Parameters.AddWithValue("Type", Type);
+        com.Parameters.AddWithValue("Specialty", Specialty);
+        com.Parameters.AddWithValue("Time", Time);
+        com.Parameters.AddWithValue("Approved", Approved);
+        com.Parameters.AddWithValue("Area", Area);
+        com.Parameters.AddWithValue("maxPremium", maxPremium);
+        com.Parameters.AddWithValue("maxBasic", maxBasic);
+        com.Parameters.AddWithValue("Price", Price);
+        com.Parameters.AddWithValue("ID", ID);
+        com.CommandText = sql;
+        com.ExecuteNonQuery();
+
+        Utils.conexion.Close();
+
+    }
+
     public void UpdateGrade(int newgrade, int id, int test)
     {
         String sql;
@@ -118,24 +144,51 @@ public class Test
 
     }
 
-    public void addTest() {
-
+    public void deleteTest(int id){
         String sql;
         SqlCommand com;
         Utils.conexion.Open();
-        sql = "INSERT INTO  TEST (Grade,Name,Type,Specialty,Time,Approved,Area,ID) VALUES ( @topic,@id)";
+        sql = "DELETE TEST  WHERE id=@id";
         com = Utils.conexion.CreateCommand();
-        com.Parameters.AddWithValue("topic", topic);
         com.Parameters.AddWithValue("id", id);
         com.CommandText = sql;
         com.ExecuteNonQuery();
 
         Utils.conexion.Close();
 
-    }
-   
 
-    
+
+
+    }
+
+    public void updateTest(int Grade, string Name, int Type, string Specialty, int Time, string Approved, string Area, int maxPremium, int maxBasic, int Price, int ID) {
+
+        String sql;
+        SqlCommand com;
+        Utils.conexion.Open();
+        sql = "Update TEST SET VALUES Grade=@Grade,Name=@Name,Type=@Type,Specialty=@Specialty,Time=@Time,Approved=@Approved,Area=@Area,maxPremium=@maxPremium,maxBasic=@maxBasic,Price=@Price where ID=@ID";
+        com = Utils.conexion.CreateCommand();
+        com.Parameters.AddWithValue("Grade", Grade);
+        com.Parameters.AddWithValue("Name", Name);
+        com.Parameters.AddWithValue("Type", Type);
+        com.Parameters.AddWithValue("Specialty", Specialty);
+        com.Parameters.AddWithValue("Time", Time);
+        com.Parameters.AddWithValue("Approved", Approved);
+        com.Parameters.AddWithValue("Area", Area);
+        com.Parameters.AddWithValue("maxPremium", maxPremium);
+        com.Parameters.AddWithValue("maxBasic", maxBasic);
+        com.Parameters.AddWithValue("Price", Price);
+        com.Parameters.AddWithValue("ID", ID);
+        com.CommandText = sql;
+        com.ExecuteNonQuery();
+
+        Utils.conexion.Close();
+
+
+
+
+    }
+
 
 
 }

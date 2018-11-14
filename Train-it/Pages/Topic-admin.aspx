@@ -178,8 +178,9 @@
                                   <li>
                       <span class="pull-right">
                     <asp:Button ID="BttnAddpru" runat="server" Text="Agregar"  CssClass=" btn bg-cyan"  style="left: 7px; top: -4px" OnClick="BttnAddpru_Click"/>
-                          <asp:Button ID="BttnUPptu" runat="server" Text="Actualiar"  CssClass=" btn bg-cyan" style="left: 7px; top: -4px"/>
-                          <asp:Button ID="BttnDELpru" runat="server" Text="Eliminar"  CssClass=" btn bg-cyan" style="left: 7px; top: -4px"/>
+                          <asp:Button ID="BttnUPptu" runat="server" Text="Actualizar"  CssClass=" btn bg-cyan" style="left: 7px; top: -4px" OnClick="BttnUPptu_Click"/>
+                          <asp:Button ID="BttnDELpru" runat="server" Text="Eliminar"  CssClass=" btn bg-cyan" style="left: 7px; top: -4px" OnClick="BttnDELpru_Click"/>
+                           
                           </span>
                  </li>
                                 <br />
@@ -192,9 +193,14 @@
                                    <div class="font-bold m-b--35"> Temas Agregados </div>
                                        <br />
                                        <br />
-                                    <asp:GridView ID="GridViewTopic" runat="server" CssClass="table-condensed">
+                                    <asp:GridView ID="GridViewTopic" runat="server" CssClass="table" AutoGenerateColumns="False" DataKeyNames="Id" >
+                                        <Columns>
+                                            <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
+                                            <asp:BoundField DataField="Topic" HeaderText="Topic" SortExpression="Topic" />
+                                        </Columns>
                                      
                                     </asp:GridView>
+                                    
                 </div>
               
                                
@@ -230,9 +236,10 @@
 
                                   <li>
                       <span class="pull-right">
-                    <asp:Button ID="BttnAddpre" runat="server" Text="Agregar"  CssClass=" btn bg-cyan" style="left: 7px; top: -4px"/>
-                          <asp:Button ID="BttnUPpre" runat="server" Text="Actualiar"  CssClass=" btn bg-cyan" style="left: 7px; top: -4px"/>
-                          <asp:Button ID="BttnDelPRe" runat="server" Text="Eliminar"  CssClass=" btn bg-cyan" style="left: 7px; top: -4px"/>
+                    <asp:Button ID="BttnAddpre" runat="server" Text="Agregar"  CssClass=" btn bg-cyan" style="left: 7px; top: -4px" OnClick="BttnAddpre_Click"/>
+                          <asp:Button ID="BttnUPpre" runat="server" Text="Actualizar"  CssClass=" btn bg-cyan" style="left: 7px; top: -4px" OnClick="BttnUPpre_Click"/>
+                          <asp:Button ID="BttnDelPRe" runat="server" Text="Eliminar"  CssClass=" btn bg-cyan" style="left: 7px; top: -4px" OnClick="BttnDelPRe_Click"/>
+                          
                           </span>
                  </li>
                                 <br />
@@ -245,10 +252,14 @@
                                    <div class="font-bold m-b--35"> Temas Agregados </div>
                                        <br />
                                        <br />
-                                    <asp:GridView ID="GridView1" runat="server" CssClass="table">
+                                    <asp:GridView ID="GridViewPre" runat="server" CssClass="table" AutoGenerateColumns="False" DataKeyNames="Id" >
+                                        <Columns>
+                                            <asp:BoundField DataField="Topic" HeaderText="Topic" SortExpression="Topic" />
+                                            <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
+                                        </Columns>
                                      
                                     </asp:GridView>
-                </div>
+                                   
               
                                
                
@@ -272,6 +283,9 @@
 
     <!-- Waves Effect Plugin Js -->
     <script src="../../plugins/node-waves/waves.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- Custom Js -->
     <script src="../../js/admin.js"></script>

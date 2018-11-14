@@ -67,4 +67,30 @@ public class Topic_Pregunta
         Utils.conexion.Close();
 
     }
+
+    public void searchTopic(int id)
+    {
+
+        String sql;
+        SqlCommand com;
+        SqlDataReader rs;
+        Utils.conexion.Open();
+        sql = "select Topic from Topic_Question where ID=@Id";
+        com = Utils.conexion.CreateCommand();
+        com.CommandText = sql;
+        com.Parameters.AddWithValue("Id", id);
+
+        rs = com.ExecuteReader();
+
+        if (rs.Read())
+        {
+            Topic = rs[0].ToString();
+
+        }
+
+        Utils.conexion.Close();
+
+
+
+    }
 }

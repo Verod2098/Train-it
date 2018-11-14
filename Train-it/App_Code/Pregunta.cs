@@ -34,5 +34,16 @@ public class Pregunta
     }
 
 
+    public void addQuestion() {
 
+    }
+
+
+    public void updateQuestion() {
+
+    }
+
+    public void deleteQuestion () {
+
+    }
 }
