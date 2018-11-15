@@ -20,24 +20,7 @@ public partial class Pages_Topic_admin : System.Web.UI.Page
 
     
 
-    private void FillGridPre()
-    {
-        try
-        {
-            Utils.conexion.Open();
-            SqlCommand consulta = new SqlCommand(string.Format("SELECT * FROM Topic_Question"), Utils.conexion);
-            SqlDataAdapter da = new SqlDataAdapter(consulta);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            GridViewPre.DataSource = dt;
-            GridViewPre.DataBind();
-            Utils.conexion.Close();
-        }
-        catch (Exception i)
-        {
-            Console.WriteLine(i.ToString());
-        }
-    }
+ 
 
     protected void BttnAddpru_Click(object sender, EventArgs e)
     {

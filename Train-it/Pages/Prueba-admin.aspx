@@ -181,8 +181,8 @@
                                         <div class="form-line focused">
                                             <label class="form-label">Tema de la prueba</label>
                                             <br />
-                                            <asp:DropDownList ID="DDLType" runat="server" CssClass="dropdown-animated" DataSourceID="SqlDataSource2" DataTextField="Topic" DataValueField="Topic" ></asp:DropDownList>
-                                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="Data Source=DELL\SQLEXPRESS;Initial Catalog=TRAINT-IT;Persist Security Info=True;User ID=Vero;Password=123" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [Topic] FROM [Topic_Test]"></asp:SqlDataSource>
+                                            <asp:DropDownList ID="DDLType" runat="server" CssClass="dropdown-animated" DataSourceID="SqlDataSource2" DataTextField="Topic" DataValueField="Id"   ></asp:DropDownList>
+                                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="Data Source=DELL\SQLEXPRESS;Initial Catalog=TRAINT-IT;Persist Security Info=True;User ID=Vero;Password=123" ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [Topic_Test]"></asp:SqlDataSource>
                                         </div>
                                     </div>
                                  </li>

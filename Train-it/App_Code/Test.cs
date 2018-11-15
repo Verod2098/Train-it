@@ -11,6 +11,11 @@ public class Test
 {
     Pregunta pregunta = new Pregunta();
 
+    public Test () {
+        Utils.conexion.Close();
+
+    }
+
     
      public static List< Pregunta> ListPregunta = new List<Pregunta> ();
 
@@ -69,6 +74,8 @@ public class Test
 
     public void AddTest(int Grade,string Name, int Type, int Time,string Approved,int maxPremium,int maxBasic,int  Price,int  ID) {
 
+
+        
         String sql;
         SqlCommand com;
         Utils.conexion.Open();
