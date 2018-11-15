@@ -32,6 +32,7 @@
 </head>
 
 <body class="theme-cyan">
+    <form id="Form1" runat="server">
     <!-- Page Loader -->
    <div class="page-loader-wrapper">
         <div class="loader">
@@ -171,5 +172,6 @@
 
     <!-- Demo Js -->
     <script src="../../js/demo.js"></script>
+    </form>
 </body>
 </html>

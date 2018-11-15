@@ -270,15 +270,18 @@
                                        <br />
                                     <asp:GridView ID="GridViewPru" runat="server" CssClass="table" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDataSource1" >
                                         <Columns>
-                                            <asp:BoundField DataField="ID" HeaderText="ID" ReadOnly="True" SortExpression="ID" />
+                                              <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" ReadOnly="True" />
                                             <asp:BoundField DataField="Name" HeaderText="Nombre" SortExpression="Name" />
-                                            <asp:BoundField DataField="Grade" HeaderText="Nota" SortExpression="Grade" /> 
-                                            <asp:BoundField DataField="Type" HeaderText="Tipo" SortExpression="Type" />
+                                            <asp:BoundField DataField="Grade" HeaderText="Nota" SortExpression="Grade" />
+                                            <asp:BoundField DataField="Type" HeaderText="Tipo" SortExpression="Type" /> 
                                             <asp:BoundField DataField="Time" HeaderText="Tiempo" SortExpression="Time" />
                                             <asp:BoundField DataField="Approved" HeaderText="Respuestas para aprobar" SortExpression="Approved" />
                                             <asp:BoundField DataField="maxPremium" HeaderText="Máximo de preguntas Premium" SortExpression="maxPremium" />
                                             <asp:BoundField DataField="maxBasic" HeaderText="Máximo de preguntas Basic" SortExpression="maxBasic" />
                                             <asp:BoundField DataField="Price" HeaderText="Precio" SortExpression="Price" />
+                                          
+                                            
+                                            <asp:BoundField DataField="Topic" HeaderText="Topic" SortExpression="Topic" />
                                             
                                         </Columns>
                                         
@@ -288,7 +291,7 @@
               
                                
                
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=DELL\SQLEXPRESS;Initial Catalog=TRAINT-IT;Persist Security Info=True;User ID=Vero;Password=123" ProviderName="System.Data.SqlClient" SelectCommand="SELECT * FROM [Test]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=DELL\SQLEXPRESS;Initial Catalog=TRAINT-IT;Persist Security Info=True;User ID=Vero;Password=123" ProviderName="System.Data.SqlClient" SelectCommand="SELECT Test.Grade, Test.Name, Test.Type, Test.Time, Test.Approved, Test.maxPremium, Test.maxBasic, Test.Price, Test.ID,  Topic_Test.Topic FROM Test  JOIN Topic_Test ON Test.Type = Topic_Test.Id"></asp:SqlDataSource>
                                    
               
                                

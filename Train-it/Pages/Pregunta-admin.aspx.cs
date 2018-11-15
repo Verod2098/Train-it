@@ -11,4 +11,8 @@ public partial class Pages_Pregunta_admin : System.Web.UI.Page
     {
 
     }
+
+
+
+
 }
