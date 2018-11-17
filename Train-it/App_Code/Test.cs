@@ -56,8 +56,7 @@ public class Test
                 Pregunta.badAnswer1 = rs[4].ToString();
                 Pregunta.badAnswer2 = rs[5].ToString();
                 Pregunta.badAnswer3 = rs[6].ToString();
-                Pregunta.path = rs[8].ToString();
-                Pregunta.format = rs[9].ToString();
+               // Pregunta.image =[ rs[8]];
                 Utils.code++;
                 ListPregunta.Add(pregunta);
             char Values= '%';
@@ -192,6 +191,6 @@ public class Test
 
     }
 
-
+     
 
 }
