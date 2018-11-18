@@ -17,15 +17,14 @@ public class Pregunta
     public static string badAnswer1;
     public static string badAnswer2;
     public static string badAnswer3;
-    public static string path;
-    public static string format;
     public static string porcentaje;
+    public static Byte[] image = new byte[10];
 
     
 
     public Pregunta()
     {
-       
+        
     }
 
     public override string ToString()
@@ -35,12 +34,12 @@ public class Pregunta
     }
 
 
-    public void addQuestion(string Question, string Percentaje, string Correct_Answer, string Bad_Answer1, string Bad_Answer2, string Bad_Answer3, string Type_Question, string Path, string Format, int ID_TEST, int ID_Topic, int ID, int ID_Creator) {
+    public void addQuestion(string Question, string Percentaje, string Correct_Answer, string Bad_Answer1, string Bad_Answer2, string Bad_Answer3, string Type_Question, byte[] image, int ID_TEST, int ID_Topic, int ID, int ID_Creator) {
 
         String sql;
         SqlCommand com;
         Utils.conexion.Open();
-        sql = "INSERT INTO  Question (Question,Percentaje,Correct_Answer,Bad_Answer1,Bad_Answer2,Bad_Answer3,Type_Question,Path,Format,ID_TEST,ID_Topic,ID,ID_Creator) VALUES (@Question,@Percentaje,@Correct_Answer,@Bad_Answer1,@Bad_Answer2,@Bad_Answer3,@Type_Question,@Path,@Format,@ID_TEST,@ID_Topic,@ID,@ID_Creator)";
+        sql = "INSERT INTO  Question (Question,Percentaje,Correct_Answer,Bad_Answer1,Bad_Answer2,Bad_Answer3,Type_Question,Image,ID_TEST,ID_Topic,id_Questions,ID_Creator) VALUES (@Question,@Percentaje,@Correct_Answer,@Bad_Answer1,@Bad_Answer2,@Bad_Answer3,@Type_Question,@Image,@ID_TEST,@ID_Topic,@ID,@ID_Creator)";
         com = Utils.conexion.CreateCommand();
         com.Parameters.AddWithValue("Question", Question);
         com.Parameters.AddWithValue("Percentaje", Percentaje);
@@ -49,8 +48,7 @@ public class Pregunta
         com.Parameters.AddWithValue("Bad_Answer2", Bad_Answer2);
         com.Parameters.AddWithValue("Bad_Answer3", Bad_Answer3);
         com.Parameters.AddWithValue("Type_Question", Type_Question);
-        com.Parameters.AddWithValue("Path", Path);
-        com.Parameters.AddWithValue("Format", Format);
+        com.Parameters.AddWithValue("Image",image);
         com.Parameters.AddWithValue("ID_Creator", ID_Creator);
         com.Parameters.AddWithValue("ID_Topic", ID_Topic);
         com.Parameters.AddWithValue("ID", ID);

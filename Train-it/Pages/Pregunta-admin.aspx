@@ -173,8 +173,13 @@
                                          </li>
                               <li>
 
+                                  <div class="form-line focused">
+                                                 
+                                            <label class="form-label">Imagen para la pregunta</label>
+                                      <asp:FileUpload ID="image" runat="server" class="file"/>
+                                        </div>
 
-                                  
+                                  </li>
                                 <li>
 
                                     <div class="form-group form-float">
@@ -224,9 +229,21 @@
                                     </div>
                                  </li>
 
-                                <li>
+                               
+                                                       <li>
 
-                                      <li>
+                                    <div class="form-group form-float">
+                                        <div class="form-line focused">
+                                            <label class="form-label">Tipo de pregunta</label>
+                                            <asp:DropDownList ID="DDLTipoPregunta" runat="server" class="dropdown-animated">
+                                                <asp:ListItem>Si/No</asp:ListItem>
+                                                <asp:ListItem>Falso/Verdadero</asp:ListItem>
+                                                <asp:ListItem>Respuesta Multiple</asp:ListItem>
+                                                <asp:ListItem></asp:ListItem>
+                                            </asp:DropDownList>
+                                        </div>
+                                    </div>
+                                 </li>
 
 
                                                        <li>
@@ -247,18 +264,17 @@
 
                                                        <li>
 
-                                    
+                                    <div class="form-group form-float">
                                             <label class="form-label">Prueba a la que pertenece</label>
                                             <asp:DropDownList ID="DropDownListCodPrueba" runat="server"  class="dropdown-animated" DataSourceID="SqlDataSource2" DataTextField="Name" DataValueField="ID"></asp:DropDownList>
                                        
                                     
                                                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:TRAINT-ITConnectionString %>" SelectCommand="SELECT [ID], [Name] FROM [Test]"></asp:SqlDataSource>
                                        
-                                    
+                                    </div>
                                  </li>
 
-                                <li>
-                                    
+                           
 
                                                        <li>
 
@@ -274,14 +290,12 @@
                                    
                                  </li>
 
-                                <li>
-                                    
-                                       </li>
+                                
 				
                 
                  <li>
                       <span class="pull-right">
-                    <asp:Button ID="BttnAdd" runat="server" Text="Agregar"  CssClass=" btn bg-cyan"/>
+                    <asp:Button ID="BttnAdd" runat="server" Text="Agregar"  CssClass=" btn bg-cyan" OnClick="BttnAdd_Click"/>
                           <asp:Button ID="BttnDel" runat="server" Text="Eliminar"  CssClass=" btn bg-cyan"/>
                           <asp:Button ID="BttnUp" runat="server" Text="Actualizar"  CssClass=" btn bg-cyan"/>
                           </span>
@@ -306,15 +320,14 @@
                                             <asp:BoundField DataField="Bad_Answer2" HeaderText="Respuesta Negativa 2" SortExpression="Bad_Answer2" />
                                             <asp:BoundField DataField="Bad_Answer3" HeaderText="Respuesta Negativa 3" SortExpression="Bad_Answer3" />
                                             <asp:BoundField DataField="Type_Question" HeaderText="Tipo" SortExpression="Type_Question" />
-                                            <asp:BoundField DataField="Path" HeaderText="Path" SortExpression="Path" />
-                                            <asp:BoundField DataField="Format" HeaderText="Format" SortExpression="Format" />
+                                            <asp:BoundField DataField="Image" HeaderText="Imagen" SortExpression="Image" />
                                             <asp:BoundField DataField="Name" HeaderText="Prueba a la que pertenece" SortExpression="Name" />
                                             <asp:BoundField DataField="Topic" HeaderText="Tema " SortExpression="Topic" />
                                             <asp:BoundField DataField="Name1" HeaderText="Creada por" SortExpression="Name1" />
                                         </Columns>
                                     </asp:GridView>
              
-                                   <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:TRAINT-ITConnectionString %>" SelectCommand="SELECT Question.Id_Questions, Question.Question, Question.Percentaje, Question.Correct_Answer, Question.Bad_Answer1, Question.Bad_Answer2, Question.Bad_Answer3, Question.Type_Question, Question.Path, Question.Format, Test.Name, Topic_Question.Topic, [User].Name FROM Question INNER JOIN Test ON Question.ID_Test = Test.ID INNER JOIN Topic_Question ON Question.ID_Topic = Topic_Question.Id INNER JOIN [User] ON Question.ID_Creator = [User].Id"></asp:SqlDataSource>
+                                   <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:TRAINT-ITConnectionString %>" SelectCommand="SELECT Question.Id_Questions, Question.Question, Question.Percentaje, Question.Correct_Answer, Question.Bad_Answer1, Question.Bad_Answer2, Question.Bad_Answer3, Question.Type_Question, Question.Image, Test.Name, Topic_Question.Topic, [User].Name FROM Question INNER JOIN Test ON Question.ID_Test = Test.ID INNER JOIN Topic_Question ON Question.ID_Topic = Topic_Question.Id INNER JOIN [User] ON Question.ID_Creator = [User].Id"></asp:SqlDataSource>
              
                                 </div>
               
