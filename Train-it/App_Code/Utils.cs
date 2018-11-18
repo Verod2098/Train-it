@@ -31,4 +31,6 @@ public class Utils
 
     //String de conexion 
     public static SqlConnection conexion = new SqlConnection("Data Source = DELL\\SQLEXPRESS;Initial Catalog = TRAINT-IT; User ID = Vero; Password=123");
+
+    public static List<Pregunta> ListPregunta = new List<Pregunta>();
 }
