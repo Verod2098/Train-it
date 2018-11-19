@@ -7,29 +7,39 @@ using System.Web.UI.WebControls;
 
 public partial class Pages_Sign_in : System.Web.UI.Page
 {
-
+    Users user = new Users();
     protected void Page_Load(object sender, EventArgs e)
     {
-        Users user = new Users();
+      
     }
-
- 
-
 
 
     protected void BttnSign_Click(object sender, EventArgs e)
     {
-   /*     try
+     try
         {
-            if (users.searchclient(TxtUser.Text, TxtPassword.Text))
+            if (user.searchclient(TxtUser.Text, TxtPassword.Text))
             {
-                Session["User_name"] = Utils.nombre;
-                Session["User_id"] = Utils.id;
-                Response.Redirect("Index-cliente.aspx",false);
-                
-            } else if (user.searchAdmin(TxtUser.Text, TxtPassword.Text))
-            {
-                Response.Redirect("Index-Admin.aspx",false);
+
+                if (Users.rol == "Usuario")
+                {
+                    Session["User_id"] = Users.id;
+                    Session["Tipo"] = Users.tipo;
+                    Response.Redirect("Index-cliente.aspx", false);
+                }
+                else if (Users.rol == "Administrador")
+                {
+                    Session["User_id"] = Users.id;
+                    Session["Tipo"] = Users.tipo;
+                    Response.Redirect("Index-Admin.aspx", false);
+                }
+                else if (Users.rol == "Especialista")
+                {
+                    Session["User_id"] = Users.id;
+                    Session["Tipo"] = Users.tipo;
+                    Response.Redirect("Index-Especialista.aspx", false);
+                }
+
             }
             else
             {
@@ -43,6 +53,6 @@ public partial class Pages_Sign_in : System.Web.UI.Page
 
         }
 
-    */
+
     }
 }
