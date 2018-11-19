@@ -139,17 +139,18 @@
                         
                        
                         
-                        <asp:BoundField DataField="Topic"  SortExpression="Topic"   >
+                        <asp:BoundField DataField="Topic"  SortExpression="Topic" HeaderText="Topic"   >
                        
                         </asp:BoundField>
-                        <asp:ButtonField CommandName="Select" Text="Seleccionar" ><ControlStyle CssClass="btn-xs bg-cyan"></ControlStyle> </asp:ButtonField>
                         
                     </Columns>
                 </asp:GridView>
                 
-                <asp:SqlDataSource ID="SqlDataTemas" runat="server" ConnectionString="<%$ ConnectionStrings:TRAINT-ITConnectionString %>" SelectCommand="SELECT  [TEMA] FROM [Preferencias]  JOIN  [TEMA_PRUEBA] ON ([ID_PRUEBA]=[CODIGO] )WHERE ([ID_Usuario] = @ID_Usuario)">
+                <asp:SqlDataSource ID="SqlDataTemas" runat="server" ConnectionString="<%$ ConnectionStrings:TRAINT-ITConnectionString %>" SelectCommand="SELECT Topic_Test.Topic FROM Preferences INNER JOIN Topic_Test ON Preferences.ID_Test = Topic_Test.Id INNER JOIN [User] ON Preferences.ID_User = [User].Id WHERE ([User].Id = @User_id)">
                     <SelectParameters>
-                        <asp:Parameter DefaultValue="1" Name="ID_Usuario" Type="Decimal" />
+                       
+                        <asp:SessionParameter Name="User_id" SessionField="[&quot;User_id&quot;]" />
+                       
                     </SelectParameters>
                 </asp:SqlDataSource>
                 

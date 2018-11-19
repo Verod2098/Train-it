@@ -80,7 +80,7 @@ public partial class Pregunta_Cliente : System.Web.UI.Page
             if (test.CorrectAnswer(Pregunta.correctAnswer, Button_Q1.Text))
             {
                 test.newGrade(int.Parse (Pregunta.porcentaje), Utils.grade);
-                test.UpdateGrade(Utils.grade, Utils.cedula, int.Parse(Session["id_prueba"].ToString()));
+                test.UpdateGrade(Utils.grade, int.Parse(Session["User_id"].ToString()), int.Parse(Session["id_prueba"].ToString()));
             }
             if (Utils.code<Utils.maxpregunta)
             {
@@ -109,7 +109,7 @@ public partial class Pregunta_Cliente : System.Web.UI.Page
             if (test.CorrectAnswer(Pregunta.correctAnswer, Button_Q2.Text))
             {
                 test.newGrade(int.Parse (Pregunta.porcentaje), Utils.grade);
-                test.UpdateGrade(Utils.grade, Utils.cedula, int.Parse(Session["id_prueba"].ToString()));
+                test.UpdateGrade(Utils.grade, int.Parse(Session["User_id"].ToString()), int.Parse(Session["id_prueba"].ToString()));
             }
             if (Utils.code <Utils.maxpregunta)
             {
@@ -138,7 +138,7 @@ public partial class Pregunta_Cliente : System.Web.UI.Page
             if (test.CorrectAnswer(Pregunta.correctAnswer, Button_Q3.Text))
             {
                 test.newGrade(int.Parse (Pregunta.porcentaje), Utils.grade);
-                test.UpdateGrade(Utils.grade, Utils.cedula, int.Parse(Session["id_prueba"].ToString()));
+                test.UpdateGrade(Utils.grade, int.Parse(Session["User_id"].ToString()), int.Parse(Session["id_prueba"].ToString()));
             }
             if (Utils.code < Utils.maxpregunta)
             {
@@ -167,7 +167,7 @@ public partial class Pregunta_Cliente : System.Web.UI.Page
             if (test.CorrectAnswer(Pregunta.correctAnswer, Button_Q4.Text))
             {
                 test.newGrade(int.Parse (Pregunta.porcentaje), Utils.grade);
-                test.UpdateGrade(Utils.grade,Utils.cedula, int.Parse(Session["id_prueba"].ToString()));
+                test.UpdateGrade(Utils.grade, int.Parse(Session["User_id"].ToString()), int.Parse(Session["id_prueba"].ToString()));
             }
             if (Utils.code < Utils.maxpregunta)
             {

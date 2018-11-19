@@ -21,7 +21,7 @@ public partial class Pages_Info_examen_pregunta : System.Web.UI.Page {
             Response.Redirect("Pregunta-Cliente.aspx", false);
             Utils.code = 0;
             Utils.grade = 0;
-            test.AddGrade(Utils.cedula, int.Parse(Session["id_prueba"].ToString()));
+            test.AddGrade(int.Parse(Session["User_id"].ToString()), int.Parse(Session["id_prueba"].ToString()));
         }
         catch (Exception exception) {
 

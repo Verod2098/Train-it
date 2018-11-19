@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Pregunta-admin.aspx.cs" Inherits="Pages_Pregunta_admin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Pregunta-Especialista.aspx.cs" Inherits="Pages_Pregunta_Especialista" %>
 
 <!DOCTYPE html>
 

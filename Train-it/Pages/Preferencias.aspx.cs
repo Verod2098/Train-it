@@ -28,24 +28,13 @@ public partial class Pages_Preferencias : System.Web.UI.Page
         }
     }
 
-        protected void ChckListPreferencias_SelectedIndexChanged(object sender, EventArgs e)
-    {
-       
-
-    }
-
-
-
-
-
-
-
+    
     protected void GrriPrefe_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
         {
             Session["Preferencias"] = GrriPrefe.SelectedRow.Cells[1].Text;
-            user.insertPreferences(Utils.cedula, Session["Preferencias"].ToString());
+            user.insertPreferences(int.Parse(Session["User_id"].ToString()), Session["Preferencias"].ToString());
             Response.Write("<script language=javascript>alert('Ingresado Con éxito');</script>");
         }
         catch (Exception exception)

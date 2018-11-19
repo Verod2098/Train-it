@@ -14,7 +14,7 @@ public partial class Pages_Nota_cliente : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         FillInfo();
-        printQuestions();
+        //printQuestions();
     }
 
     protected void BttnNota_Click(object sender, EventArgs e)
@@ -42,12 +42,12 @@ public partial class Pages_Nota_cliente : System.Web.UI.Page
             com = conexion.CreateCommand();
             com.CommandText = sql;
             com.Parameters.AddWithValue("prueba", int.Parse(Session["id_prueba"].ToString()));
-            com.Parameters.AddWithValue("id", Utils.cedula);
+            com.Parameters.AddWithValue("id", Users.id);
             rs = com.ExecuteReader();
 
             if (rs.Read())
             {
-                LblCodTxt.Text = Utils.cedula.ToString();
+                LblCodTxt.Text = Users.id.ToString();
                 LblNomTex.Text = rs[3].ToString();
                 LblCacTex.Text = rs[0].ToString();
 
@@ -62,7 +62,7 @@ public partial class Pages_Nota_cliente : System.Web.UI.Page
 
     }
 
-    public void printQuestions()
+ /*   public void printQuestions()
     {
         try
         {
@@ -85,7 +85,7 @@ public partial class Pages_Nota_cliente : System.Web.UI.Page
 
 
 
-
+    */
 
     
 }

@@ -10,7 +10,7 @@ public partial class Pages_Sign_up : System.Web.UI.Page
     Users user = new Users();
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Utils.conexion.Close();
     }
 
     protected void BttnSingup_Click(object sender, EventArgs e)
@@ -18,15 +18,18 @@ public partial class Pages_Sign_up : System.Web.UI.Page
 
         try
         {
-            user.isMailReal(TxtMail.ToString());
-            
-
+            user.isMailReal(TxtMail.Text);
+            user.addUser(int.Parse(Txtid.Text), TxtName.Text, TxtMail.Text, TxtOcupation.Text, Txtplace.Text, TxtPhone.Text, "Usuario",0, "Basic", Txtdate.Text, TxtPassword.Text);
+            Response.Write("<script language=javascript>.alert-blue-grey('Usuario Registrado con exito');</script>");
+            Session["User_id"] = Txtid.Text;
+            Session["Tipo"] = "Basic";
+            Response.Redirect("Preferencias.aspx");
 
         }
         catch (Exception i)
         {
             Console.WriteLine(i.ToString());
-            Response.Write("<script language=javascript>.alert-blue-grey('Error al Registrar');</script>");
+            Response.Write("<script language=javascript>('Error al Registrar');</script>");
 
         }
     }

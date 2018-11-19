@@ -23,7 +23,8 @@ public partial class Pages_Pago_Premium : System.Web.UI.Page
     {
         try {
             tarjeta.addCreditCard(Txt_NombreText.Text, TxtTarejat.Text, TxtCodigo.Text, Tarjeta.Tipo, Txtfecha.Text);
-            tarjeta.upgradeAccount(TxtTarejat.Text,Utils.cedula);
+            tarjeta.upgradeAccount(TxtTarejat.Text,Users.id);
+            Response.Write("<script language=javascript>alert('Ha pagado  Con éxito');</script>");
             TxtCodigo.Text = "";
             Txtfecha.Text = "";
             Txt_NombreText.Text = "";
@@ -36,6 +37,8 @@ public partial class Pages_Pago_Premium : System.Web.UI.Page
         {
 
             Console.WriteLine(exception.ToString());
+            Response.Write("<script language=javascript>alert('Error al pagar');</script>");
+           
 
         }
     }

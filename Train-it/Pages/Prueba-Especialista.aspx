@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Prueba-admin.aspx.cs" Inherits="Pages_Prueba_admin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Prueba-Especialista.aspx.cs" Inherits="Pages_Prueba_Especialista" %>
 
 <!DOCTYPE html>
 

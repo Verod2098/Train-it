@@ -119,12 +119,12 @@ public class Users
 
 
     }
-    public void addUser(int id,string name, string mail, string job, string place, string phone,string Rol,string Specialty,string type,string birthdate,string password,string Creditcard) {
+    public void addUser(int id,string name, string mail, string job, string place, string phone,string Rol,int Specialty,string type,string birthdate,string password) {
         String sql;
         SqlCommand com;
         Utils.conexion.Open();
-        sql = " INSERT INTO USER VALUES (id,Name,Mail,Occupation,Place_Occupation,Phone_Numbrer,Rol,Specialty,Type,Bithdate,Password,CreditCard) VALUES " +
-            "(@id,@Name,@Mail,@Occupation,@place_Occupation,@Phone_Numbrer,@Rol,@Specialty,@Type,@Bithdate,@Password,@CreditCard) ";
+        sql = " INSERT INTO [USER]  (id,Name,Mail,Occupation,Place_Occupation,Phone_Number,Rol,Specialty,Type,Birthdate,Password) VALUES " +
+            "(@id,@Name,@Mail,@Occupation,@place_Occupation,@Phone_Number,@Rol,@Specialty,@Type,@Bithdate,@Password) ";
         com = Utils.conexion.CreateCommand();
         com.Parameters.AddWithValue("Name", name);
         com.Parameters.AddWithValue("Phone_Number", phone);
@@ -132,12 +132,19 @@ public class Users
         com.Parameters.AddWithValue("Occupation", job);
         com.Parameters.AddWithValue("Mail", mail);
         com.Parameters.AddWithValue("id", id);
-        com.Parameters.AddWithValue("Specialty",Specialty);
+        if (Specialty == 0)
+        {
+            com.Parameters.AddWithValue("Specialty", DBNull.Value);
+        }
+        else {
+            com.Parameters.AddWithValue("Specialty", Specialty);
+        }
+        
         com.Parameters.AddWithValue("Type", type);
         com.Parameters.AddWithValue("Rol", Rol);
         com.Parameters.AddWithValue("Bithdate", birthdate);
         com.Parameters.AddWithValue("Password", password);
-        com.Parameters.AddWithValue("CreditCard", Creditcard);
+        
         com.CommandText = sql;
         com.ExecuteNonQuery();
         Utils.conexion.Close();
@@ -152,7 +159,7 @@ public class Users
         SqlDataReader rs;
 
         Utils.conexion.Open();
-        sql = "SELECT Id,Type,rol FROM User where Mail=@correo AND contrasena=@contrasena";
+        sql = "SELECT Id,Type,rol FROM [User] where Mail=@correo AND Password=@contrasena";
         com = Utils.conexion.CreateCommand();
         com.Parameters.AddWithValue("correo", correo);
         com.Parameters.AddWithValue("contrasena", contrasena);
@@ -165,6 +172,7 @@ public class Users
                 tipo = rs[1].ToString();
                  rol = rs[2].ToString();
                 id = int.Parse(rs[0].ToString());
+                isReal = true;
            
 
         }

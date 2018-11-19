@@ -10,7 +10,7 @@ public partial class Pages_Sign_in : System.Web.UI.Page
     Users user = new Users();
     protected void Page_Load(object sender, EventArgs e)
     {
-      
+        Utils.conexion.Close();
     }
 
 
