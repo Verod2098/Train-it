@@ -60,12 +60,12 @@ public class Pregunta
     }
 
 
-    public void updateQuestion(string Question,string Percentaje,string Correct_Answer,string Bad_Answer1,string Bad_Answer2,string Bad_Answer3,string Type_Question,string Path,string Format,int ID_TEST,int ID_Topic,int ID,int ID_Creator) {
+    public void updateQuestion(string Question,string Percentaje,string Correct_Answer,string Bad_Answer1,string Bad_Answer2,string Bad_Answer3,string Type_Question,byte [] image,int ID_TEST,int ID_Topic,int ID,int ID_Creator) {
 
         String sql;
         SqlCommand com;
         Utils.conexion.Open();
-        sql = "Update Question SET VALUES Question=@Question,Percentaje=@Percentaje,Correct_Answer=@Correct_Answer,Bad_Answer1=@Bad_Answer1,Bad_Answer2=@Bad_Answer2,Bad_Answer3=@Bad_Answer,Type_Question=@Type_Question,Path=@Path,Format=@Format,ID_Creator=@ID_Creator,ID_Topic=@ID_Topic,ID_TEST=@ID_TEST where id_Question=@ID";
+        sql = "Update Question SET  Question=@Question,Percentaje=@Percentaje,Correct_Answer=@Correct_Answer,Bad_Answer1=@Bad_Answer1,Bad_Answer2=@Bad_Answer2,Bad_Answer3=@Bad_Answer3,Type_Question=@Type_Question,Image=@image,ID_Creator=@ID_Creator,ID_Topic=@ID_Topic,ID_TEST=@ID_TEST where id_Questions=@ID";
         com = Utils.conexion.CreateCommand();
         com.Parameters.AddWithValue("Question", Question);
         com.Parameters.AddWithValue("Percentaje", Percentaje);
@@ -74,8 +74,7 @@ public class Pregunta
         com.Parameters.AddWithValue("Bad_Answer2", Bad_Answer2);
         com.Parameters.AddWithValue("Bad_Answer3", Bad_Answer3);
         com.Parameters.AddWithValue("Type_Question", Type_Question);
-        com.Parameters.AddWithValue("Path", Path);
-        com.Parameters.AddWithValue("Format", Format);
+        com.Parameters.AddWithValue("image", image);
         com.Parameters.AddWithValue("ID_Creator", ID_Creator);
         com.Parameters.AddWithValue("ID_Topic",ID_Topic);
         com.Parameters.AddWithValue("ID", ID);
@@ -93,7 +92,7 @@ public class Pregunta
         String sql;
         SqlCommand com;
         Utils.conexion.Open();
-        sql = "DELETE Question  WHERE id=@id";
+        sql = "DELETE Question  WHERE id_questions=@id";
         com = Utils.conexion.CreateCommand();
         com.Parameters.AddWithValue("id", id);
         com.CommandText = sql;

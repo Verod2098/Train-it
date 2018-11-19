@@ -37,14 +37,14 @@
     
     <div class="login-box">
         <div class="logo">
-            <a href="javascript:void(0);">Train-<b>IT</b></a>
-            <small>Plataforma de exámenes en linea</small>
+            &nbsp;<img src="../Images/Train-it%20(1).png" /><br />
+   
         </div>
         <div class="card">
             <div class="body">
                 <form id="sign_in" method="POST" runat="server">
-                    <div class="msg">Ingrese su información para acceder a la plataforma</div>
-                    <div class="input-group">
+                    <div class="msg">Inicia sesión para comenzar</div>
+                   <div class="input-group">
                         <span class="input-group-addon">
                             <i class="material-icons">person</i>
                         </span>
@@ -61,18 +61,32 @@
                                <asp:TextBox ID="TxtPassword" runat="server" class="form-control" name="password" placeholder="Contraseña"  TextMode="Password" ></asp:TextBox>
                         </div>
                     </div>
-                    <div class="row">
+                    
+ 
                         <div class="col-xs-4">
-                            <asp:Button ID="BttnSign" runat="server" Text="Entrar" class="btn btn-block bg-light-green waves-effect" OnClick="BttnSign_Click" />
+                            <asp:Button ID="BttnSign" runat="server" Text="Entrar" class="btn btn-block bg-navy waves-effect" OnClick="BttnSign_Click" />
                   
                         </div>
+                    
+                   
+                    <div class="row m-t-15 m-b--20">
+                        <div class="col-xs-6">
+                            <a href="sign-up.aspx">Registrese Ahora</a>
+                        </div>
+                        <div class="col-xs-6 align-right">
+                            <a href="forgot-password.aspx">¿Olvido su contraseña?</a>
+                            
+                        </div>
                     </div>
-                    
-                    
                 </form>
             </div>
         </div>
     </div>
+
+                    
+                    
+                
+          
 
     <!-- Jquery Core Js -->
     <script src="../../plugins/jquery/jquery.min.js"></script>

@@ -296,8 +296,8 @@
                  <li>
                       <span class="pull-right">
                     <asp:Button ID="BttnAdd" runat="server" Text="Agregar"  CssClass=" btn bg-cyan" OnClick="BttnAdd_Click"/>
-                          <asp:Button ID="BttnDel" runat="server" Text="Eliminar"  CssClass=" btn bg-cyan"/>
-                          <asp:Button ID="BttnUp" runat="server" Text="Actualizar"  CssClass=" btn bg-cyan"/>
+                          <asp:Button ID="BttnDel" runat="server" Text="Eliminar"  CssClass=" btn bg-cyan" OnClick="BttnDel_Click" style="height: 35px"/>
+                          <asp:Button ID="BttnUp" runat="server" Text="Actualizar"  CssClass=" btn bg-cyan" OnClick="BttnUp_Click"/>
                           </span>
                  </li>
                                 </ul>
@@ -306,11 +306,11 @@
                             <div >
 
                                    
-                                   <div class="font-bold m-b--35"> Preguntas Agregadas </div>
+                                   <div class="font-bold m-b--35 "> Preguntas Agregadas </div>
                                        <br />
                                        <br />
                                 
-                                    <asp:GridView ID="GridViewPregunta" runat="server" CssClass="table" AutoGenerateColumns="False" DataSourceID="SqlDataSource3">
+                                    <asp:GridView ID="GridViewPregunta" runat="server" CssClass="table-responsive" AutoGenerateColumns="False" DataSourceID="SqlDataSource3">
                                         <Columns>
                                             <asp:BoundField DataField="Id_Questions" HeaderText="ID" SortExpression="Id_Questions" />
                                             <asp:BoundField DataField="Question" HeaderText="Pregunta" SortExpression="Question" />
@@ -338,7 +338,7 @@
          </div>
 
 
-            </div>
+            
         </div>
     </section>
 

@@ -144,14 +144,14 @@
                        <asp:ButtonField ButtonType="Button" CommandName="Select" Text="Agregar " >
 <ControlStyle CssClass="btn-xs bg-cyan"></ControlStyle> 
                             </asp:ButtonField>
-                       <asp:BoundField DataField="Tema"  SortExpression="Tema"  />
+                       <asp:BoundField DataField="Topic"  SortExpression="Topic"  />
                  
                    </Columns>
                
                     </asp:GridView>
 
                    
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TRAINT-ITConnectionString %>" SelectCommand="SELECT [Tema] FROM [Tema_Prueba]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TRAINT-ITConnectionString %>" SelectCommand="SELECT [Topic] FROM [Topic_Test]"></asp:SqlDataSource>
                 <span class="pull-right">
                     <asp:Button ID="Bttnnext" runat="server" Text="Continuar"  CssClass="btn primary bg-cyan" OnClick="Bttnnext_Click" />
                           </span>

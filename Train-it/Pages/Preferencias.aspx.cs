@@ -46,11 +46,13 @@ public partial class Pages_Preferencias : System.Web.UI.Page
         {
             Session["Preferencias"] = GrriPrefe.SelectedRow.Cells[1].Text;
             user.insertPreferences(Utils.cedula, Session["Preferencias"].ToString());
+            Response.Write("<script language=javascript>alert('Ingresado Con éxito');</script>");
         }
         catch (Exception exception)
 
         {
             Console.WriteLine(exception.ToString());
+            Response.Write("<script language=javascript>alert('Error al realizar acción');</script>");
         }
 
     }

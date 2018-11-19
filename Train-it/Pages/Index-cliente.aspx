@@ -139,7 +139,7 @@
                         
                        
                         
-                        <asp:BoundField DataField="TEMA"  SortExpression="TEMA"   >
+                        <asp:BoundField DataField="Topic"  SortExpression="Topic"   >
                        
                         </asp:BoundField>
                         <asp:ButtonField CommandName="Select" Text="Seleccionar" ><ControlStyle CssClass="btn-xs bg-cyan"></ControlStyle> </asp:ButtonField>
