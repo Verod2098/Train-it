@@ -112,22 +112,7 @@
                             <span>Preguntas</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="Usuario-Admin.aspx">
-                            <i class="material-icons">face</i>
-                            <span>Creación de usuarios</span>
-                        </a>
-                      
-                    </li>
-
-                     <li>
-                        <a href="Topic-Admin.aspx">
-                            <i class="material-icons">edit</i>
-                            <span>Agregar Temas</span>
-                        </a>
-                      
-                    </li>
-                  
+                   
                 </ul>
             </div>
             <!-- #Menu -->

@@ -5,6 +5,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Web;
+using System.Net.Mail;
+
 
 /// <summary>
 /// Summary description for Users
@@ -21,7 +23,9 @@ public class Users
     public static string tipo;
     public static string correo;
     public static string rol;
+    public static string password;
 
+    
     
     public Users()
     {
@@ -180,4 +184,24 @@ public class Users
         return isReal;
 
     }
+
+
+    public String msjPassword(int id) {
+        String msj;
+
+        searchUser(id);
+        msj = "Estimado: " + nombre + " Su Contraseña es:  " + password;
+
+        return msj;
+
+    }
+
+    public void mail()
+    {
+        MailMessage correo = new MailMessage();
+
+
+
+    }
+
 }
