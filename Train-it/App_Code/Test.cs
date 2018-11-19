@@ -16,9 +16,7 @@ public class Test
 
     }
 
-    
-     public static List< Pregunta> ListPregunta = new List<Pregunta> ();
-
+ 
 
     public Boolean CorrectAnswer(string answer, string choose)
     {
@@ -159,10 +157,6 @@ public class Test
         com.ExecuteNonQuery();
 
         Utils.conexion.Close();
-
-
-
-
     }
 
     public void updateTest(int Grade, string Name, int Type, int Time, string Approved, int maxPremium, int maxBasic, int Price, int ID) {
@@ -185,10 +179,6 @@ public class Test
         com.ExecuteNonQuery();
 
         Utils.conexion.Close();
-
-
-
-
     }
 
      
