@@ -149,7 +149,7 @@
                 <asp:SqlDataSource ID="SqlDataTemas" runat="server" ConnectionString="<%$ ConnectionStrings:TRAINT-ITConnectionString %>" SelectCommand="SELECT Topic_Test.Topic FROM Preferences INNER JOIN Topic_Test ON Preferences.ID_Test = Topic_Test.Id INNER JOIN [User] ON Preferences.ID_User = [User].Id WHERE ([User].Id = @User_id)">
                     <SelectParameters>
                        
-                        <asp:SessionParameter Name="User_id" SessionField="[&quot;User_id&quot;]" />
+                        <asp:SessionParameter Name="User_id" SessionField="[User_id]" />
                        
                     </SelectParameters>
                 </asp:SqlDataSource>

@@ -60,7 +60,7 @@ public class Users
         SqlCommand com;
         SqlDataReader rs;
        Utils. conexion.Open();
-        sql = "select * from  User where Id=@Id";
+        sql = "select * from  [User] where Id=@Id";
         com = Utils.conexion.CreateCommand();
         com.CommandText = sql;
         com.Parameters.AddWithValue("Id", id);
