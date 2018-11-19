@@ -32,12 +32,12 @@ public class Users
        
     }
 
-   public void updateClient(string name,string mail,string job,string place,string phone) {
+   public void updateClient(string name,string mail,string job,string place,string phone,int id) {
 
          String sql;
          SqlCommand com;
          Utils.conexion.Open();
-         sql = "UPDATE Usuario SET Name=@name,Phone_Number=@phone,Place_Occupation=@place,Occupation=@job, Email=@mail WHERE Id=@id ";
+         sql = "UPDATE User SET Name=@name,Phone_Number=@phone,Place_Occupation=@place,Occupation=@job, mail=@mail WHERE Id=@id ";
          com = Utils.conexion.CreateCommand();
          com.Parameters.AddWithValue("name", name);
          com.Parameters.AddWithValue("phone", phone);

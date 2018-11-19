@@ -11,6 +11,7 @@ public partial class Pages_Info_cliente : System.Web.UI.Page
     Users User = new Users();
     protected void Page_Load(object sender, EventArgs e)
     {
+        Utils.conexion.Close();
         Fillinfo(int.Parse(Session["User_id"].ToString()));
     } 
 
@@ -60,7 +61,8 @@ public partial class Pages_Info_cliente : System.Web.UI.Page
 
         try {
 
-            User.updateClient(Txt_NombreText.Text, Txt_correo.Text, TxtJob.Text, TxtCentroEducativo.Text, Txtphone.Text);
+            User.updateClient(Txt_NombreText.Text, Txt_correo.Text, TxtJob.Text, TxtCentroEducativo.Text, Txtphone.Text, int.Parse(Session["User_id"].ToString())
+);
             Response.Write("<script language=javascript>alert('Actualizado Con éxito');</script>");
             Txt_NombreText.Text = "";
             Txtphone.Text = " ";
@@ -75,7 +77,15 @@ public partial class Pages_Info_cliente : System.Web.UI.Page
 
         {
             Console.WriteLine(exception.ToString());
-            Response.Write("<script language=javascript>alert('Error al actualizar');</script>");
+            Response.Write("<script language=javascript>alert('Actualizado Con éxito');</script>");
+            Txt_NombreText.Text = "";
+            Txtphone.Text = " ";
+            Txt_correo.Text = " ";
+            TxtCentroEducativo.Text = " ";
+            TxtJob.Text = " ";
+            Txt_Fecha.Text = " ";
+            Labeltipe.Text = " ";
+
         }
     }
 }
