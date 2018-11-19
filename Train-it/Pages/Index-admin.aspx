@@ -149,7 +149,7 @@
                  <div  class="card">
             <h2>Bienvenido a Train-it</h2>
             <div class="block-header">
-                <asp:GridView ID="GridViewExamen"  runat="server" class="table bg-navy" AutoGenerateColumns="False" DataSourceID="SqlDataTemas" OnSelectedIndexChanged="GridViewExamen_SelectedIndexChanged"  CssClass=" table-condensed" BorderColor="White">
+                <asp:GridView ID="GridViewExamen"  runat="server" class="table bg-navy" AutoGenerateColumns="False" DataSourceID="SqlDataTemas"   CssClass=" table-condensed" BorderColor="White">
                     <Columns>
                         
                        

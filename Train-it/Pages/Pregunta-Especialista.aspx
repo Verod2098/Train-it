@@ -92,7 +92,7 @@
             
             <!-- Menu -->
             <div class="menu">
-                <ul class="list">
+                  <ul class="list">
                     <br />
                     <!--<li class="header">Menú Principal</li> -->
                     <li class="active">
@@ -113,22 +113,9 @@
                             <i class="material-icons">help_outline</i>
                             <span>Preguntas</span>
                         </a>
-                    </li>
-                    <li>
-                        <a href="Usuario-Admin.aspx">
-                            <i class="material-icons">face</i>
-                            <span>Creación de usuarios</span>
-                        </a>
-                      
-                    </li>
+                   
 
-                     <li>
-                        <a href="Topic-Admin.aspx">
-                            <i class="material-icons">edit</i>
-                            <span>Agregar Temas</span>
-                        </a>
-                      
-                    </li>
+                    
                   
                 </ul>
             </div>

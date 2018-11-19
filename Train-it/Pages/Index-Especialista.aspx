@@ -97,19 +97,19 @@
                     <!--<li class="header">Menú Principal</li> -->
                     <li class="active">
                          <li class="active">
-                        <a href="Index-admin.aspx">
+                        <a href="Index-Especialista.aspx">
                             <i class="material-icons">home</i>
                             <span>Página Principal</span>
                         </a>
                     </li>
                     <li>
-                        <a href="Prueba-Admin.aspx">
+                        <a href="Prueba-Especialista.aspx">
                             <i class="material-icons">description</i>
                             <span>Agregar Prueba</span>
                         </a>
                     </li>
                     <li>
-                        <a href="Pregunta-Admin.aspx">
+                        <a href="Pregunta-Especialista.aspx">
                             <i class="material-icons">help_outline</i>
                             <span>Preguntas</span>
                         </a>
@@ -136,7 +136,7 @@
                  <div  class="card">
             <h2>Bienvenido a Train-it</h2>
             <div class="block-header">
-                <asp:GridView ID="GridViewExamen"  runat="server" class="table bg-navy" AutoGenerateColumns="False" DataSourceID="SqlDataTemas" OnSelectedIndexChanged="GridViewExamen_SelectedIndexChanged"  CssClass=" table-condensed" BorderColor="White">
+                <asp:GridView ID="GridViewExamen"  runat="server" class="table bg-navy" AutoGenerateColumns="False" DataSourceID="SqlDataTemas"   CssClass=" table-condensed" BorderColor="White">
                     <Columns>
                         
                        
