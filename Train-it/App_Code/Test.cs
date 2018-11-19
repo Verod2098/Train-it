@@ -56,7 +56,7 @@ public class Test
                 Pregunta.badAnswer3 = rs[6].ToString();
                // Pregunta.image =[ rs[8]];
                 Utils.code++;
-                ListPregunta.Add(pregunta);
+                //ListPregunta.Add(pregunta);
             char Values= '%';
             Pregunta.porcentaje = Pregunta.porcentaje.TrimEnd(Values);
             

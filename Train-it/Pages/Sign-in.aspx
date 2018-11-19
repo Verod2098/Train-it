@@ -26,9 +26,9 @@
     <!-- Custom Css -->
     <link href="../../css/style.css" rel="stylesheet">
     <style type="text/css">
-        .auto-style1 {
-            left: 0px;
-            top: 0px;
+        .auto-style2 {
+            width: 444px;
+            margin-left: 343px;
         }
     </style>
 </head>
@@ -37,7 +37,7 @@
     
     <div class="login-box">
         <div class="logo">
-            &nbsp;<img src="../Images/Train-it%20(1).png" /><br />
+            &nbsp;<img src="../Images/Train-it%20(1).png" class="auto-style2"  /><br />
    
         </div>
         <div class="card">
