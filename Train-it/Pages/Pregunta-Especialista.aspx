@@ -286,8 +286,10 @@
                           </span>
                  </li>
                                 </ul>
-                              
-                            <div class="font-bold m-b--35"> Preguns Agregadas</div>
+                              <br />  
+
+                            <br />
+                            <div class="font-bold m-b--35"> Preguntas Agregadas</div>
 
                                    
                                    
