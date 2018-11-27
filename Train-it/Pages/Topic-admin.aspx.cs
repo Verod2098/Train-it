@@ -26,7 +26,7 @@ public partial class Pages_Topic_admin : System.Web.UI.Page
     {
         try {
 
-            test.addTopicTest(int.Parse(txt_codtemapru.Text),txtNombretemapru.Text);
+            test.addTopicTest(txtNombretemapru.Text);
             Response.Write("<script language=javascript>alert('Ingresado Con éxito');</script>");
         }
         catch (Exception exception)
@@ -75,7 +75,7 @@ public partial class Pages_Topic_admin : System.Web.UI.Page
         try
         {
 
-           pregunta.addTopicQuestion(int.Parse(Txtcodtemapre.Text),Txtnombretemapre.Text);
+           pregunta.addTopicQuestion(Txtnombretemapre.Text);
             Response.Write("<script language=javascript>alert('Ingresado Con éxito');</script>");
         }
         catch (Exception exception)

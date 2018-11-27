@@ -20,15 +20,14 @@ public class Topic_Pregunta
 
 
 
-    public void addTopicQuestion(int id, string topic ) {
+    public void addTopicQuestion( string topic ) {
 
         String sql;
         SqlCommand com;
         Utils.conexion.Open();
-        sql = "INSERT INTO  Topic_Question (Topic,ID) VALUES ( @topic,@id)";
+        sql = "INSERT INTO  Topic_Question (Topic) VALUES ( @topic)";
         com = Utils.conexion.CreateCommand();
         com.Parameters.AddWithValue("topic", topic);
-        com.Parameters.AddWithValue("id", id);
         com.CommandText = sql;
         com.ExecuteNonQuery();
 

@@ -18,16 +18,15 @@ public class Topic_Test
     public static int Id { get; set; }
     public static string Topic { get; set; }
 
-    public void addTopicTest(int id, string topic)
+    public void addTopicTest( string topic)
     {
 
         String sql;
         SqlCommand com;
         Utils.conexion.Open();
-        sql = "INSERT INTO  Topic_TEST (Topic,ID) VALUES ( @topic,@id)";
+        sql = "INSERT INTO  Topic_TEST (Topic) VALUES ( @topic)";
         com = Utils.conexion.CreateCommand();
         com.Parameters.AddWithValue("topic", topic);
-        com.Parameters.AddWithValue("id", id);
         com.CommandText = sql;
         com.ExecuteNonQuery();
 

@@ -134,10 +134,10 @@
             <!--Insertar Codigo-->
             <div class="block-header">
                 
- <div class="card">
+                    <div class="card" >
                         <div class="body bg-gray">
                             <div class="font-bold m-b--35">Agregar Preguntas</div>
-                            <ul class="dashboard-stat-list">
+                            <ul class="dashboard-stat-list col-sm-10">
 
                                 <li>
 
@@ -286,16 +286,13 @@
                           </span>
                  </li>
                                 </ul>
-                              <br />  
-                            <br />
-                            <div >
+                              
+                            <div class="font-bold m-b--35"> Preguns Agregadas</div>
 
                                    
-                                   <div class="font-bold m-b--35"> Preguntas Agregadas </div>
-                                       <br />
-                                       <br />
+                                   
                                 
-                                    <asp:GridView ID="GridViewPregunta" runat="server" CssClass="table" AutoGenerateColumns="False" DataSourceID="SqlDataSource3">
+                                    <asp:GridView ID="GridViewPregunta" runat="server" CssClass="table col-sm-5" AutoGenerateColumns="False" DataSourceID="SqlDataSource3">
                                         <Columns>
                                             <asp:BoundField DataField="Id_Questions" HeaderText="ID" SortExpression="Id_Questions" />
                                             <asp:BoundField DataField="Question" HeaderText="Pregunta" SortExpression="Question" />
@@ -316,7 +313,7 @@
              
                                 </div>
               
-                               
+                               </div>
                
          </div>
                
