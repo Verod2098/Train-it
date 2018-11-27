@@ -123,6 +123,8 @@ public class Users
 
 
     }
+
+
     public void addUser(int id,string name, string mail, string job, string place, string phone,string Rol,int Specialty,string type,string birthdate,string password) {
         String sql;
         SqlCommand com;
@@ -133,7 +135,7 @@ public class Users
         com.Parameters.AddWithValue("Name", name);
         com.Parameters.AddWithValue("Phone_Number", phone);
         com.Parameters.AddWithValue("place_Occupation", place);
-        com.Parameters.AddWithValue("Occupation", job);
+        com.Parameters.AddWithValue("Occupation", job); 
         com.Parameters.AddWithValue("Mail", mail);
         com.Parameters.AddWithValue("id", id);
         if (Specialty == 0)

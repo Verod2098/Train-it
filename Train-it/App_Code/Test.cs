@@ -76,7 +76,7 @@ public class Test
         String sql;
         SqlCommand com;
         Utils.conexion.Open();
-        sql = "INSERT INTO  TEST (Grade,Name,Type,Time,Approved,maxPremium,maxBasic,Price,ID) VALUES ( @Grade,@Name,@Type,@Time,@Approved,@maxPremium,@maxBasic,@Price,@ID)";
+        sql = "INSERT INTO  TEST (Grade,Name,Type,Time,Approved,maxPremium,maxBasic,Price) VALUES ( @Grade,@Name,@Type,@Time,@Approved,@maxPremium,@maxBasic,@Price)";
         com = Utils.conexion.CreateCommand();
         com.Parameters.AddWithValue("Grade", Grade);
         com.Parameters.AddWithValue("Name", Name);
@@ -86,7 +86,6 @@ public class Test
         com.Parameters.AddWithValue("maxPremium", maxPremium);
         com.Parameters.AddWithValue("maxBasic", maxBasic);
         com.Parameters.AddWithValue("Price", Price);
-        com.Parameters.AddWithValue("ID", ID);
         com.CommandText = sql;
         com.ExecuteNonQuery();
 

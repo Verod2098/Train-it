@@ -39,7 +39,7 @@ public class Pregunta
         String sql;
         SqlCommand com;
         Utils.conexion.Open();
-        sql = "INSERT INTO  Question (Question,Percentaje,Correct_Answer,Bad_Answer1,Bad_Answer2,Bad_Answer3,Type_Question,Image,ID_TEST,ID_Topic,id_Questions,ID_Creator) VALUES (@Question,@Percentaje,@Correct_Answer,@Bad_Answer1,@Bad_Answer2,@Bad_Answer3,@Type_Question,@Image,@ID_TEST,@ID_Topic,@ID,@ID_Creator)";
+        sql = "INSERT INTO  Question (Question,Percentaje,Correct_Answer,Bad_Answer1,Bad_Answer2,Bad_Answer3,Type_Question,Image,ID_TEST,ID_Topic,ID_Creator) VALUES (@Question,@Percentaje,@Correct_Answer,@Bad_Answer1,@Bad_Answer2,@Bad_Answer3,@Type_Question,@Image,@ID_TEST,@ID_Topic,@ID_Creator)";
         com = Utils.conexion.CreateCommand();
         com.Parameters.AddWithValue("Question", Question);
         com.Parameters.AddWithValue("Percentaje", Percentaje);
@@ -51,7 +51,6 @@ public class Pregunta
         com.Parameters.AddWithValue("Image",image);
         com.Parameters.AddWithValue("ID_Creator", ID_Creator);
         com.Parameters.AddWithValue("ID_Topic", ID_Topic);
-        com.Parameters.AddWithValue("ID", ID);
         com.Parameters.AddWithValue("ID_TEST", ID_TEST);
         com.CommandText = sql;
         com.ExecuteNonQuery();

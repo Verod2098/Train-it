@@ -131,14 +131,14 @@
             <div class="block-header">
                    <div class="card">
                         <div class="body bg-gray">
-                            <div class="font-bold m-b--35">Agregar Pruebas</div>
-                            <ul class="dashboard-stat-list">
+                            <div class="font-bold m-b--35 ">Agregar Pruebas</div>
+                            <ul class="dashboard-stat-list col-sm-5 ">
 
                                   <li>
 
-                                    <div class="form-group form-float">
-                                        <div class="form-line focused">
-                                                 <asp:TextBox ID="Txt_ID" runat="server"  class="form-control"></asp:TextBox>
+                                    <div class="form-group form-float ">
+                                        <div class="form-line focused ">
+                                                 <asp:TextBox ID="Txt_ID" runat="server"  class="form-control "></asp:TextBox>
                                                      
                                             <label class="form-label">ID de la Prueba</label>
                                         </div>
@@ -230,7 +230,7 @@
                                         </div>
                                     </div>
                                          </li>
-      
+     
                  <li>
                       <span class="pull-right">
                     <asp:Button ID="BttnAdd" runat="server" Text="Agregar"  CssClass=" btn bg-cyan" OnClick="BttnAdd_Click" />
@@ -238,14 +238,16 @@
                          <asp:Button ID="Bttnupdate" runat="server" Text="Actualizar"  CssClass=" btn bg-cyan" OnClick="Bttnupdate_Click" />
                           </span>
                  </li>
-                </ul>
+                 </ul> 
                
          </div>
+                       
+                  
+                                       <br />
+                                       <br />
 
-                  <div class="font-bold m-b--35"> Pruebas Agregadas </div>
-                                       <br />
-                                       <br />
                                     <asp:GridView ID="GridViewPru" runat="server" CssClass="table" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDataSource1" >
+                                        
                                         <Columns>
                                               <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" ReadOnly="True" />
                                             <asp:BoundField DataField="Name" HeaderText="Nombre" SortExpression="Name" />
@@ -268,10 +270,13 @@
                
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=DELL\SQLEXPRESS;Initial Catalog=TRAINT-IT;Persist Security Info=True;User ID=Vero;Password=123" ProviderName="System.Data.SqlClient" SelectCommand="SELECT Test.Grade, Test.Name, Test.Type, Test.Time, Test.Approved, Test.maxPremium, Test.maxBasic, Test.Price, Test.ID,  Topic_Test.Topic FROM Test  JOIN Topic_Test ON Test.Type = Topic_Test.Id"></asp:SqlDataSource>
             
+                       
          </div>
+               
              </div>
-
+              
              </div>
+      
             </div>
         
     </section>
