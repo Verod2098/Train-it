@@ -34,7 +34,7 @@ public class Pregunta
     }
 
 
-    public void addQuestion(string Question, string Percentaje, string Correct_Answer, string Bad_Answer1, string Bad_Answer2, string Bad_Answer3, string Type_Question, byte[] image, int ID_TEST, int ID_Topic, int ID, int ID_Creator) {
+    public void addQuestion(string Question, string Percentaje, string Correct_Answer, string Bad_Answer1, string Bad_Answer2, string Bad_Answer3, string Type_Question, byte[] image, int ID_TEST, int ID_Topic,  int ID_Creator) {
 
         String sql;
         SqlCommand com;

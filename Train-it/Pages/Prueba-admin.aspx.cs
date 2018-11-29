@@ -18,7 +18,7 @@ public partial class Pages_Prueba_admin : System.Web.UI.Page
         try
         {
             
-            test.AddTest(int.Parse(Txt_grade.Text),Txt_NombreText.Text,int.Parse(DDLType.Text),int.Parse(Txt_Time.Text),Txt_Approved.Text,int.Parse(TxtPrem.Text),int.Parse(TxtBasic.Text),int.Parse(TxtPrice.Text),int.Parse(Txt_ID.Text));
+            test.AddTest(int.Parse(Txt_grade.Text),Txt_NombreText.Text,int.Parse(DDLType.Text),int.Parse(Txt_Time.Text),Txt_Approved.Text,int.Parse(TxtPrem.Text),int.Parse(TxtBasic.Text),int.Parse(TxtPrice.Text));
             Response.Write("<script language=javascript>alert('Agregado Con éxito');</script>");
             Txt_ID.Text = " ";
             TxtBasic.Text = " ";

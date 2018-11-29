@@ -69,7 +69,7 @@ public class Test
 
 
 
-    public void AddTest(int Grade,string Name, int Type, int Time,string Approved,int maxPremium,int maxBasic,int  Price,int  ID) {
+    public void AddTest(int Grade,string Name, int Type, int Time,string Approved,int maxPremium,int maxBasic,int  Price) {
 
 
         
