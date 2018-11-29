@@ -20,26 +20,32 @@ public partial class Pages_Sign_in : System.Web.UI.Page
         {
             if (user.searchclient(TxtUser.Text, TxtPassword.Text))
             {
+                if (Users.Status == 1)
+                {
+                    if (Users.rol == "Usuario")
+                    {
+                        Session["User_id"] = Users.id;
+                        Session["Tipo"] = Users.tipo;
+                        Response.Redirect("Index-cliente.aspx", false);
+                    }
+                    else if (Users.rol == "Administrador")
+                    {
+                        Session["User_id"] = Users.id;
+                        Session["Tipo"] = Users.tipo;
+                        Response.Redirect("Index-Admin.aspx", false);
+                    }
+                    else if (Users.rol == "Especialista")
+                    {
+                        Session["User_id"] = Users.id;
+                        Session["Tipo"] = Users.tipo;
+                        Response.Redirect("Index-Especialista.aspx", false);
+                    }
 
-                if (Users.rol == "Usuario")
-                {
-                    Session["User_id"] = Users.id;
-                    Session["Tipo"] = Users.tipo;
-                    Response.Redirect("Index-cliente.aspx", false);
                 }
-                else if (Users.rol == "Administrador")
-                {
-                    Session["User_id"] = Users.id;
-                    Session["Tipo"] = Users.tipo;
-                    Response.Redirect("Index-Admin.aspx", false);
-                }
-                else if (Users.rol == "Especialista")
-                {
-                    Session["User_id"] = Users.id;
-                    Session["Tipo"] = Users.tipo;
-                    Response.Redirect("Index-Especialista.aspx", false);
-                }
+            }else if (Users.Status==0)
+            {
 
+                Response.Write("<script language=javascript>alert('La cuenta no esta activa');</script>");
             }
             else
             {

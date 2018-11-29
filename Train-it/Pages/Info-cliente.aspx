@@ -221,6 +221,8 @@
                  
                       <span class="pull-right">
                     <asp:Button ID="BttnUdate" runat="server" Text="Modificar"  CssClass="btn primary bg-cyan" OnClick="BttnUdate_Click" />
+                          <asp:Button ID="BttnnoActive" runat="server" Text="Desactivar Cuenta"  CssClass="btn primary bg-cyan" OnClick="BttnnoActive_Click" />
+
                           </span>
                  </li>
                 </ul>

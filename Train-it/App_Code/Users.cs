@@ -24,6 +24,7 @@ public class Users
     public static string correo;
     public static string rol;
     public static string password;
+    public static int Status;
 
     
     
@@ -37,7 +38,7 @@ public class Users
          String sql;
          SqlCommand com;
          Utils.conexion.Open();
-         sql = "UPDATE User SET Name=@name,Phone_Number=@phone,Place_Occupation=@place,Occupation=@job, mail=@mail WHERE Id=@id ";
+         sql = "UPDATE [User] SET Name=@name,Phone_Number=@phone,Place_Occupation=@place,Occupation=@job, mail=@mail WHERE Id=@id ";
          com = Utils.conexion.CreateCommand();
          com.Parameters.AddWithValue("name", name);
          com.Parameters.AddWithValue("phone", phone);
@@ -77,6 +78,8 @@ public class Users
             tipo = rs[6].ToString();
            fecha = rs[8].ToString();
             isReal = true;
+            Status = int.Parse(rs[12].ToString());
+
 
         }
         
@@ -129,8 +132,8 @@ public class Users
         String sql;
         SqlCommand com;
         Utils.conexion.Open();
-        sql = " INSERT INTO [USER]  (id,Name,Mail,Occupation,Place_Occupation,Phone_Number,Rol,Specialty,Type,Birthdate,Password) VALUES " +
-            "(@id,@Name,@Mail,@Occupation,@place_Occupation,@Phone_Number,@Rol,@Specialty,@Type,@Bithdate,@Password) ";
+        sql = " INSERT INTO [USER]  (id,Name,Mail,Occupation,Place_Occupation,Phone_Number,Rol,Specialty,Type,Birthdate,Password,Status) VALUES " +
+            "(@id,@Name,@Mail,@Occupation,@place_Occupation,@Phone_Number,@Rol,@Specialty,@Type,@Bithdate,@Password,@Status) ";
         com = Utils.conexion.CreateCommand();
         com.Parameters.AddWithValue("Name", name);
         com.Parameters.AddWithValue("Phone_Number", phone);
@@ -138,6 +141,8 @@ public class Users
         com.Parameters.AddWithValue("Occupation", job); 
         com.Parameters.AddWithValue("Mail", mail);
         com.Parameters.AddWithValue("id", id);
+        com.Parameters.AddWithValue("Status", 1);
+       
         if (Specialty == 0)
         {
             com.Parameters.AddWithValue("Specialty", DBNull.Value);
@@ -205,5 +210,35 @@ public class Users
 
 
     }
+
+
+    public Boolean noActive(int id) {
+
+        Boolean isSuccesful = true;
+        try
+        {
+           
+            String sql;
+            SqlCommand com;
+            Utils.conexion.Open();
+            sql = "UPDATE [User] SET Status=@Status WHERE Id=@id ";
+            com = Utils.conexion.CreateCommand();
+            com.Parameters.AddWithValue("Status", 0);
+            com.Parameters.AddWithValue("id", id);
+            com.CommandText = sql;
+            com.ExecuteNonQuery();
+            Utils.conexion.Close();
+
+
+         
+
+        }
+        catch (Exception e) {
+            Console.WriteLine(e.ToString());
+            isSuccesful = false;
+        }
+        return isSuccesful;
+    }
+   
 
 }

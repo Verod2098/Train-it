@@ -88,4 +88,26 @@ public partial class Pages_Info_cliente : System.Web.UI.Page
 
         }
     }
+
+    protected void BttnnoActive_Click(object sender, EventArgs e)
+    {
+        try
+        {
+
+            if (User.noActive(int.Parse(Session["User_id"].ToString())))
+            {
+
+                Response.Write("<script language=javascript>alert('Usuario desactivado con éxito');</script>");
+                Response.Redirect("Sign-in.aspx", false);
+
+            }
+        }
+        catch (Exception i) {
+
+            Console.WriteLine(i.ToString());
+            Response.Write("<script language=javascript>alert('Error al realizar acción');</script>");
+        }
+   
+
+    }
 }
