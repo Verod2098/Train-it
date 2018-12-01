@@ -236,6 +236,7 @@
                     <asp:Button ID="BttnAdd" runat="server" Text="Agregar"  CssClass=" btn bg-cyan" OnClick="BttnAdd_Click" />
                       <asp:Button ID="Bttndel" runat="server" Text="Eliminar"  CssClass=" btn bg-cyan" OnClick="Bttndel_Click" />
                          <asp:Button ID="Bttnupdate" runat="server" Text="Actualizar"  CssClass=" btn bg-cyan" OnClick="Bttnupdate_Click" />
+                           <asp:Button ID="Bttnsearch" runat="server" Text="Buscar"  CssClass=" btn bg-cyan" OnClick="Bttnsearch_Click" />
                           </span>
                  </li>
                  </ul> 

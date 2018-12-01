@@ -150,7 +150,7 @@
                    <div class="card">
                         <div class="body bg-gray">
                             <div class="font-bold m-b--35">Agregar Pruebas</div>
-                            <ul class="dashboard-stat-list">
+                            <ul class="dashboard-stat-list col-sm-5">
 
                                   <li>
 
@@ -259,6 +259,7 @@
                     <asp:Button ID="BttnAdd" runat="server" Text="Agregar"  CssClass=" btn bg-cyan" OnClick="BttnAdd_Click" />
                       <asp:Button ID="Bttndel" runat="server" Text="Eliminar"  CssClass=" btn bg-cyan" OnClick="Bttndel_Click" />
                          <asp:Button ID="Bttnupdate" runat="server" Text="Actualizar"  CssClass=" btn bg-cyan" OnClick="Bttnupdate_Click" />
+                          <asp:Button ID="Bttnsearch" runat="server" Text="Buscar"  CssClass=" btn bg-cyan" OnClick="Bttnsearch_Click" />
                           </span>
                  </li>
                 </ul>
