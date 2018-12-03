@@ -180,6 +180,32 @@ public class Test
         Utils.conexion.Close();
     }
 
-     
+    public void searchTest(int id) {
+        String sql;
+        SqlCommand com;
+        SqlDataReader rs;
+        Utils.conexion.Open();
+        sql = "SEARCH Test WHERE Id=@id";
+        com = Utils.conexion.CreateCommand();
+         com.Parameters.AddWithValue("id", id);
+        com.CommandText = sql;
+        rs = com.ExecuteReader();
+
+        if (rs.Read())
+        {
+
+            Pregunta.preguntatext = rs[1].ToString();
+            Pregunta.porcentaje = rs[2].ToString();
+            Pregunta.correctAnswer = rs[3].ToString();
+            Pregunta.badAnswer1 = rs[4].ToString();
+            Pregunta.badAnswer2 = rs[5].ToString();
+            Pregunta.badAnswer3 = rs[6].ToString();
+            // Pregunta.image =[ rs[8]];
+            Utils.code++;
+            //ListPregunta.Add(pregunta);
+
+            Utils.conexion.Close();
+        }
+    }
 
 }

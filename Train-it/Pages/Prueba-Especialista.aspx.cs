@@ -91,4 +91,28 @@ public partial class Pages_Prueba_Especialista : System.Web.UI.Page
             Response.Write("<script language=javascript>alert('Error al realizar acción');</script>");
         }
     }
+
+    protected void Bttnsearch_Click(object sender, EventArgs e)
+    {
+        try
+        {
+
+            test.searchTest(int.Parse(Txt_ID.Text));
+            Txt_ID.Text = " ";
+            TxtBasic.Text = " ";
+            TxtPrem.Text = " ";
+            Txt_Approved.Text = " ";
+            Txt_grade.Text = " ";
+            Txt_NombreText.Text = " ";
+            Txt_Time.Text = " ";
+            TxtPrice.Text = " ";
+
+        }
+        catch (Exception exception)
+
+        {
+            Console.WriteLine(exception.ToString());
+            Response.Write("<script language=javascript>alert('Error al realizar acción');</script>");
+        }
+    }
 }

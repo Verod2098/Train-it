@@ -17,8 +17,8 @@ public partial class Pages_Prueba_admin : System.Web.UI.Page
     {
         try
         {
-            
-            test.AddTest(int.Parse(Txt_grade.Text),Txt_NombreText.Text,int.Parse(DDLType.Text),int.Parse(Txt_Time.Text),Txt_Approved.Text,int.Parse(TxtPrem.Text),int.Parse(TxtBasic.Text),int.Parse(TxtPrice.Text));
+
+            test.AddTest(int.Parse(Txt_grade.Text), Txt_NombreText.Text, int.Parse(DDLType.Text), int.Parse(Txt_Time.Text), Txt_Approved.Text, int.Parse(TxtPrem.Text), int.Parse(TxtBasic.Text), int.Parse(TxtPrice.Text));
             Response.Write("<script language=javascript>alert('Agregado Con éxito');</script>");
             Txt_ID.Text = " ";
             TxtBasic.Text = " ";
@@ -31,7 +31,6 @@ public partial class Pages_Prueba_admin : System.Web.UI.Page
 
         }
         catch (Exception exception)
-
         {
             Console.WriteLine(exception.ToString());
             Response.Write("<script language=javascript>alert('Error al realizar acción');</script>");
@@ -57,11 +56,8 @@ public partial class Pages_Prueba_admin : System.Web.UI.Page
             Txt_NombreText.Text = " ";
             Txt_Time.Text = " ";
             TxtPrice.Text = " ";
-
-
         }
         catch (Exception exception)
-
         {
             Console.WriteLine(exception.ToString());
             Response.Write("<script language=javascript>alert('Error al realizar acción');</script>");
@@ -72,7 +68,6 @@ public partial class Pages_Prueba_admin : System.Web.UI.Page
     {
         try
         {
-
             test.updateTest(int.Parse(Txt_grade.Text), Txt_NombreText.Text, int.Parse(DDLType.Text), int.Parse(Txt_Time.Text), Txt_Approved.Text, int.Parse(TxtPrem.Text), int.Parse(TxtBasic.Text), int.Parse(TxtPrice.Text), int.Parse(Txt_ID.Text));
             Response.Write("<script language=javascript>alert('Actualizado Con éxito');</script>");
             Txt_ID.Text = " ";
@@ -83,7 +78,29 @@ public partial class Pages_Prueba_admin : System.Web.UI.Page
             Txt_NombreText.Text = " ";
             Txt_Time.Text = " ";
             TxtPrice.Text = " ";
+        }
+        catch (Exception exception)
 
+        {
+            Console.WriteLine(exception.ToString());
+            Response.Write("<script language=javascript>alert('Error al realizar acción');</script>");
+        }
+    }
+
+    protected void Bttnsearch_Click(object sender, EventArgs e)
+    {
+        try
+        {
+
+            test.searchTest(int.Parse(Txt_ID.Text));
+            Txt_ID.Text = " ";
+            TxtBasic.Text = " ";
+            TxtPrem.Text = " ";
+            Txt_Approved.Text = " ";
+            Txt_grade.Text = " ";
+            Txt_NombreText.Text = " ";
+            Txt_Time.Text = " ";
+            TxtPrice.Text = " ";
 
         }
         catch (Exception exception)
