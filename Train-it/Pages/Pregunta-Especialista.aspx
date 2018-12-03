@@ -137,7 +137,7 @@
                     <div class="card" >
                         <div class="body bg-gray">
                             <div class="font-bold m-b--35">Agregar Preguntas</div>
-                            <ul class="dashboard-stat-list col-sm-10">
+                            <ul class="dashboard-stat-list col-sm-5 ">
 
                                 <li>
 
