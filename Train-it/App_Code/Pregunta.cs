@@ -20,21 +20,22 @@ public class Pregunta
     public static string porcentaje;
     public static Byte[] image = new byte[10];
 
-    
+
 
     public Pregunta()
     {
-        
+
     }
 
     public override string ToString()
     {
-        return "   Pregunta: "  + preguntatext.ToString() +  "  Respuesta:  "+ correctAnswer.ToString() + "   " ;
+        return "   Pregunta: " + preguntatext.ToString() + "  Respuesta:  " + correctAnswer.ToString() + "   ";
 
     }
 
 
-    public void addQuestion(string Question, string Percentaje, string Correct_Answer, string Bad_Answer1, string Bad_Answer2, string Bad_Answer3, string Type_Question, byte[] image, int ID_TEST, int ID_Topic,  int ID_Creator) {
+    public void addQuestion(string Question, string Percentaje, string Correct_Answer, string Bad_Answer1, string Bad_Answer2, string Bad_Answer3, string Type_Question, byte[] image, int ID_TEST, int ID_Topic, int ID_Creator)
+    {
 
         String sql;
         SqlCommand com;
@@ -48,7 +49,7 @@ public class Pregunta
         com.Parameters.AddWithValue("Bad_Answer2", Bad_Answer2);
         com.Parameters.AddWithValue("Bad_Answer3", Bad_Answer3);
         com.Parameters.AddWithValue("Type_Question", Type_Question);
-        com.Parameters.AddWithValue("Image",image);
+        com.Parameters.AddWithValue("Image", image);
         com.Parameters.AddWithValue("ID_Creator", ID_Creator);
         com.Parameters.AddWithValue("ID_Topic", ID_Topic);
         com.Parameters.AddWithValue("ID_TEST", ID_TEST);
@@ -59,7 +60,8 @@ public class Pregunta
     }
 
 
-    public void updateQuestion(string Question,string Percentaje,string Correct_Answer,string Bad_Answer1,string Bad_Answer2,string Bad_Answer3,string Type_Question,byte [] image,int ID_TEST,int ID_Topic,int ID,int ID_Creator) {
+    public void updateQuestion(string Question, string Percentaje, string Correct_Answer, string Bad_Answer1, string Bad_Answer2, string Bad_Answer3, string Type_Question, byte[] image, int ID_TEST, int ID_Topic, int ID, int ID_Creator)
+    {
 
         String sql;
         SqlCommand com;
@@ -75,7 +77,7 @@ public class Pregunta
         com.Parameters.AddWithValue("Type_Question", Type_Question);
         com.Parameters.AddWithValue("image", image);
         com.Parameters.AddWithValue("ID_Creator", ID_Creator);
-        com.Parameters.AddWithValue("ID_Topic",ID_Topic);
+        com.Parameters.AddWithValue("ID_Topic", ID_Topic);
         com.Parameters.AddWithValue("ID", ID);
         com.Parameters.AddWithValue("ID_TEST", ID_TEST);
         com.CommandText = sql;
@@ -86,7 +88,8 @@ public class Pregunta
 
     }
 
-    public void deleteQuestion (int id ) {
+    public void deleteQuestion(int id)
+    {
 
         String sql;
         SqlCommand com;
@@ -99,5 +102,34 @@ public class Pregunta
 
         Utils.conexion.Close();
 
+    }
+
+    public void searchQuestion(int id)
+    {
+        String sql;
+        SqlCommand com;
+        SqlDataReader rs;
+        Utils.conexion.Open();
+        sql = "SEARCH Question WHERE Id=@id";
+        com = Utils.conexion.CreateCommand();
+        com.Parameters.AddWithValue("id", id);
+        com.CommandText = sql;
+        rs = com.ExecuteReader();
+
+        if (rs.Read())
+        {
+
+            Pregunta.preguntatext = rs[1].ToString();
+            Pregunta.porcentaje = rs[2].ToString();
+            Pregunta.correctAnswer = rs[3].ToString();
+            Pregunta.badAnswer1 = rs[4].ToString();
+            Pregunta.badAnswer2 = rs[5].ToString();
+            Pregunta.badAnswer3 = rs[6].ToString();
+            // Pregunta.image =[ rs[8]];
+            Utils.code++;
+            //ListPregunta.Add(pregunta);
+
+            Utils.conexion.Close();
+        }
     }
 }

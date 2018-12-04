@@ -236,13 +236,12 @@
                     <asp:Button ID="BttnAdd" runat="server" Text="Agregar"  CssClass=" btn bg-cyan" OnClick="BttnAdd_Click" />
                       <asp:Button ID="Bttndel" runat="server" Text="Eliminar"  CssClass=" btn bg-cyan" OnClick="Bttndel_Click" />
                          <asp:Button ID="Bttnupdate" runat="server" Text="Actualizar"  CssClass=" btn bg-cyan" OnClick="Bttnupdate_Click" />
+                           <asp:Button ID="Bttnsearch" runat="server" Text="Buscar"  CssClass=" btn bg-cyan" OnClick="Bttnsearch_Click" />
                           </span>
                  </li>
                  </ul> 
                
          </div>
-                       
-                  
                                        <br />
                                        <br />
 
@@ -257,19 +256,14 @@
                                             <asp:BoundField DataField="Approved" HeaderText="Respuestas para aprobar" SortExpression="Approved" />
                                             <asp:BoundField DataField="maxPremium" HeaderText="Máximo de preguntas Premium" SortExpression="maxPremium" />
                                             <asp:BoundField DataField="maxBasic" HeaderText="Máximo de preguntas Basic" SortExpression="maxBasic" />
-                                            <asp:BoundField DataField="Price" HeaderText="Precio" SortExpression="Price" />
-                                          
+                                            <asp:BoundField DataField="Price" HeaderText="Precio" SortExpression="Price" />       
                                             
                                             <asp:BoundField DataField="Topic" HeaderText="Topic" SortExpression="Topic" />
                                             
                                         </Columns>
-                                        
                                      
-                                    </asp:GridView>
-      
-               
+                                    </asp:GridView>            
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=DELL\SQLEXPRESS;Initial Catalog=TRAINT-IT;Persist Security Info=True;User ID=Vero;Password=123" ProviderName="System.Data.SqlClient" SelectCommand="SELECT Test.Grade, Test.Name, Test.Type, Test.Time, Test.Approved, Test.maxPremium, Test.maxBasic, Test.Price, Test.ID,  Topic_Test.Topic FROM Test  JOIN Topic_Test ON Test.Type = Topic_Test.Id"></asp:SqlDataSource>
-            
                        
          </div>
                
