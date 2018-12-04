@@ -18,6 +18,7 @@ public partial class Pages_Sign_up : System.Web.UI.Page
 
         try
         {
+            Validate(TxtPassword.Text);
             user.isMailReal(TxtMail.Text);
             user.addUser(int.Parse(Txtid.Text), TxtName.Text, TxtMail.Text, TxtOcupation.Text, Txtplace.Text, TxtPhone.Text, "Usuario",0, "Basic", Txtdate.Text, TxtPassword.Text);
             Response.Write("<script language=javascript>.alert-blue-grey('Usuario Registrado con exito');</script>");
@@ -33,4 +34,50 @@ public partial class Pages_Sign_up : System.Web.UI.Page
 
         }
     }
+
+
+    private void Validate(string password)
+    {
+
+
+        if (password != String.Empty)
+        {
+            if (password.Length > 8)
+            {
+
+                bool contNum = false;
+                bool contString = false;
+                foreach (char item in password)
+                {
+                    if (Char.IsNumber(item))
+                    {
+                        contNum = true;
+                    }
+                    else if (Char.IsLetter(item))
+                    {
+                        contString = true;
+                    }
+                }
+                if (!contString || !contNum)
+                {
+                    Response.Write("<script language=javascript>('No contiene números o caractéres');</script>");
+                }
+            }
+            else
+            {
+
+                Response.Write("<script language=javascript>('La contraseña no tiene el largo adecuado ');</script>");
+
+            }
+        }
+        else
+        {
+            Response.Write("<script language=javascript>('No puede dejar este espacio en blanco ');</script>");
+        }
+
+        }
+   
+    
 }
+
+
