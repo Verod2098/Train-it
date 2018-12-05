@@ -185,7 +185,7 @@ public class Test
         SqlCommand com;
         SqlDataReader rs;
         Utils.conexion.Open();
-        sql = "SEARCH Test WHERE Id=@id";
+        sql = "SELECT * FROM TEST WHERE Id=@id";
         com = Utils.conexion.CreateCommand();
          com.Parameters.AddWithValue("id", id);
         com.CommandText = sql;
@@ -194,15 +194,15 @@ public class Test
         if (rs.Read())
         {
 
-            Pregunta.preguntatext = rs[1].ToString();
-            Pregunta.porcentaje = rs[2].ToString();
-            Pregunta.correctAnswer = rs[3].ToString();
-            Pregunta.badAnswer1 = rs[4].ToString();
-            Pregunta.badAnswer2 = rs[5].ToString();
-            Pregunta.badAnswer3 = rs[6].ToString();
-            // Pregunta.image =[ rs[8]];
-            Utils.code++;
-            //ListPregunta.Add(pregunta);
+            Utils.grade = int.Parse(rs[0].ToString());
+            Utils.name = rs[1].ToString();
+            Utils.type = int.Parse(rs[2].ToString());
+            Utils.time = rs[3].ToString();
+            Utils.approved = int.Parse(rs[4].ToString());
+            Utils.maxpreguntaPremium = int.Parse(rs[5].ToString());
+            Utils.maxpreguntaBasic = int.Parse(rs[6].ToString());
+            Utils.price = int.Parse(rs[7].ToString());
+            Utils.conexion.Close();
 
             Utils.conexion.Close();
         }

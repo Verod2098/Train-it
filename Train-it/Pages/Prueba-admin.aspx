@@ -266,7 +266,7 @@
                
          </div>
 
-                  <div class="font-bold m-b--35"> Pruebas Agregadas </div>
+                   <div class="font-bold m-b--35">  </div>
                                        <br />
                                        <br />
                                     <asp:GridView ID="GridViewPru" runat="server" CssClass="table" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDataSource1" >
