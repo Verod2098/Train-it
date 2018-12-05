@@ -176,9 +176,8 @@
                             <br />
                             <br />
                            
-                            <asp:Label ID="GridViewPreguntas" runat="server" Text=" "></asp:Label>
-
-                            
+                            <asp:Label ID="GridViewPreguntas" runat="server" Text=" "> </asp:Label>
+                                                        
                             <asp:GridView ID="DataList1" runat="server" >
                                  
                             </asp:GridView>
@@ -186,7 +185,7 @@
                             
                             <br />
                             <br />
-                            <h4>Subscribirse a Premiun para obtener mas preguntas</h4>
+                            <h4>Subscribirse a Premium para obtener mas preguntas</h4>
                             <p>&nbsp;</p>
                             <asp:Button ID="BttnLinkPremiun" runat="server" Text="Subscribirse"  CssClass="btn bg-cyan" OnClick="BttnLinkPremiun_Click"/>
                             
