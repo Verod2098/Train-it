@@ -18,13 +18,22 @@ public partial class Pages_Sign_up : System.Web.UI.Page
 
         try
         {
-            Validate(TxtPassword.Text);
-            user.isMailReal(TxtMail.Text);
-            user.addUser(int.Parse(Txtid.Text), TxtName.Text, TxtMail.Text, TxtOcupation.Text, Txtplace.Text, TxtPhone.Text, "Usuario",0, "Basic", Txtdate.Text, TxtPassword.Text);
-            Response.Write("<script language=javascript>.alert-blue-grey('Usuario Registrado con exito');</script>");
-            Session["User_id"] = Txtid.Text;
-            Session["Tipo"] = "Basic";
-            Response.Redirect("Preferencias.aspx");
+
+
+            if (Validate(TxtPassword.Text))
+            {
+
+                user.isMailReal(TxtMail.Text);
+                user.addUser(int.Parse(Txtid.Text), TxtName.Text, TxtMail.Text, TxtOcupation.Text, Txtplace.Text, TxtPhone.Text, "Usuario", 0, "Basic", Txtdate.Text, TxtPassword.Text);
+                Response.Write("<script language=javascript>.alert-blue-grey('Usuario Registrado con exito');</script>");
+                Session["User_id"] = Txtid.Text;
+                Session["Tipo"] = "Basic";
+                Response.Redirect("Preferencias.aspx");
+
+            }
+            else {
+                Response.Write("<script language=javascript>.alert-blue-grey('La contraseña no cumple con los parámetros de seguridad');</script>");
+            }
 
         }
         catch (Exception i)
@@ -36,9 +45,9 @@ public partial class Pages_Sign_up : System.Web.UI.Page
     }
 
 
-    private void Validate(string password)
+    private Boolean Validate(string password)
     {
-
+        Boolean isGood = false;
 
         if (password != String.Empty)
         {
@@ -57,6 +66,7 @@ public partial class Pages_Sign_up : System.Web.UI.Page
                     {
                         contString = true;
                     }
+                    isGood = true;
                 }
                 if (!contString || !contNum)
                 {
@@ -73,11 +83,14 @@ public partial class Pages_Sign_up : System.Web.UI.Page
         else
         {
             Response.Write("<script language=javascript>('No puede dejar este espacio en blanco ');</script>");
-        }
+
+           
 
         }
-   
-    
+
+        return isGood;
+    }
+
 }
 
 

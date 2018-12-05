@@ -10,13 +10,19 @@ using System.Web;
 public class Utils
 {
     //Examen 
-    public static int maxpregunta;
+    public static int maxpreguntaPremium;
+    public static int maxpreguntaBasic;
     public static int id;
     public static int id_prueba;
-    public static string req;
+    public static int approved;
     public static int grade=0;
        public static Boolean isfull;
     public static int code = 0;
+    public static int price;
+    public static string name;
+    public static int type;
+    public static string time;
+    public static int maxpregunta;
 
  
 

@@ -93,14 +93,13 @@ public partial class Pages_Prueba_admin : System.Web.UI.Page
         {
 
             test.searchTest(int.Parse(Txt_ID.Text));
-            Txt_ID.Text = " ";
-            TxtBasic.Text = " ";
-            TxtPrem.Text = " ";
-            Txt_Approved.Text = " ";
-            Txt_grade.Text = " ";
-            Txt_NombreText.Text = " ";
-            Txt_Time.Text = " ";
-            TxtPrice.Text = " ";
+            TxtBasic.Text = Utils.maxpreguntaBasic.ToString();
+            TxtPrem.Text =Utils.maxpreguntaPremium.ToString() ;
+            Txt_Approved.Text = Utils.approved.ToString();
+            Txt_grade.Text = Utils.grade.ToString();
+            Txt_NombreText.Text = Utils.name;
+            Txt_Time.Text =Utils.time;
+            TxtPrice.Text = Utils.price.ToString();
 
         }
         catch (Exception exception)
