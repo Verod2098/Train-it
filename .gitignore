@@ -5,3 +5,5 @@
 /.vs/Train-it/v15/Server/sqlite3
 /.vs/slnx.sqlite
 /.vs/Train-it/v15/.suo
+/packages
+/Train-it/Bin/roslyn
