@@ -150,19 +150,20 @@
  <div class="card">
                         <div class="body bg-gray">
                             <div class="font-bold m-b--35">Agregar Preguntas</div>
-                            <ul class="dashboard-stat-list">
+                            <ul class="dashboard-stat-list ">
 
                                 <li class="col-sm-5 ">
 
-                                    <div class="form-group form-float ">
+
+                                   <div class="form-group form-float ">
                                         <div class="form-line focused ">
                                             <asp:TextBox ID="txt_Nump" class="form-control" runat ="server"  >     </asp:TextBox>
                                             <label class="form-label">Número de la pregunta   </label>
                                         </div>
                                     </div>
                                  </li>
-                                  
-                                <li class="col-sm-5 ">
+
+                             <li class="col-sm-5 ">
                                       <div class="form-group form-float">
                                         <div class="form-line focused">
                                                  <asp:TextBox ID="txt_pregunta" runat="server"  CssClass="form-control">
@@ -171,7 +172,7 @@
                                         </div>
                                     </div>
                                          </li>
-                              <li class="col-sm-5 ">
+                              <li  class="col-sm-5 ">
 
                                   <div class="form-line focused">
                                                  
@@ -180,7 +181,8 @@
                                         </div>
 
                                   </li>
-                                <li class="col-sm-5 ">
+
+                                <li  class="col-sm-5 ">
 
                                     <div class="form-group form-float">
                                         <div class="form-line focused">
@@ -190,9 +192,8 @@
                                     </div>
                                  </li>
 
+                                <li  class="col-sm-5 ">
 
-                                    
-                                <li class="col-sm-5 ">
 
                                     <div class="form-group form-float">
                                         <div class="form-line focused">
@@ -202,8 +203,7 @@
                                     </div>
                                  </li>
 
-
-                                                       <li class="col-sm-5 ">
+                                                       <li  class="col-sm-5 ">
 
                                     <div class="form-group form-float">
                                         <div class="form-line focused">
@@ -212,8 +212,6 @@
                                         </div>
                                     </div>
                                  </li>
-                            
-
 
                                                        <li class="col-sm-5 ">
 
@@ -225,8 +223,7 @@
                                     </div>
                                  </li>
 
-                               
-                                                       <li class="col-sm-5 ">
+                                                       <li  class="col-sm-5 ">
 
                                     <div class="form-group form-float">
                                         <div class="form-line focused">
@@ -241,8 +238,7 @@
                                     </div>
                                  </li>
 
-
-                                                       <li class="col-sm-5 ">
+                                                       <li  class="col-sm-5 ">
 
                                     <div class="form-group form-float">
                                         <div class="form-line focused">
@@ -252,8 +248,7 @@
                                     </div>
                                  </li>
 
-
-                                                       <li class="col-sm-5 ">
+                                                       <li  class="col-sm-5 ">
 
                                     <div class="form-group form-float">
                                             <label class="form-label">Prueba a la que pertenece</label>
@@ -265,13 +260,9 @@
                                     </div>
                                  </li>
 
-                           
+                                                       <li  class="col-sm-5 ">
 
-                                                       <li class="col-sm-5 ">
-
-                                   
-                                        
-                                           
+                                 
                                             <label class="form-label">Código del tema</label>
                                             <asp:DropDownList ID="DropDownListCodTema" runat="server"  class="dropdown-animated" DataSourceID="SqlDataSource1" DataTextField="Topic" DataValueField="Id"></asp:DropDownList>
                                        
@@ -280,11 +271,8 @@
                                        
                                    
                                  </li>
-
-                                
-				
                 
-                 <li class="col-sm-5 ">
+                 <li  class="col-sm-5 ">
                       <span class="pull-right">
                     <asp:Button ID="BttnAdd" runat="server" Text="Agregar"  CssClass=" btn bg-cyan" OnClick="BttnAdd_Click"/>
                           <asp:Button ID="BttnDel" runat="server" Text="Eliminar"  CssClass=" btn bg-cyan" OnClick="BttnDel_Click" style="height: 35px"/>
@@ -321,15 +309,12 @@
                                    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:TRAINT-ITConnectionString %>" SelectCommand="SELECT Question.Id_Questions, Question.Question, Question.Percentaje, Question.Correct_Answer, Question.Bad_Answer1, Question.Bad_Answer2, Question.Bad_Answer3, Question.Type_Question, Question.Image, Test.Name, Topic_Question.Topic, [User].Name FROM Question INNER JOIN Test ON Question.ID_Test = Test.ID INNER JOIN Topic_Question ON Question.ID_Topic = Topic_Question.Id INNER JOIN [User] ON Question.ID_Creator = [User].Id"></asp:SqlDataSource>
              
                                 </div>
-              
-                </div>               
+               </div>                              
                
          </div>
                
          </div>
-
-
-          
+            
         </div>
     </section>
 

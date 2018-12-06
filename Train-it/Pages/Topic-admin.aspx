@@ -152,7 +152,7 @@
                  <div class="card">
                         <div class="body bg-gray">
                             <div class="font-bold m-b--35">Agregar tema para prueba</div>
-                            <ul class="dashboard-stat-list">
+                            <ul class="dashboard-stat-list col-sm-5">
 
                                 <li>
 
@@ -180,6 +180,7 @@
                     <asp:Button ID="BttnAddpru" runat="server" Text="Agregar"  CssClass=" btn bg-cyan"  style="left: 7px; top: -4px" OnClick="BttnAddpru_Click"/>
                           <asp:Button ID="BttnUPptu" runat="server" Text="Actualizar"  CssClass=" btn bg-cyan" style="left: 7px; top: -4px" OnClick="BttnUPptu_Click"/>
                           <asp:Button ID="BttnDELpru" runat="server" Text="Eliminar"  CssClass=" btn bg-cyan" style="left: 7px; top: -4px" OnClick="BttnDELpru_Click"/>
+                          <asp:Button ID="BttnSearch" runat="server" Text="Buscar"  CssClass=" btn bg-cyan" style="left: 7px; top: -4px" OnClick="BttnSEARCHpru_Click"/>
                            
                           </span>
                  </li>

@@ -74,7 +74,7 @@ public partial class Pregunta_Cliente : System.Web.UI.Page
 
 
 
-    
+
     protected void Button_Q1_Click(object sender, EventArgs e)
     {
         try
@@ -198,12 +198,9 @@ public partial class Pregunta_Cliente : System.Web.UI.Page
         sql.CommandText = "SELECT image FROM Question where id_Questions=@id ";
         sql.Parameters.AddWithValue("id", id);
         sql.CommandType = CommandType.Text;
-
         DataTable Imagen = new DataTable();
-        Imagen.Load(sql.ExecuteReader());   
+        Imagen.Load(sql.ExecuteReader());
         ImagePregunta.DataBind();
-        
 
     }
-
 }

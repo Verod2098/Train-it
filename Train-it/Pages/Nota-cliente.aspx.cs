@@ -62,30 +62,21 @@ public partial class Pages_Nota_cliente : System.Web.UI.Page
 
     }
 
- /*   public void printQuestions()
-    {
-        try
-        {
-            for (int i =0; i<Test.ListPregunta.Count;i++)
-            {
+ 
 
-              
-              GridViewPreguntas.Text+=Test.ListPregunta[i].ToString();
-              
-                
-                
+       public void printQuestions()
+       {
+           try
+           {
 
-            }
-        }
-        catch (Exception i)
-        {
-            Console.WriteLine(i.ToString());
-        }
-    }
+            //var DataSource = Utils.ListPregunta; 
 
-
-
-    */
-
-    
+            DataList1.DataSource = Utils.ListPregunta;
+            DataList1.DataBind();
+           }
+           catch (Exception i)
+           {
+               Console.WriteLine(i.ToString());
+           }
+       }
 }

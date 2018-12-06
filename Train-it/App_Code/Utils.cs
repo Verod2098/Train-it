@@ -16,7 +16,7 @@ public class Utils
     public static int id_prueba;
     public static int approved;
     public static int grade=0;
-       public static Boolean isfull;
+    public static Boolean isfull;
     public static int code = 0;
     public static int price;
     public static string name;
@@ -24,7 +24,7 @@ public class Utils
     public static string time;
     public static int maxpregunta;
 
- 
+
 
     //String de conexion 
     public static SqlConnection conexion = new SqlConnection("Data Source = DELL\\SQLEXPRESS;Initial Catalog = TRAINT-IT; User ID = Vero; Password=123");

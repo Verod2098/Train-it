@@ -54,7 +54,7 @@ public partial class Pages_Info_examen_pregunta : System.Web.UI.Page {
                 LblNomTex.Text = Session[ "nombre_prueba"].ToString();
                 LblEsTex.Text = rs[3].ToString();
                 LblAText.Text = rs[5].ToString();
-               // Utils.maxpregunta = int.Parse (rs[5].ToString());
+                //Utils.maxpregunta = int.Parse (rs[5].ToString());
                 LblTimeText.Text= rs[4].ToString();
                 
 

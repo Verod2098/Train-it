@@ -193,20 +193,19 @@ public class Test
 
         if (rs.Read())
         {
-            Utils.grade = int.Parse (rs[0].ToString());
+
+            Utils.grade = int.Parse(rs[0].ToString());
             Utils.name = rs[1].ToString();
             Utils.type = int.Parse(rs[2].ToString());
             Utils.time = rs[3].ToString();
-            Utils.approved = int.Parse( rs[4].ToString());
+            Utils.approved = int.Parse(rs[4].ToString());
             Utils.maxpreguntaPremium = int.Parse(rs[5].ToString());
             Utils.maxpreguntaBasic = int.Parse(rs[6].ToString());
             Utils.price = int.Parse(rs[7].ToString());
+            Utils.conexion.Close();
 
             Utils.conexion.Close();
         }
     }
-
-
-    
 
 }

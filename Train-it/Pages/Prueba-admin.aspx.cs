@@ -94,11 +94,11 @@ public partial class Pages_Prueba_admin : System.Web.UI.Page
 
             test.searchTest(int.Parse(Txt_ID.Text));
             TxtBasic.Text = Utils.maxpreguntaBasic.ToString();
-            TxtPrem.Text =Utils.maxpreguntaPremium.ToString() ;
+            TxtPrem.Text = Utils.maxpreguntaPremium.ToString();
             Txt_Approved.Text = Utils.approved.ToString();
             Txt_grade.Text = Utils.grade.ToString();
             Txt_NombreText.Text = Utils.name;
-            Txt_Time.Text =Utils.time;
+            Txt_Time.Text = Utils.time;
             TxtPrice.Text = Utils.price.ToString();
 
         }

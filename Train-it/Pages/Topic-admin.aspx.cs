@@ -12,19 +12,20 @@ public partial class Pages_Topic_admin : System.Web.UI.Page
 
     Topic_Pregunta pregunta = new Topic_Pregunta();
     Topic_Test test = new Topic_Test();
-        
-        protected void Page_Load(object sender, EventArgs e)
+
+    protected void Page_Load(object sender, EventArgs e)
     {
-       
+
     }
 
-    
 
- 
+
+
 
     protected void BttnAddpru_Click(object sender, EventArgs e)
     {
-        try {
+        try
+        {
 
             test.addTopicTest(txtNombretemapru.Text);
             Response.Write("<script language=javascript>alert('Ingresado Con éxito');</script>");
@@ -75,7 +76,7 @@ public partial class Pages_Topic_admin : System.Web.UI.Page
         try
         {
 
-           pregunta.addTopicQuestion(Txtnombretemapre.Text);
+            pregunta.addTopicQuestion(Txtnombretemapre.Text);
             Response.Write("<script language=javascript>alert('Ingresado Con éxito');</script>");
         }
         catch (Exception exception)
@@ -118,5 +119,5 @@ public partial class Pages_Topic_admin : System.Web.UI.Page
         }
     }
 
-  
+ 
 }
