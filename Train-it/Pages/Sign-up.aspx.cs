@@ -28,7 +28,7 @@ public partial class Pages_Sign_up : System.Web.UI.Page
                 Response.Write("<script language=javascript>.alert-blue-grey('Usuario Registrado con exito');</script>");
                 Session["User_id"] = Txtid.Text;
                 Session["Tipo"] = "Basic";
-                Response.Redirect("Preferencias.aspx");
+                Response.Redirect("Preferencias.aspx",false);
 
             }
             else {

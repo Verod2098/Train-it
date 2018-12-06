@@ -24,7 +24,7 @@ public class Users
     public static string correo;
     public static string rol;
     public static string password;
-    public static int Status;
+    public static string  Status;
 
     
     
@@ -78,7 +78,7 @@ public class Users
             tipo = rs[6].ToString();
            fecha = rs[8].ToString();
             isReal = true;
-            Status = int.Parse(rs[12].ToString());
+          //  Status = int.Parse(rs[12].ToString());
 
 
         }
@@ -141,7 +141,7 @@ public class Users
         com.Parameters.AddWithValue("Occupation", job); 
         com.Parameters.AddWithValue("Mail", mail);
         com.Parameters.AddWithValue("id", id);
-        com.Parameters.AddWithValue("Status", 1);
+        com.Parameters.AddWithValue("Status","true");
        
         if (Specialty == 0)
         {
@@ -170,7 +170,7 @@ public class Users
         SqlDataReader rs;
 
         Utils.conexion.Open();
-        sql = "SELECT Id,Type,rol FROM [User] where Mail=@correo AND Password=@contrasena";
+        sql = "SELECT Id,Type,rol,Status FROM [User] where Mail=@correo AND Password=@contrasena";
         com = Utils.conexion.CreateCommand();
         com.Parameters.AddWithValue("correo", correo);
         com.Parameters.AddWithValue("contrasena", contrasena);
@@ -181,8 +181,9 @@ public class Users
         {
             
                 tipo = rs[1].ToString();
-                 rol = rs[2].ToString();
+                rol = rs[2].ToString();
                 id = int.Parse(rs[0].ToString());
+                Status = rs[3].ToString();
                 isReal = true;
            
 
@@ -223,7 +224,7 @@ public class Users
             Utils.conexion.Open();
             sql = "UPDATE [User] SET Status=@Status WHERE Id=@id ";
             com = Utils.conexion.CreateCommand();
-            com.Parameters.AddWithValue("Status", 0);
+            com.Parameters.AddWithValue("Status", "false");
             com.Parameters.AddWithValue("id", id);
             com.CommandText = sql;
             com.ExecuteNonQuery();
