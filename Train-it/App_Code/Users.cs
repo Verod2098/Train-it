@@ -26,8 +26,11 @@ public class Users
     public static string password;
     public static string  Status;
 
-    
-    
+    private string mensaje;
+    private SqlCommand comando = new SqlCommand();
+    SqlConnection conexion = new SqlConnection("Data Source = DELL\\SQLEXPRESS;Initial Catalog = TRAINT-IT; User ID = Vero; Password=123");
+    private SqlDataReader leer;
+
     public Users()
     {
        
@@ -240,7 +243,51 @@ public class Users
         }
         return isSuccesful;
     }
-   
 
-    
+    public  String RecuperarPassword(string id)
+    {
+        comando.Connection = conexion.Open();
+        comando.CommandText = "Select * from usuarios where id = " Users.id;
+        leer = comando.ExecuteReader();
+        if (leer.Read() == true)
+        {
+            Users.correo = leer["Mail"].ToString();
+            Users.nombre = leer["Nombre"].ToString();
+            Users.password = leer["password"].ToString();
+            EnviarCorreo();
+            mensaje = "Estimado " + Users.nombre + ", se ha enviado la contraseña a su correo: " + Users.correo + " verifique su bandeja de entrada";
+            leer.Close();
+        }
+        else
+        {
+            mensaje = "No existen datos en el sistema";
+        }
+        return mensaje;
+    }
+
+    public void EnviarCorreo()
+    {
+        MailMessage Correo = new MailMessage();
+        Correo.From = new MailAddress("soporteTrainit@gmail.com");
+        Correo.To.Add(Users.correo);
+        Correo.Subject = ("RECUPERAR CONTRASEÑA SYSTEM");
+        Correo.Body = "Hola, " + Users.nombre + "Usted solicitó recuperar su contraseña.\n Su contraseña es: " + Users.password;
+        Correo.Priority = MailPriority.High;
+
+        SmtpClient ServerMail = new SmtpClient();
+        ServerMail.Credentials = new NetworkCredential("soporteTrainit@gmail.com", "@admin123");
+        ServerMail.Host = "smtp@gmail.com";
+        ServerMail.Port = 587;
+        ServerMail.EnableSsl = true;
+        try
+        {
+            ServerMail.Send(Correo);
+        }
+        catch (Exception e)
+        {
+        }
+        Correo.Dispose();
+
+    }
+
 }

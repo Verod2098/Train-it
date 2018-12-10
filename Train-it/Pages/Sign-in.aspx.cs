@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -8,6 +11,7 @@ using System.Web.UI.WebControls;
 public partial class Pages_Sign_in : System.Web.UI.Page
 {
     Users user = new Users();
+
     protected void Page_Load(object sender, EventArgs e)
     {
         Utils.conexion.Close();
@@ -69,4 +73,11 @@ public partial class Pages_Sign_in : System.Web.UI.Page
 
 
     }
+
+    public string RecuperarPass() {
+        string mensaje;
+        mensaje = Users.RecuperarPassword(id);
+        return mensaje; 
+    }
+    
 }
