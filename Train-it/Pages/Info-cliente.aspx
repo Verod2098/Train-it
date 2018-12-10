@@ -137,7 +137,7 @@
                    <div class="card">
                         <div class="body bg-gray">
                             <div class="h1">Información Personal</div>
-                            <ul class="dashboard-stat-list">
+                            <ul class="dashboard-stat-list col-md-">
 
                                 <li>
 
@@ -224,7 +224,21 @@
                           <asp:Button ID="BttnnoActive" runat="server" Text="Desactivar Cuenta"  CssClass="btn primary bg-cyan" OnClick="BttnnoActive_Click" />
 
                           </span>
+
+                                          <asp:GridView ID="GridView1" runat="server" CssClass="table" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
+                                              <Columns>
+                                                  <asp:BoundField DataField="Topic" HeaderText="Topic" SortExpression="Topic" />
+                                                  <asp:CommandField ShowDeleteButton="True" />
+                                              </Columns>
+                                            </asp:GridView>
+                                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TRAINT-ITConnectionString %>" SelectCommand="SELECT Topic_Test.Topic FROM Preferences INNER JOIN Topic_Test ON Preferences.ID_Test = Topic_Test.Id  WHERE ([ID_User] = @ID_User)">
+                                                <SelectParameters>
+                                                    <asp:SessionParameter Name="ID_User" SessionField="User_id" />
+                                                </SelectParameters>
+                                            </asp:SqlDataSource>
                  </li>
+
+
                 </ul>
                </div>
          </div>

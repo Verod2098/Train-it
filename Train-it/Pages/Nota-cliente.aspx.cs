@@ -14,7 +14,7 @@ public partial class Pages_Nota_cliente : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         FillInfo();
-        //printQuestions();
+        printQuestions();
     }
 
     protected void BttnNota_Click(object sender, EventArgs e)

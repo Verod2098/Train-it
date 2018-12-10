@@ -19,6 +19,7 @@ public partial class Pregunta_Cliente : System.Web.UI.Page
             UpdatePanel1.Update();
             test.FillQuestion(int.Parse(Session["id_prueba"].ToString()));
             LblPregunta.Text = Pregunta.preguntatext.ToString();
+            getImage(int.Parse(Session["id_prueba"].ToString()));
             FillButton();
             Utils.isfull = true;
             

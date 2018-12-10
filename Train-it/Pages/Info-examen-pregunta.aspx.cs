@@ -40,7 +40,7 @@ public partial class Pages_Info_examen_pregunta : System.Web.UI.Page {
             SqlDataReader rs;
             
             conexion.Open();
-            sql = "select * from  Prueba where Nombre=@codigo";
+            sql = "select * from  Test where Name=@codigo";
             com = conexion.CreateCommand();
             com.CommandText = sql;
             com.Parameters.AddWithValue("codigo", Session["nombre_prueba"].ToString());
@@ -49,13 +49,26 @@ public partial class Pages_Info_examen_pregunta : System.Web.UI.Page {
 
             if (rs.Read())
             {
-                Session["id_Prueba"] = rs[7].ToString();
-                LblCodTxt.Text = rs[7].ToString ();
+                Session["id_Prueba"] = rs[8].ToString();
+                LblCodTxt.Text = rs[8].ToString ();
                 LblNomTex.Text = Session[ "nombre_prueba"].ToString();
-                LblEsTex.Text = rs[3].ToString();
-                LblAText.Text = rs[5].ToString();
-                //Utils.maxpregunta = int.Parse (rs[5].ToString());
-                LblTimeText.Text= rs[4].ToString();
+                LblEsTex.Text = rs[2].ToString();
+                LblTimeText.Text= rs[3].ToString();
+
+                if (Session["Tipo"].ToString() == "Basic")
+                {
+
+                    Utils.maxpregunta = int.Parse(rs[6].ToString());
+
+                }
+                else {
+                    if (Session["Tipo"].ToString() == "Premium") {
+
+                        Utils.maxpregunta = int.Parse(rs[5].ToString());
+
+                    }
+
+                }
                 
 
             }
