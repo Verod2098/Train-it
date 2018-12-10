@@ -15,7 +15,7 @@ public partial class Pages_Topic_admin : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Utils.conexion.Close();
     }
 
 
@@ -119,5 +119,26 @@ public partial class Pages_Topic_admin : System.Web.UI.Page
         }
     }
 
- 
+
+
+    protected void BttnSearch_Click(object sender, EventArgs e)
+    {
+        try
+        {
+
+           test.searchTopic(int.Parse(txt_codtemapru.Text));
+            txtNombretemapru.Text = Topic_Test.Topic;
+        }
+        catch (Exception exception)
+
+        {
+            Console.WriteLine(exception.ToString());
+            Response.Write("<script language=javascript>alert('Error al realizar acción');</script>");
+        }
+
+
+
+
+
+    }
 }

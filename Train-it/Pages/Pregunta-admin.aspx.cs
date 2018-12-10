@@ -27,7 +27,7 @@ public partial class Pages_Pregunta_admin : System.Web.UI.Page
                 Pregunta.image = image.FileBytes;
 
             }
-            pregunta.addQuestion(txt_pregunta.Text, txt_Porcentaje.Text, txt_RA.Text, txt_RN1.Text, txt_RN2.Text, txt_RN3.Text, DDLTipoPregunta.Text, Pregunta.image, int.Parse(DropDownListCodPrueba.Text), int.Parse(DropDownListCodTema.Text),  int.Parse(Session["User_id"].ToString()));
+            pregunta.addQuestion(txt_pregunta.Text, txt_Porcentaje.Text, txt_RA.Text, txt_RN1.Text, txt_RN2.Text, txt_RN3.Text, DDLTipoPregunta.Text, Pregunta.image, int.Parse(DropDownListCodPrueba.Text), int.Parse(DropDownListCodTema.Text), 1206354);
             Response.Write("<script language=javascript>alert('Ingresado Con éxito');</script>");
         }
         catch (Exception exception)

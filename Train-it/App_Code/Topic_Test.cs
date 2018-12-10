@@ -16,7 +16,7 @@ public class Topic_Test
         //
     }
     public static int Id { get; set; }
-    public static string Topic { get; set; }
+    public static string Topic;
 
     public void addTopicTest( string topic)
     {

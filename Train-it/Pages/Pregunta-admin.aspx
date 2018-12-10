@@ -152,7 +152,7 @@
                             <div class="font-bold m-b--35">Agregar Preguntas</div>
                             <ul class="dashboard-stat-list ">
 
-                                <li class="col-sm-5 ">
+                                <li >
 
 
                                    <div class="form-group form-float ">
@@ -163,7 +163,7 @@
                                     </div>
                                  </li>
 
-                             <li class="col-sm-5 ">
+                             <li >
                                       <div class="form-group form-float">
                                         <div class="form-line focused">
                                                  <asp:TextBox ID="txt_pregunta" runat="server"  CssClass="form-control">
@@ -172,7 +172,7 @@
                                         </div>
                                     </div>
                                          </li>
-                              <li  class="col-sm-5 ">
+                              <li >
 
                                   <div class="form-line focused">
                                                  
@@ -182,7 +182,7 @@
 
                                   </li>
 
-                                <li  class="col-sm-5 ">
+                                <li >
 
                                     <div class="form-group form-float">
                                         <div class="form-line focused">
@@ -192,7 +192,7 @@
                                     </div>
                                  </li>
 
-                                <li  class="col-sm-5 ">
+                                <li >
 
 
                                     <div class="form-group form-float">
@@ -203,7 +203,7 @@
                                     </div>
                                  </li>
 
-                                                       <li  class="col-sm-5 ">
+                                                       <li >
 
                                     <div class="form-group form-float">
                                         <div class="form-line focused">
@@ -213,7 +213,7 @@
                                     </div>
                                  </li>
 
-                                                       <li class="col-sm-5 ">
+                                                       <li >
 
                                     <div class="form-group form-float">
                                         <div class="form-line focused">
@@ -223,7 +223,7 @@
                                     </div>
                                  </li>
 
-                                                       <li  class="col-sm-5 ">
+                                                       <li >
 
                                     <div class="form-group form-float">
                                         <div class="form-line focused">
@@ -238,7 +238,7 @@
                                     </div>
                                  </li>
 
-                                                       <li  class="col-sm-5 ">
+                                                       <li >
 
                                     <div class="form-group form-float">
                                         <div class="form-line focused">
@@ -248,7 +248,7 @@
                                     </div>
                                  </li>
 
-                                                       <li  class="col-sm-5 ">
+                                                       <li >
 
                                     <div class="form-group form-float">
                                             <label class="form-label">Prueba a la que pertenece</label>
@@ -260,7 +260,7 @@
                                     </div>
                                  </li>
 
-                                                       <li  class="col-sm-5 ">
+                                                       <li >
 
                                  
                                             <label class="form-label">Código del tema</label>
@@ -272,7 +272,7 @@
                                    
                                  </li>
                 
-                 <li  class="col-sm-5 ">
+                 <li >
                       <span class="pull-right">
                     <asp:Button ID="BttnAdd" runat="server" Text="Agregar"  CssClass=" btn bg-cyan" OnClick="BttnAdd_Click"/>
                           <asp:Button ID="BttnDel" runat="server" Text="Eliminar"  CssClass=" btn bg-cyan" OnClick="BttnDel_Click" style="height: 35px"/>
