@@ -9,6 +9,8 @@ using System.Web.UI.WebControls;
 
 public partial class Pages_Nota_cliente : System.Web.UI.Page
 {
+    Users user; 
+
     Test test = new Test();
     SqlConnection conexion = new SqlConnection("Data Source = DELL\\SQLEXPRESS;Initial Catalog = TRAINT-IT; User ID = Vero; Password=123");
     protected void Page_Load(object sender, EventArgs e)
@@ -69,11 +71,14 @@ public partial class Pages_Nota_cliente : System.Web.UI.Page
            try
            {
 
-            //var DataSource = Utils.ListPregunta; 
+            if (user ) {
+                //var DataSource = Utils.ListPregunta; 
 
-            DataList1.DataSource = Utils.ListPregunta;
-            DataList1.DataBind();
-           }
+                DataList1.DataSource = Utils.ListPregunta;
+                DataList1.DataBind();
+            }
+        }
+        
            catch (Exception i)
            {
                Console.WriteLine(i.ToString());

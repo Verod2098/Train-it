@@ -23,6 +23,7 @@ public class Utils
     public static int type;
     public static string time;
     public static int maxpregunta;
+    public static string sesion;
 
 
 
