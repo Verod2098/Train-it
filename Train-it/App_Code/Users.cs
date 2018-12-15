@@ -246,7 +246,7 @@ public class Users
 
 
 
-    public  String RecuperarPassword(string id)
+    public  String RecuperarPassword(int id)
     {
         comando.Connection = conexion.Open();
         comando.CommandText = "Select * from usuarios where id = " Users.id;
