@@ -225,17 +225,7 @@
 
                           </span>
 
-                                          <asp:GridView ID="GridView1" runat="server" CssClass="table" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
-                                              <Columns>
-                                                  <asp:BoundField DataField="Topic" HeaderText="Topic" SortExpression="Topic" />
-                                                  <asp:CommandField ShowDeleteButton="True" />
-                                              </Columns>
-                                            </asp:GridView>
-                                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TRAINT-ITConnectionString %>" SelectCommand="SELECT Topic_Test.Topic FROM Preferences INNER JOIN Topic_Test ON Preferences.ID_Test = Topic_Test.Id  WHERE ([ID_User] = @ID_User)">
-                                                <SelectParameters>
-                                                    <asp:SessionParameter Name="ID_User" SessionField="User_id" />
-                                                </SelectParameters>
-                                            </asp:SqlDataSource>
+                                         
                  </li>
 
 

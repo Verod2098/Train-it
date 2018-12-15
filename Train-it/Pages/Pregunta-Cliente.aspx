@@ -146,6 +146,7 @@
                                  UpdateMode="Conditional"
                                  runat="server">
                     <ContentTemplate>
+                        <asp:Label ID="lblNumPre" runat="server" Text="" CssClass="labelpregunta"></asp:Label>
                            <asp:Label ID="LblPregunta" runat="server" Text="" CssClass="labelpregunta"></asp:Label>
                         <asp:Image ID="ImagePregunta" runat="server" />
                             <asp:Button ID="Button_Q1" class="element-animation1 btn btn-lg  btn-block bg-cyan" runat="server" OnClick="Button_Q1_Click" ></asp:Button>

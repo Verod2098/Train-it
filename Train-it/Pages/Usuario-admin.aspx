@@ -146,7 +146,135 @@
         <div class="container-fluid">
             <!--Insertar Codigo-->
             <div class="block-header">
-                <h2>En Construcción</h2>
+                 <section class="content">
+        <div class="container-fluid">
+            <!--Insertar Codigo-->
+            <div class="block-header">
+                   <div class="card">
+                        <div class="body bg-gray">
+                            <div class="h1">Información Personal</div>
+                            <ul class="dashboard-stat-list ">
+
+                                 <li>
+                     <div class="form-group form-float">
+                        
+                        <div class="form-line">
+                        <asp:TextBox ID="Txtid" runat="server" CssClass="form-control" placeholder="Cédula"  ></asp:TextBox>
+                        </div>
+                    </div>
+                                     </li>
+
+                                      <li>
+                     <div class="form-group form-float">
+                       
+                        <div class="form-line">
+                        <asp:TextBox ID="TxtPassword" runat="server" CssClass="form-control" placeholder="Contraseña" TextMode="Password" ></asp:TextBox>
+                        </div>
+                    </div>
+                                     </li>
+                                <li>
+
+                                    <div class="form-group form-float">
+                                        <div class="form-line focused">
+                                            <asp:TextBox ID="TxtName" class="form-control" runat ="server"  ></asp:TextBox>
+                                            <label class="form-label">Nombre </label>
+                                        </div>
+                                    </div>
+                                 </li>
+
+                                <li>
+                                      <div class="form-group form-float">
+                                        <div class="form-line focused">
+                                                 <asp:TextBox ID="Txtdate" runat="server"  CssClass="form-control "  TextMode="Date">
+                                                     </asp:TextBox>
+                                            <label class="form-label">Fecha de Nacimiento</label>
+                                        </div>
+                                    </div>
+                                         </li>
+                                  <li>
+                                      <div class="form-group form-float">
+                                        <div class="form-line focused">
+                                                 <asp:TextBox ID="TxtPhone" runat="server"  CssClass="form-control glyphicon-phone" >
+                                                     </asp:TextBox>
+                                            <label class="form-label">Número de Teléfono</label>
+                                        </div>
+                                    </div>
+                                         </li>
+
+                                 <li>
+                                      <div class="form-group form-float">
+                                        <div class="form-line focused">
+                                                 <asp:TextBox ID="TxtOcupation" runat="server"  CssClass="form-control" >
+                                                     </asp:TextBox>
+                                            <label class="form-label">Ocupación</label>
+                                        </div>
+                                    </div>
+                                         </li>
+
+                                 <li>
+                                      <div class="form-group form-float">
+                                        <div class="form-line focused">
+                                                 <asp:TextBox ID="Txtplace" runat="server"  CssClass="form-control" >
+                                                     </asp:TextBox>
+                                            <label class="form-label">Centro Educativo o Lugar de Trabajo</label>
+                                        </div>
+                                    </div>
+                                         </li>
+                             
+                                <li>
+
+                                    <div class="form-group form-float">
+                                        <div class="form-line focused">
+                                                 <asp:TextBox ID="TxtMail" runat="server"  class="form-control" TextMode="Email"></asp:TextBox>
+                                                     
+                                            <label class="form-label">Correo electrónico</label>
+                                        </div>
+                                    </div>
+                                   
+                                </li>
+
+                                
+                                <li>
+
+                                    <div class="form-group form-float">
+                                        <div class="form-line focused">
+                                            <asp:DropDownList ID="DDL" runat="server" DataSourceID="SqlDataSource1" DataTextField="Topic" DataValueField="Id"></asp:DropDownList>
+                                                     
+                                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TRAINT-ITConnectionString %>" SelectCommand="SELECT * FROM [Topic_Test]"></asp:SqlDataSource>
+                                                     
+                                            <label class="form-label">Especialidad</label>
+                                        </div>
+                                    </div>
+                                   
+                                </li>
+
+                                             <li>
+
+                                    <div class="form-group form-float">
+                                        <div class="form-line focused">
+                                            <asp:DropDownList ID="DropDownList1" runat="server" >
+                                                <asp:ListItem>Administrador</asp:ListItem>
+                                                <asp:ListItem>Especialista</asp:ListItem>
+                                            </asp:DropDownList>
+                                                     
+                                          
+                                            <label class="form-label">Tipo de Usuario</label>
+                                        </div>
+                                    </div>
+                                   
+                                </li>   
+                                                    <li>
+                                      
+
+                                        
+                                    
+                                         
+       
+                                                 
+                 
+                      <span class="pull-right">
+                    <asp:Button ID="BttnAdd" runat="server" Text="Agregar"  CssClass="btn primary bg-cyan" OnClick="BttnAdd_Click" />
+</span>
             </div>
         </div>
     </section>

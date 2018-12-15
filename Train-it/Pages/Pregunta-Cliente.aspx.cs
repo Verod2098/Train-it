@@ -21,6 +21,7 @@ public partial class Pregunta_Cliente : System.Web.UI.Page
             LblPregunta.Text = Pregunta.preguntatext.ToString();
             getImage(int.Parse(Session["id_prueba"].ToString()));
             FillButton();
+            lblNumPre.Text = Utils.code.ToString()+ " / "+Utils.maxpregunta.ToString() ;
             Utils.isfull = true;
             
         }
@@ -90,6 +91,7 @@ public partial class Pregunta_Cliente : System.Web.UI.Page
                 test.FillQuestion(int.Parse(Session["id_prueba"].ToString()));
                 UpdatePanel1.Update();
                 LblPregunta.Text = Pregunta.preguntatext.ToString();
+                lblNumPre.Text = Utils.code.ToString() + " / " + Utils.maxpregunta.ToString();
                 FillButton();
             }
             else
@@ -119,6 +121,7 @@ public partial class Pregunta_Cliente : System.Web.UI.Page
                 test.FillQuestion(int.Parse(Session["id_prueba"].ToString()));
                 UpdatePanel1.Update();
                 LblPregunta.Text = Pregunta.preguntatext.ToString();
+                lblNumPre.Text = Utils.code.ToString() + " / " + Utils.maxpregunta.ToString();
                 FillButton();
             }
             else
@@ -148,6 +151,7 @@ public partial class Pregunta_Cliente : System.Web.UI.Page
                 test.FillQuestion(int.Parse(Session["id_prueba"].ToString()));
                 UpdatePanel1.Update();
                 LblPregunta.Text = Pregunta.preguntatext.ToString();
+                lblNumPre.Text = Utils.code.ToString() + " / " + Utils.maxpregunta.ToString();
                 FillButton();
             }
             else
@@ -177,6 +181,7 @@ public partial class Pregunta_Cliente : System.Web.UI.Page
                 test.FillQuestion(int.Parse(Session["id_prueba"].ToString()));
                 UpdatePanel1.Update();
                 LblPregunta.Text = Pregunta.preguntatext.ToString();
+                lblNumPre.Text = Utils.code.ToString() + " / " + Utils.maxpregunta.ToString();
                 FillButton();
             }
             else

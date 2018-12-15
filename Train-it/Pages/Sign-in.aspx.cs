@@ -24,7 +24,7 @@ public partial class Pages_Sign_in : System.Web.UI.Page
         {
             if (user.searchclient(TxtUser.Text, TxtPassword.Text))
             {
-                if (Users.Status == "true")
+                if (Users.Status == "1")
                 {
                     if (Users.rol == "Usuario")
                     {
@@ -46,20 +46,21 @@ public partial class Pages_Sign_in : System.Web.UI.Page
                     }
 
                 }
-            }
-            else
-            {
 
-
-
-                if (Users.Status == "false")
-                {
-
-                    Response.Write("<script language=javascript>alert('La cuenta no esta activa');</script>");
-                }
                 else
                 {
-                    Response.Write("<script language=javascript>alert('Datos incorrectos');</script>");
+
+
+
+                    if (Users.Status == "0")
+                    {
+
+                        Response.Write("<script language=javascript>alert('La cuenta no esta activa');</script>");
+                    }
+                    else
+                    {
+                        Response.Write("<script language=javascript>alert('Datos incorrectos');</script>");
+                    }
                 }
             }
         }
