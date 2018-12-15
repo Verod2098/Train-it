@@ -75,7 +75,7 @@ public partial class Pages_Sign_in : System.Web.UI.Page
 
     public string RecuperarPass() {
         string mensaje;
-        mensaje = Users.RecuperarPassword(id);
+        mensaje = Users.RecuperarPassword(Users.id);
         return mensaje; 
     }
     

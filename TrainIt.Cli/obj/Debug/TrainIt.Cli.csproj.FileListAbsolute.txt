@@ -1,0 +1,7 @@
+C:\Users\aleal\source\repos\Train-it\TrainIt.Cli\bin\Debug\TrainIt.Cli.exe.config
+C:\Users\aleal\source\repos\Train-it\TrainIt.Cli\bin\Debug\TrainIt.Cli.exe
+C:\Users\aleal\source\repos\Train-it\TrainIt.Cli\bin\Debug\TrainIt.Cli.pdb
+C:\Users\aleal\source\repos\Train-it\TrainIt.Cli\obj\Debug\TrainIt.Cli.csprojAssemblyReference.cache
+C:\Users\aleal\source\repos\Train-it\TrainIt.Cli\obj\Debug\TrainIt.Cli.csproj.CoreCompileInputs.cache
+C:\Users\aleal\source\repos\Train-it\TrainIt.Cli\obj\Debug\TrainIt.Cli.exe
+C:\Users\aleal\source\repos\Train-it\TrainIt.Cli\obj\Debug\TrainIt.Cli.pdb

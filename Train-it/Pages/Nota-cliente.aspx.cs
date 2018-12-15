@@ -71,7 +71,7 @@ public partial class Pages_Nota_cliente : System.Web.UI.Page
            try
            {
 
-            if (user ) {
+            if (user.) {
                 //var DataSource = Utils.ListPregunta; 
 
                 DataList1.DataSource = Utils.ListPregunta;

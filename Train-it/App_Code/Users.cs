@@ -244,6 +244,8 @@ public class Users
         return isSuccesful;
     }
 
+
+
     public  String RecuperarPassword(string id)
     {
         comando.Connection = conexion.Open();
@@ -254,7 +256,7 @@ public class Users
             Users.correo = leer["Mail"].ToString();
             Users.nombre = leer["Nombre"].ToString();
             Users.password = leer["password"].ToString();
-            EnviarCorreo();
+            MailService.EnviarCorreo(Users.correo, "RECUPERAR CONTRASEÑA", "Hola, " + Users.nombre + "su contraseña es: " + Users.password); 
             mensaje = "Estimado " + Users.nombre + ", se ha enviado la contraseña a su correo: " + Users.correo + " verifique su bandeja de entrada";
             leer.Close();
         }
@@ -265,29 +267,6 @@ public class Users
         return mensaje;
     }
 
-    public void EnviarCorreo()
-    {
-        MailMessage Correo = new MailMessage();
-        Correo.From = new MailAddress("soporteTrainit@gmail.com");
-        Correo.To.Add(Users.correo);
-        Correo.Subject = ("RECUPERAR CONTRASEÑA SYSTEM");
-        Correo.Body = "Hola, " + Users.nombre + "Usted solicitó recuperar su contraseña.\n Su contraseña es: " + Users.password;
-        Correo.Priority = MailPriority.High;
-
-        SmtpClient ServerMail = new SmtpClient();
-        ServerMail.Credentials = new NetworkCredential("soporteTrainit@gmail.com", "@admin123");
-        ServerMail.Host = "smtp@gmail.com";
-        ServerMail.Port = 587;
-        ServerMail.EnableSsl = true;
-        try
-        {
-            ServerMail.Send(Correo);
-        }
-        catch (Exception e)
-        {
-        }
-        Correo.Dispose();
-
-    }
+   
 
 }
